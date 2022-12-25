@@ -22,8 +22,11 @@ const Home = () => {
                     <h1>BILLY</h1>
                     <h1>BOARD</h1>
                     <p>All your work information with you.</p>
+                    <div className='btn-container'>
                     <button type="button" class="btn btn-light" onClick={signinHandler}>Sign in</button>
                     <button type="button" class="btn btn-light" onClick={loginHandler}>Login</button>
+                    </div>
+                  
 
                 </div>
 
