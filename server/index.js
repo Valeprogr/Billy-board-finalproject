@@ -1,7 +1,7 @@
 import express,{json} from "express";
 import {} from "dotenv/config";
 import mongoose from "mongoose";
-import userRouter from "./routes/post-router.js"
+import userRouter from "./routes/user-router.js"
 
 const app= express();
 const PORT = process.env.PORT;
