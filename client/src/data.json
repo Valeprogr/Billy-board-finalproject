@@ -1,0 +1,77 @@
+{
+    "companies":[{
+    "company_id": 1,
+    "company_name":"Acme Corporation",
+    "company_type":"Small Company",
+    "company_description": "Real Estate and Rental and Leasing",
+    "company_password": 123
+    },{
+    "company_id": 2,
+    "company_name":"LolPop",
+    "company_type":"partnership",
+    "company_description": "LolPop is a private company based in Berlin, primarily known for its energy drinks",
+    "company_password": 123
+    }
+    ],"users":[{
+    "user_id":1,
+    "company_id":1,
+    "user_name":"mario",
+    "user_lastname":"rossi",
+    "user_email":"mario@rossi.com",
+    "user_occupation":"Manager",
+    "user_image":"url",
+    "user_password":123
+    },{
+    "user_id":2,
+    "company_id":1,
+    "user_name":"lola",
+    "user_lastname":"ciccone",
+    "user_email":"lola@ciccone.com",
+    "user_occupation":"employee",
+    "user_image":"url",
+    "user_password":123
+    },{
+    "user_id":3,
+    "company_id":2,
+    "user_name":"gabriella",
+    "user_lastname":"fox",
+    "user_email":"Gabriella@fox.com",
+    "user_occupation":"Manager",
+    "user_image":"url",
+    "user_password":123
+    },{
+    "user_id":4,
+    "company_id":2,
+    "user_name":"mason",
+    "user_lastname":"jacob",
+    "user_email":"jacob@mason.com",
+    "user_occupation":"employee",
+    "user_image":"url",
+    "user_password":123
+    }
+    ],"projects":[
+    {
+    "project_id":1,
+    "project_name":"furnishing of apartment 204",
+    "project_description":"renovation and sanitization of the apartment, choice of colors and marbles.",
+    "start_date":"18.02.2022",
+    "end_date":"30.06.2022",
+    "location":"Clark Street 3566, New York 10011 "
+    },{
+    "project_id":2,
+    "project_name":"LolPop-Design",
+    "project_description":"creations of 2 drafts for the new design of the energy drink.",
+    "start_date":"5.04.2022",
+    "end_date":"5.05.2022",
+    "location":"Office n. 33 "
+    }
+    ],"employees_project":[{
+    "user_name":"mason",
+    "company_id":1,
+    "project_id":1
+    },{
+    "user_name":"lola",
+    "company_id":2,
+    "project_id":2
+    }]
+    }

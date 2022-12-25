@@ -1,0 +1,32 @@
+:root {
+    --color-primary: #A5F1E9;
+    --color-secondary:#22A39F;
+    --text-color: #F9F9F9;
+    --text-color2: black ;
+    --font-family: 'Montserrat', sans-serif;
+  }
+  
+  html, body{
+    font-style: var(--font-family);
+    color: var(--text-color);
+  }
+
+.login-body{
+   display: flex;
+   justify-content: center;
+    justify-items: center;
+    background-image: url(../../images/login.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+}
+
+
+.login-box{
+    display: flex;
+    flex-direction: column;
+    margin-left: 336px;
+    padding: 150px;
+}
+
