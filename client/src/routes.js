@@ -5,6 +5,7 @@ import Signin from "./components/signin/Signin";
 import Login from './pages/login/Login';
 import About from "./components/about/About";
 import Contacts from "./components/contacts/Contacts";
+import AdminHome from "./components/admin/AdminHome"
 
 export const useRoutes = (isAuthenticated) => {
     if (isAuthenticated) {
@@ -23,6 +24,7 @@ export const useRoutes = (isAuthenticated) => {
             <Route path="/login" element={<Login />} />
             <Route path="/about" element={<About />}/>
             <Route path="/contacts" element={<Contacts/>}/>
+            <Route path="/userAdmin" element={<AdminHome/>} />
             <Route path="*" element={<Navigate to="/" replace />} />
            
         </Routes>

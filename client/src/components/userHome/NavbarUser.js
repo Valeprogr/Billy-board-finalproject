@@ -5,7 +5,7 @@ import "./homeUser.css";
 const NavbarUser = () => {
     return (
         <>
-            <nav class="nav flex-column">
+            <nav class="nav flex-column nav-user">
                 <div className='avatar-img-wow text-center'>
                     <img className='avatar-img' src='https://cdn.discordapp.com/attachments/1008786354865451019/1053355839953588335/profileimage.jpg' alt='profile pictures'></img>
                 </div>

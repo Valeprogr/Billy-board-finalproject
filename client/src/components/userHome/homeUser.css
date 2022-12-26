@@ -34,7 +34,7 @@ article {
 }
 
 
-nav {
+.nav-user {
     grid-area: nav;
     padding: 24px;
     background-color:var(--text-color);
@@ -42,7 +42,7 @@ nav {
     border:  1px solid lightgray;
 }
 
-nav a{
+.nav-user a{
     text-decoration: none !important;
     color: var(--color-secondary) !important;
     font-size: 22px ;
@@ -99,6 +99,6 @@ width: 200px;
     width: 100px;
 } */
 
-.nav, span{
+.nav-user, span{
     margin-right: 15px;
 }
