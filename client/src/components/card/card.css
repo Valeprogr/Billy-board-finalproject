@@ -5,8 +5,10 @@
     --text-color2: black ;
     --font-family: 'Montserrat', sans-serif;
   }
-.card{
-    padding: 32px;
+.card-personaliz{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     background-color: white !important; 
     color: var(--text-color2);
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
@@ -15,10 +17,10 @@ filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
 }
 
 .card-img{
-    width: 1rem;
-    height: 9rem;
     padding: 12px;
-    border: 2px solid #62B6B7;
+    border-radius: 90%;
+    margin-left: 10px;
+    
     
 }
 

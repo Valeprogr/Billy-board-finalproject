@@ -6,10 +6,11 @@ const Card = ({title}) => {
   // console.log(title)
     return (
         <>
-<div className="card">
-  <img src={images} className="card-img-top card-img" alt="icons"/>
+<div className="card-personaliz">
+  <img src={images}  alt="icons" className='card-img'/>
   <div className="card-body">
     <h5 className="card-title">{title}</h5>
+    
     <a href="#" className="btn btn-secondary">lets go!</a>
   </div>
 </div>
