@@ -5,23 +5,26 @@
     --text-color2: black ;
     --font-family: 'Montserrat', sans-serif;
   }
-body{
-    background-image: url("../../images/background.png");
-}
+
 .container-body{
     display: flex;
     flex-direction: column;
-    margin: 72px 60px 0 90px;
     padding: 12px;
     box-shadow: 0px 1px 2px rgba(0,0,0,0.1), 
     0px 2px 4px rgba(0,0,0,0.1), 
     0px 4px 8px rgba(0,0,0,0.1), 
     0px 8px 16px rgba(0,0,0,0.1);
     background-color: white;
+    height: auto;
+    width: auto;
+    border-radius: 2%;
 }
 .container-box{
     display: flex;
-   
+    width: 1024px;
+    height:  768px;
+    justify-items: center;
+    padding: 60px;
 }
 .container-img{
    
@@ -34,9 +37,18 @@ body{
 }
 .container-data{
     margin-left: 42px;
+    
+    /* margin-bottom: 242px; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    width: 400px;
+   
+}
+.container-data p{
+    color: var(--color-secondary);
+    font-weight: 700;
+    
 }
 
 .buttons{

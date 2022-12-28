@@ -28,7 +28,6 @@ function App() {
     //       {/* <Login /> */}
     //       {/* <Signin /> */}
     //       {/* <AdminHome /> */}
-    //       {/* <EmployeeHome/> */}
     //       {/* <ProfileUser /> */}
     //       {/* <ProjectsList /> */}
     //     </div>
