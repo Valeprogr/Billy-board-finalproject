@@ -1,14 +1,14 @@
 import React from 'react';
 import "./homeUser.css";
-import ProfileUser from "../userComponets/ProfileUser"
+import ProfileUser from "../ProfileUser"
 const ArticleUser = () => {
-    
+
     return (
         <>
-              <article>
+            <article>
                 <div className='box-body'>
                     <div className='box2-container'>
-                    <ProfileUser />
+                        {/* <ProfileUser /> */}
                     </div>
                 </div>
             </article>

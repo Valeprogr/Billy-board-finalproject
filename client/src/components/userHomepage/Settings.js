@@ -33,6 +33,9 @@ const Settings = () => {
                         <option value="manager" name="manager">Manager</option>
                     </select>
                 </div>
+                <div>
+                <button type="button" class="btn btn-secondary">Save Profile</button>
+                </div>
                
             </form>
             </div>

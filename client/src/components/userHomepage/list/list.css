@@ -5,9 +5,7 @@
     --text-color2: black ;
     --font-family: 'Montserrat', sans-serif;
   }
-body{
-    background-image: url("../../images/background.png");
-}
+
 .container-body{
     margin: 72px 60px 0 90px;
     padding: 12px;

@@ -98,3 +98,8 @@ width: 200px;
 .nav-user, span{
     margin-right: 15px;
 }
+
+.navbar-data{
+    font-size: 12px;
+    margin: 0;
+}
