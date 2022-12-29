@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'
 import "./home.css";
-import Navbar from './Navbar';
+
 
 const Home = () => {
-
+    //Hook che serve per navigare su un altra pagina 
     const navigate = useNavigate();
+    
+    //Funzioni collegate al button signin e login 
     const signinHandler = () => {
         navigate('/signin');
     }
