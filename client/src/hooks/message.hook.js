@@ -1,10 +1,15 @@
 import { useCallback } from "react"
+import toast from "react-hot-toast";
 
 
 export const useMessage = () => {
-    return useCallback((text) => {
-        if(window.M && text) {
-            window.M.toast({html: text});
+    return useCallback((info) => {
+     if(info){
+        if(info.status === "error"){
+            toast.error(info.message)
+        }else{
+            toast.success(info.message)
         }
-    })
+     }
+    },[])
 }

@@ -1,5 +1,7 @@
 import {useState, useCallback, useEffect} from "react";
 
+
+//Funzione che esporta altre funzioni (vedi App.js)
 export const useAuth = () => {
     const [token, setToken] = useState(null);
     const [ready, setReady] = useState(false);
@@ -27,7 +29,7 @@ export const useAuth = () => {
         if (data && data.token) {
             login(data.token, data.userId);
         }
-        setReady(false);
+        setReady(true);
     }, [login]);
     return {login, logout, token, userId, ready}
 }

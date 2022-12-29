@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 
+//Funzioni per request al server
 export const useHttp = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -16,20 +17,20 @@ export const useHttp = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                throw new Error('error...');
+                throw new Error(data.message);
             }
             setLoading(false);
             return data;
         } catch (e) {
             setLoading(false);
-            setError(e.message);
+            setError({message: e.message, status: e.name.toLowerCase()});
             throw e;
         }
     }, []);
 
     const clearError = useCallback(() => {
         setError(null);
-    });
+    },[]);
 
     return { loading, request, error, clearError };
 }
