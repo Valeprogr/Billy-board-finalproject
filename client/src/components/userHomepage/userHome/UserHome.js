@@ -6,8 +6,10 @@ import "../userHome/homeUser.css";
 const UserHome = () => {
     return (
         <div className='admin-home-body'>
+        <div className='admin-home-container'>
             <NavbarUser />
             <ArticleUser />
+            </div>
             <FooterUser />
         </div>
     );

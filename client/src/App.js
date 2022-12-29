@@ -3,9 +3,10 @@ import './App.css';
 import { AuthContext } from './context/AuthContext';
 import { useAuth } from './hooks/auth.hook';
 import { useRoutes } from './routes';
+//import NavbarUser from './components/userHomepage/userHome/NavbarUser';
 
 //import Home from './pages/home/Home';
-//import Navbar from './pages/home/Navbar';
+import Navbar from './pages/home/Navbar';
 //import Signin from './components/signin/Signin';
 
 
@@ -37,6 +38,7 @@ function App() {
 
     <AuthContext.Provider value={{ token, login, logout, userId, isAuthenticated }}>
       <BrowserRouter>
+      <Navbar />
         {routes}
       </BrowserRouter>
     </AuthContext.Provider>

@@ -8,7 +8,7 @@ const ProfileUser = () => {
     // console.log(data.users)
     return (
         <>
-            <div className='container-body'>
+            <div className='container-body-profile'>
                 <h1>Profile</h1>
                 <hr></hr>
                 <div className="container-box">

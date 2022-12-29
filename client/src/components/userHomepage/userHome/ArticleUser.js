@@ -8,7 +8,7 @@ const ArticleUser = () => {
             <article>
                 <div className='box-body'>
                     <div className='box2-container'>
-                        {/* <ProfileUser /> */}
+                        <ProfileUser />
                     </div>
                 </div>
             </article>
