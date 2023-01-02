@@ -3,6 +3,8 @@ import { AuthContext } from '../../context/AuthContext';
 import "./login.css"
 import { useHttp } from '../../hooks/http.hook';
 import { useMessage } from '../../hooks/message.hook';
+import Btnspinner from "../../btnSpinner/BtnSpinner";
+import { Toaster } from "react-hot-toast";
 
 
 const Login = () => {
@@ -20,11 +22,16 @@ const Login = () => {
 
     }, [error, message, clearError]);
 
+    const changeHandler = (event)=>{
+        setForm({...form, [event.target.name]: event.target.value})
+    }
+
     const loginHandler = async() => {
         try {
-            const data = await request
+            const data = await request('http://localhost:4000/login','POST', {...form});
+            auth.login(data.token, data.userId);
         } catch (e) {
-            
+            console.log(e)
         }
     }
 
@@ -35,10 +42,25 @@ const Login = () => {
             <hr></hr>
             <form>
                 <label for="user-email">Email</label><br/>
-                <input type="text"></input><br/>
+                <input type="text"
+                placeholder='enter email'
+                name='email'
+                value={form.email}
+                onChange={changeHandler}></input><br/>
                 <label for="user-password">Password</label><br/>
-                <input type="text"></input><br/>
-                <input type="submit" value="Login" className='btn btn-secondary'></input>
+                <input type="password"
+                placeholder='password'
+                name="password"
+                value={form.password}
+                onChange={changeHandler}
+                ></input><br/>
+                <button type="submit" 
+                className='btn btn-secondary'
+                disabled={loading}
+                onClick={loginHandler}>
+                    Login
+                    {loading && <Btnspinner />}
+                </button>
             </form>
             <p>Don't have an account?</p>
         </div>
