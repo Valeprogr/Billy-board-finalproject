@@ -26,17 +26,20 @@ const Login = () => {
         setForm({...form, [event.target.name]: event.target.value})
     }
 
-    const loginHandler = async() => {
+    const loginHandler = async(event) => {
+        event.preventDefault();
         try {
-            const data = await request('http://localhost:4000/login','POST', {...form});
+            const data = await request('http://localhost:4000/login', 'POST', {...form});
             auth.login(data.token, data.userId);
+            
         } catch (e) {
-            console.log(e)
         }
     }
+    
 
     return (
         <div id='login' className='login-body'>
+        <Toaster />
         <div className='login-box'>
         <h1>Login</h1>
             <hr></hr>

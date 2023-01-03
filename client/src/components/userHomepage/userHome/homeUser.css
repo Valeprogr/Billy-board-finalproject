@@ -9,21 +9,27 @@
   html, body{
     font-style: var(--font-family);
     color: var(--text-color);
+    
   }
 .admin-home-body {
     background-color: --text-color;
+    display:flex;
+    flex-direction: column;
+    justify-content:end;
+    justify-items: center;
+    align-items: center;
     /* overflow: hidden; */
   
 }
-.admin-home-container{
+/* .admin-home-container{
     display: flex;
-}
+} */
 
 
 article {
     border:  1px solid red;
     display: flex;
-    display: flex;
+    height: auto;
    
 }
 

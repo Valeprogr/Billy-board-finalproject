@@ -1,8 +1,9 @@
 import React from 'react';
+import { NavLink, Outlet } from "react-router-dom";
 import "./homeUser.css";
 
 
-const NavbarUser = () => {
+const NavbarUser = ({ children }) => {
     return (
         <>
             <nav class="nav flex-column nav-user">
@@ -13,37 +14,44 @@ const NavbarUser = () => {
 
                 </div>
                 <br />
-                <a class="nav-link active" aria-current="page" href="/userHome">
+                <NavLink class="nav-link active" aria-current="page" to="/userHome">
                     <span class="material-symbols-outlined">
                         Home
                     </span>
-                    <span>Home</span></a>
+                    <span>Home</span></NavLink >
                 <br />
-                <a class="nav-link" href="/profile">
+                <NavLink class="nav-link" to="user/profile">
                     <span class="material-symbols-outlined">
                         person
                     </span>
-                    Profile</a>
+                    Profile</NavLink >
                 <br />
-                <a class="nav-link" href="/employees">
+                <NavLink class="nav-link" to="/employees">
                     <span class="material-symbols-outlined">
                         group
                     </span>
-                    Employees</a>
+                    Employees</NavLink >
                 <br />
-                <a class="nav-link" href="/projects">
+                <NavLink class="nav-link" to="/projects">
                     <span class="material-symbols-outlined">
                         list_alt
                     </span>
-                    Projects</a>
+                    Projects</NavLink >
                 <br />
-                <a class="nav-link" href="/settings">
+                <NavLink class="nav-link" to="/user/settings">
                     <span class="material-symbols-outlined">
                         settings
                     </span>
-                    Settings</a>
+                    Settings</NavLink >
                 <br />
+                <NavLink className="nav-link">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>Logout</NavLink>
             </nav>
+           
+            <Outlet />
+            {children}
         </>
     );
 }

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import "./home.css";
 
 
+
 const Home = () => {
     //Hook che serve per navigare su un altra pagina 
     const navigate = useNavigate();

@@ -1,4 +1,5 @@
-import React,{useEffect, useState} from 'react';
+import React,{useEffect, useState, useContext} from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import { useMessage } from '../../hooks/message.hook';
 import { useHttp } from '../../hooks/http.hook';
 
@@ -8,6 +9,8 @@ import Btnspinner from "../../btnSpinner/BtnSpinner";
 import { Toaster } from "react-hot-toast";
 
 const Signin = () => {
+     const auth = useContext(AuthContext);
+     console.log(auth)
     const {loading, request, error, clearError} =useHttp();
     const message= useMessage();
     const [form,setForm]=useState({
@@ -29,14 +32,17 @@ const Signin = () => {
     const registerHandler = async (event)=>{
         event.preventDefault();
         try{
-            const data = await request("http://localhost:4000/signin","POST", {...form});
+            const data = await request("http://localhost:4000/signin",'POST', {...form});
+            message(data);
         }catch(error){
+           
             
         }
     }
 
     return (
         <div id='signin'>
+        <Toaster />
             <div id='login' className='signin-body'>
                 <div className='signin-box'>
                 <div className="text">
