@@ -2,11 +2,21 @@ import React from 'react';
 import data from "../../../data.json"
 import "./list.css"
 
+
 const ProjectsList = () => {
     console.log( data )
     return (
         <div className='container-body'>
-            <h2>Projects List</h2>
+            {/* <h2>Projects List</h2> */}
+            <div className='list-title-emplyeeList'>
+              <h2>Projects List</h2>
+
+                <a href="/CreateProject">
+                    <span class="material-symbols-outlined">
+                        add_circle
+                    </span>
+                </a>
+            </div>
             <hr></hr>
             <div className='cotainer-box'>
                 <table class="table">

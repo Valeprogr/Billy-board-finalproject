@@ -10,6 +10,7 @@ import ProfileUser from "./components/userHomepage/ProfileUser";
 import Settings from "./components/userHomepage/Settings";
 import EmployeeList from "./components/userHomepage/list/EmployeeList";
 import ProjectsList from "./components/userHomepage/list/ProjectsList";
+import CreateProject from "./components/userHomepage/CreateProject";
 
 
 export const useRoutes = (isAuthenticated) => {
@@ -21,6 +22,7 @@ export const useRoutes = (isAuthenticated) => {
                 <Route path="user/profile" element={<ProfileUser/>}/>
                 <Route path="/employees" element={<EmployeeList/>} />
                 <Route path="/projects" element={<ProjectsList/>} />
+                <Route path="/createProject" element={<CreateProject/>} />
                 <Route path="*" element={<Navigate to="/user/dashboard" replace />} />
             </Routes>
         );
