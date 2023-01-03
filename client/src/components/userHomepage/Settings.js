@@ -1,11 +1,12 @@
 import React from 'react';
+import "./settings.css"
 
 const Settings = () => {
     return (
-        <div className='container-body'>
+        <div className='container-body-settings'>
             <h1>Settings</h1>
             <hr></hr>
-            <div className='containair-box'>
+            <div className='containair-box-settings'>
             <form>
                 <div>
                 <label>Name: </label>
@@ -33,7 +34,7 @@ const Settings = () => {
                         <option value="manager" name="manager">Manager</option>
                     </select>
                 </div>
-                <div>
+                <div className='btn-container'>
                 <button type="button" class="btn btn-secondary">Save Profile</button>
                 </div>
                
