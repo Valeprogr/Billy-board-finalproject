@@ -25,3 +25,8 @@
 .btn{
     margin-top: 12px;
 }
+
+.list-title-emplyeeList{
+    display: flex;
+    justify-content: space-between;
+}
