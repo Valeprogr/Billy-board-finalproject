@@ -1,4 +1,5 @@
 import { get } from "mongoose";
+import Bcrypt from 'bcryptjs';
 import UserServices from "../services/UserServices.js";
 
 class UserControllers {
