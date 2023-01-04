@@ -9,8 +9,8 @@ import Btnspinner from "../../btnSpinner/BtnSpinner";
 import { Toaster } from "react-hot-toast";
 
 const Signin = () => {
-     const auth = useContext(AuthContext);
-     console.log(auth)
+     //const auth = useContext(AuthContext);
+     //console.log(auth)
     const {loading, request, error, clearError} =useHttp();
     const message= useMessage();
     const [form,setForm]=useState({

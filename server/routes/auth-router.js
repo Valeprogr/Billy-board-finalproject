@@ -2,6 +2,7 @@ import { Router } from "express";
 import User from "../models/User.js";
 import  jwt  from "jsonwebtoken";
 const { sign } = jwt;
+import bcrypt from "bcrypt";
 
 const router= new Router();
 
@@ -9,13 +10,15 @@ router.post("/signin", async (req,res)=>{
     try{
         const {email, password, name, lastname, company_name} = req.body;
         const candidate = await User.findOne({email: email});
-        console.log(candidate);
+        //console.log(candidate);
 
 
         if(candidate){
             return res.status(400).json({message: "user already exist...", status:"error"});
         }
-        const user = new User({name, lastname , email, password, company_name});
+        const hashPassword =  bcrypt.hashSync(password,7);
+        console.log(hashPassword)
+        const user = new User({name, lastname , email, password: hashPassword, company_name});
         console.log(user);
         await user.save();
         res.status(201).json({message: "user created..."})
@@ -31,12 +34,13 @@ router.post("/login", async (req,res)=>{
         if(!user){
             return res.status(400).json({message: "user not found", status: "error"});
         }
-        if (user.password != password){
-            return res.status(400).json({message: "invalid password", status:"error"});
-        }
+       const match= await bcrypt.compare(password, user.password);
+       if(!match){
+        return res.status(400).json({message: `incorrect password...`})
+       }
 
         const token = sign(
-            {userId: user._id.toString()},
+            {userId: user.password.toString()},
             process.env.JWT_SECRET,
             {expiresIn: '1h'});
             console.log(token)

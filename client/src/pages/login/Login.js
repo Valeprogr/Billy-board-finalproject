@@ -36,7 +36,6 @@ const Login = () => {
         }
     }
     
-
     return (
         <div id='login' className='login-body'>
         <Toaster />

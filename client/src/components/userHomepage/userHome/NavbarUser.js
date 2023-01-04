@@ -8,12 +8,11 @@ import { AuthContext } from "../../../context/AuthContext";
 
 const NavbarUser = ({ children }) => {
     const auth= useContext(AuthContext);
-    console.log(auth.logout)
-    const logoutHandler= async(event)=>{
-        await auth.logout()
-        // data.token = null ;
-        // data.userId = null;
+    
+    const logoutHandler= async()=>{
+        await auth.logout();
     }
+    console.log(auth)
 
     return (
         <>
