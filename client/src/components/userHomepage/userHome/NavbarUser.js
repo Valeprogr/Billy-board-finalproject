@@ -1,9 +1,20 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { NavLink, Outlet } from "react-router-dom";
 import "./homeUser.css";
+import { AuthContext } from "../../../context/AuthContext";
+
+
 
 
 const NavbarUser = ({ children }) => {
+    const auth= useContext(AuthContext);
+    console.log(auth.logout)
+    const logoutHandler= async(event)=>{
+        await auth.logout()
+        // data.token = null ;
+        // data.userId = null;
+    }
+
     return (
         <>
             <nav className="nav flex-column nav-user">
@@ -44,10 +55,10 @@ const NavbarUser = ({ children }) => {
                     </span>
                     Settings</NavLink >
                 <br />
-                <NavLink className="nav-link">
+                <button class="btn btn-light" onClick={logoutHandler}>
                     <span class="material-symbols-outlined">
                         logout
-                    </span>Logout</NavLink>
+                    </span>Logout</button>
             </nav>
            
             <Outlet />
