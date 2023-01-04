@@ -1,34 +1,38 @@
 import React from 'react';
 import "./createProject.css"
 
-const CreateProject = () => {
-//Nel dropdown devo fetchare tutte le email per poterli insirire nel dropdown
+const CreateNewEmployee = () => {
     return (
-        <div className='container'>
+        <>
+             <div className='container'>
             <div>
-            <h1>Create a new Project</h1>
+            <h1>Create a new Employee</h1>
             <hr></hr>
             </div>
           
             <div>
             <form className='form-container-createPro'>
-                <label>Project Name:</label>
+                <label>Name:</label>
                 <br />
                 <input type="text"></input>
                 <br />
-                <label>Description:</label>
+                <label>Last Name:</label>
                 <br />
                 <input type="text"></input>
                 <br />
-                <label>Start Date:</label>
+                <label>Email:</label>
                 <br />
                 <input type="text"></input>
                 <br />
-                <label>End Date:</label>
+                <label>Password:</label>
                 <br />
                 <input type="text"></input>
                 <br />
-                <label>Select employees:</label>
+                <label>Occupation:</label>
+                <br />
+                <input type="text"></input>
+                <br />
+                <label>Assign Role:</label>
                 
                 <div className='btn-group'>
                         <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +56,8 @@ const CreateProject = () => {
                 </div>
     
         </div>
+        </>
     );
 }
 
-export default CreateProject;
+export default CreateNewEmployee;
