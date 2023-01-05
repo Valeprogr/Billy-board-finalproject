@@ -6,7 +6,7 @@ import "./list.css"
 const ProjectsList = () => {
     console.log( data )
     return (
-        <div className='container-body'>
+        <div className='container-body-list'>
             {/* <h2>Projects List</h2> */}
             <div className='list-title-emplyeeList'>
               <h2>Projects List</h2>

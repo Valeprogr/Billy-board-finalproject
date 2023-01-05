@@ -4,11 +4,11 @@ import data from "../../../data.json"
 const EmployeeList = () => {
     console.log(data)
     return (
-        <div className='container-body'>
+        <div className='container-body-list'>
             <div className='list-title-emplyeeList'>
                 <h2>Employee List</h2>
 
-                <a href="https://www.w3schools.com">
+                <a href="/createNewEmployee">
                     <span class="material-symbols-outlined">
                         add_circle
                     </span>
