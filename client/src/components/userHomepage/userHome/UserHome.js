@@ -1,17 +1,23 @@
 import React from 'react';
-// import NavbarUser from './NavbarUser';
-//import ArticleUser from './ArticleUser';
 import FooterUser from './FooterUser';
 import "../userHome/homeUser.css";
 import FetchDB from '../../../fetchDB/fetchDB';
+import Card from '../card/Card';
+import CardHolidays from '../card/CardHolidays';
+import CardProjectsSum from '../card/CardProjectsSum';
 
 const UserHome = () => {
     FetchDB()
     return (
         <div className='admin-home-body'>
-        {/* <div className='admin-home-container'>
-            <ArticleUser />
-            </div> */}
+        <div className='admin-home-container'>
+        <CardHolidays />
+            <CardProjectsSum/>
+            <Card />
+            </div>
+          
+            
+            
             <FooterUser />
         </div>
     );

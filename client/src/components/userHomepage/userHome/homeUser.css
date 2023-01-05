@@ -12,18 +12,24 @@
     
   }
 .admin-home-body {
-    background-color: --text-color;
+    background-color:var( --text-color);
     display:flex;
-    flex-direction: column;
-    justify-content:end;
-    justify-items: center;
-    align-items: center;
+    flex-wrap: wrap;
+   justify-content: space-around;
+   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+   margin-top: 32px;
+   height: auto;
+    /* justify-items: center;
+    align-items: center; */
     /* overflow: hidden; */
   
 }
-/* .admin-home-container{
+.admin-home-container{
     display: flex;
-} */
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
 
 article {
