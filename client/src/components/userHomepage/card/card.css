@@ -51,8 +51,8 @@ h1 {
 }
 
 .container-holiday-card {
-    height: 200px;
-    width: 300px;
+    height: auto;
+    width: auto;
     display: flex;
     justify-content: space-around;
     padding-top: 32px;
@@ -69,9 +69,11 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
-    .card {
+    .admin-home-body {
         width: auto;
-        height: 50px;
+        flex-wrap: wrap;
+        margin: 0;
     }
+
 
 }
