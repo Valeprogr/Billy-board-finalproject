@@ -48,5 +48,12 @@ class UserControllers {
         }
     }
 }
-
+const userControllersGet = async(req, res) => {
+    try {
+        const users = await UserServices.getAll();
+        res.status(200).json(users);
+    }catch(error){
+        res.status(500).json(error);
+    }
+    };
 export default new UserControllers();

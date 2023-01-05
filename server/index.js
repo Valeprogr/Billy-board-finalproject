@@ -1,7 +1,7 @@
 import express,{json} from "express";
 import {} from "dotenv/config";
 import mongoose from "mongoose";
-//import userRouter from "./routes/user-router.js";
+import userRouter from "./routes/user-router.js";
 import authRouter from "./routes/auth-router.js";
 
 import cors from "cors";
@@ -20,6 +20,7 @@ app.use(express.json({ extended: true }));
 app.use(cors());
 // app.use("", userRouter);
 app.use("/", authRouter);
+app.use("", userRouter);
 
 async function StartApp(){
     try{
