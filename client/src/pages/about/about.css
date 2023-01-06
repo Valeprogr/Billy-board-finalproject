@@ -1,0 +1,32 @@
+:root {
+    --color-primary: #A5F1E9;
+    --color-secondary:#22A39F;
+    --text-color: #F9F9F9;
+    --text-color2: black ;
+    --font-family: 'Montserrat', sans-serif;
+  }
+.body-about{
+    background-color:var(--text-color);
+    height: 700px;
+    border: solid 1px lightgray;
+}
+
+.box-container{
+    display: flex;
+    justify-content: space-around;
+   
+
+}
+.box{
+    margin: 100px;
+    padding: 22px;
+    height: 420px;
+    width: 1200px;
+    /* background-color: white; */
+    /* border: solid 1px lightgrey; */
+    opacity: 80%;
+}
+
+.box-text{
+    width: 500px;
+}

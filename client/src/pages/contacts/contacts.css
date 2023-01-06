@@ -8,6 +8,7 @@
 .body{
     background-image: url("../../images/contacs.png" );
     background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     height: 750px;
 }
@@ -34,7 +35,7 @@
 
         .text-message{
            height: 100%;
-           display: block;
+           /* display: block; */
         }
 
    .btn-contact{
@@ -42,4 +43,26 @@
     width: 100px;
     
     margin: 10px 0 0 0 !important;
+   }
+
+   @media screen and (max-width: 600px) {
+    .body{
+        font-size: 32px;
+        height: auto;
+    }
+    .container2{
+        width: 667px;
+        }
+    .box-container-contacts{
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid white; */
+        border-radius: 0px;
+        height: 750px;
+        width: 60%;
+        margin: 0px 0px;
+        padding: 60px;
+        background-color: var(--text-color);
+        opacity: 82%;
+    }
    }
