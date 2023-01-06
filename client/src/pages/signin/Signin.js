@@ -46,7 +46,7 @@ const Signin = () => {
             <div id='login' className='signin-body'>
                 <div className='signin-box'>
                 <div className="text">
-                <h1>Sign in</h1>
+                <h1>Sign Up</h1>
                     <hr className="horizontalLine"></hr>
                     <form>
                         <label for="name">Name:</label><br />
@@ -67,7 +67,7 @@ const Signin = () => {
                         <a href='/login'><h6 className='h6-text'>Do you have already an account ? Click here!</h6></a>
                         <button type="submit" value="Sign in" className='btn btn-secondary' onClick={registerHandler} disabled={loading}>
                             {loading && <Btnspinner />}
-                            Signin
+                            Sign Up
                         </button>
                     </form>
                 </div>

@@ -29,8 +29,8 @@ const Home = () => {
                     <h1>BOARD</h1>
                     <p>All your work information with you.</p>
                     <div className='btn-container'>
-                        <button type="button" className="btn btn-light" onClick={signinHandler}>Sign in</button>
-                        <button type="button" className="btn btn-light" onClick={loginHandler}>Login</button>
+                        <button type="button" className="btn btn-light" onClick={signinHandler}>Sign Up</button>
+                        <button type="button" className="btn btn-secondary" onClick={loginHandler}>Login</button>
                     </div>
 
                 </div>
