@@ -19,7 +19,7 @@
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
     /* height: 200px; */
-    /* margin: 32px 142px; */
+    margin: 32px;
 
 }
 
@@ -48,6 +48,7 @@ h1 {
     border: 1px solid lightgray;
     padding: 22px;
     /* margin-right: 32px; */
+    margin:  32px;
 }
 
 .container-holiday-card {
