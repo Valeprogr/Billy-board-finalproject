@@ -7,7 +7,7 @@ const FetchDB = () => {
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                //console.log(data)
                 setUsers(data);
             })
             .catch((error) => console.log(error))

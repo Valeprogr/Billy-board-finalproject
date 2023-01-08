@@ -1,7 +1,27 @@
-import React from 'react';
-import "./createProject.css"
+import React,{useState,useEffect} from 'react';
+import "./createProject.css";
+import { useMessage } from '../../hooks/message.hook';
+import { useHttp } from '../../hooks/http.hook';
+import Btnspinner from "../../btnSpinner/BtnSpinner";
+import { Toaster } from "react-hot-toast";
 
 const CreateNewEmployee = () => {
+    const {loading, request, error, clearError}= useHttp();
+    const message = useMessage();
+    const [form, setForm]= useState({
+        name:'',
+        lastName:'',
+        email:'',
+        password:'',
+        user_occupation:'',
+        company_name:'',
+        its_Admin:''
+    });
+    useEffect(()=>{
+        message(error);
+        clearError();
+    },[error,message,clearError]);
+    
     return (
         <>
              <div className='container'>
@@ -12,28 +32,28 @@ const CreateNewEmployee = () => {
           
             <div className='form-container-createPro'>
             <form>
-                <label>Name:</label>
+                <label for="name">Name:</label>
                 <br />
-                <input type="text"></input>
+                <input type="text" name='name'></input>
                 <br />
-                <label>Last Name:</label>
+                <label for="lastname">Last Name:</label>
                 <br />
-                <input type="text"></input>
+                <input type="text" name='lastname'></input>
                 <br />
-                <label>Email:</label>
+                <label for="email">Email:</label>
                 <br />
-                <input type="text"></input>
+                <input type="text" name='email'></input>
                 <br />
-                <label>Password:</label>
+                <label for="password">Password:</label>
                 <br />
-                <input type="text"></input>
+                <input type="text" name='password'></input>
                 <br />
-                <label>Occupation:</label>
+                <label for="occupation">Occupation:</label>
                 <br />
-                <input type="text"></input>
+                <input type="text" name='occupation'></input>
                 <br />
-                <label>Assign Role:</label>
-                
+                <label name="role">Assign Role:</label>
+            
                 <div>
                     <select>
                         <option value="employee" name="employee">Employee</option>
@@ -41,7 +61,7 @@ const CreateNewEmployee = () => {
                     </select>
                 </div>
                 <div className='btn-container-create-project'>
-                    <button type="button" class="btn btn-secondary">Save Profile</button>
+                    <button type="submit" class="btn btn-secondary">Save Profile</button>
                 </div>
 
             </form>

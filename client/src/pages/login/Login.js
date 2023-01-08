@@ -30,7 +30,8 @@ const Login = () => {
         event.preventDefault();
         try {
             const data = await request('http://localhost:4000/login', 'POST', {...form});
-            auth.login(data.token, data.userId);
+            auth.login(data.token, data.company_name);
+            console.log (data.company_name)
             
         } catch (e) {
         }

@@ -12,7 +12,7 @@ const NavbarUser = ({ children }) => {
     const logoutHandler= async()=>{
         await auth.logout();
     }
-    console.log(auth)
+    //console.log(auth)
 
     return (
         <>
