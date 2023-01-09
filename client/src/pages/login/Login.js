@@ -16,6 +16,9 @@ const Login = () => {
         password: ''
     });
 
+  
+    
+
     useEffect(() => {
         message(error);
         clearError();
@@ -31,11 +34,13 @@ const Login = () => {
         try {
             const data = await request('http://localhost:4000/login', 'POST', {...form});
             auth.login(data.token, data.company_name);
-            console.log (data.company_name)
+           //console.log(data.company_name)
+          
             
         } catch (e) {
         }
     }
+    
     
     return (
         <div id='login' className='login-body'>

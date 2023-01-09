@@ -1,11 +1,12 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import data from "../../data.json"
 import image from "../../images/png/user.png"
 import "./profileUser.css"
+import { AuthContext } from '../../context/AuthContext';
 
 const ProfileUser = () => {
-    // console.log(data.companies[0].company_name)
-    // console.log(data.users)
+   const auth=useContext(AuthContext);
+   console.log(auth.company)
     return (
         <>
             <div className='container-body-profile'>

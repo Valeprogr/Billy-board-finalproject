@@ -14,7 +14,7 @@ import { useRoutes } from './routes';
 
 
 function App() {
-  const { token, login, logout, userId, ready } = useAuth();
+  const { token, login, logout, userId, ready, company } = useAuth();
   const isAuthenticated = !!token;
   const routes = useRoutes(isAuthenticated);
 
@@ -23,7 +23,7 @@ function App() {
     return <h1>loading..</h1>
   }
   return (
-    <AuthContext.Provider value={{ token, login, logout, userId, isAuthenticated }}>
+    <AuthContext.Provider value={{ token, login, logout, userId, isAuthenticated,company }}>
       <BrowserRouter>
      
       {
