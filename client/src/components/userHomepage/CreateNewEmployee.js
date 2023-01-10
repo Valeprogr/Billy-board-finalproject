@@ -5,13 +5,6 @@ import { useHttp } from '../../hooks/http.hook';
 import Btnspinner from "../../btnSpinner/BtnSpinner";
 import { Toaster } from "react-hot-toast";
 import { AuthContext } from '../../context/AuthContext.js';
-import Select from 'react-select';
-
-const options = [
-    { value: 'false', label: 'Employee' },
-    { value: 'true', label: 'Manager' },
-
-];
 
 const CreateNewEmployee = () => {
     const { loading, request, error, clearError } = useHttp();
@@ -31,7 +24,7 @@ const CreateNewEmployee = () => {
         password: '',
         user_occupation: '',
         company_name: auth.company,
-        its_Admin: true
+        its_Admin: false
     });
     useEffect(() => {
         message(error);
@@ -91,11 +84,6 @@ const CreateNewEmployee = () => {
                             <input type="text" name='user_occupation' onChange={changeHandler}></input>
                             <br />
                             <label htmlFor="role">Assign Role:</label>
-
-                            <Select
-                                defaultValue={selectedOption}
-                                onChange={setSelectedOption}
-                                options={options} />
                             <div className='btn-container-create-project'>
                                 <button type="submit" class="btn btn-secondary" onClick={createUser}>Save Profile
                                     {loading && <Btnspinner />}
