@@ -3,6 +3,7 @@ import {} from "dotenv/config";
 import mongoose from "mongoose";
 import userRouter from "./routes/user-router.js";
 import authRouter from "./routes/auth-router.js";
+import projectRouter from "./routes/project-router.js";
 
 import cors from "cors";
 mongoose.set('strictQuery', true);
@@ -21,6 +22,7 @@ app.use(cors());
 // app.use("", userRouter);
 app.use("/", authRouter);
 app.use("", userRouter);
+app.use("", projectRouter);
 
 async function StartApp(){
     try{
