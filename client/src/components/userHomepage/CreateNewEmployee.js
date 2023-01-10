@@ -10,13 +10,9 @@ const CreateNewEmployee = () => {
     const { loading, request, error, clearError } = useHttp();
     const message = useMessage();
     const auth = useContext(AuthContext);
-    console.log(auth.company)
+    //console.log(auth.company)
 
     //Salvare l opzione
-    const [selectedOption, setSelectedOption] = useState(true);
-
-
-
     const [form, setForm] = useState({
         name: '',
         lastname: '',
@@ -48,12 +44,9 @@ const CreateNewEmployee = () => {
         }
 
     }
-
-
-    console.log(selectedOption)
     return (
         <div id="createNewEmployee">
-            {selectedOption ?
+        
                 <div className='container'>
                     <Toaster />
                     <div className=''>
@@ -82,8 +75,6 @@ const CreateNewEmployee = () => {
                             <label htmlFor="occupation">Occupation:</label>
                             <br />
                             <input type="text" name='user_occupation' onChange={changeHandler}></input>
-                            <br />
-                            <label htmlFor="role">Assign Role:</label>
                             <div className='btn-container-create-project'>
                                 <button type="submit" class="btn btn-secondary" onClick={createUser}>Save Profile
                                     {loading && <Btnspinner />}
@@ -94,13 +85,6 @@ const CreateNewEmployee = () => {
                     </div>
 
                 </div>
-                :
-                <>
-                    <h2>Loading...</h2>
-                </>
-                
-
-            }
         </div>
     );
 }
