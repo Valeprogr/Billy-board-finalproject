@@ -1,7 +1,10 @@
-import ProjectServices from "../services/ProjectServices";
+import {get} from "mongoose";
+import ProjectServices from "../services/ProjectServices.js";
+
 
 class projectControllers {
-    async getAll(res, req) {
+
+    async getAll(req,res) {
         try {
             const projects = await ProjectServices.getAll();
             res.status(200).json(projects);
@@ -9,16 +12,17 @@ class projectControllers {
             res.status(500).json(error);
         }
     }
-    async create(res, req) {
+    
+    async create(req,res) {
         try {
             const project = await ProjectServices.create(req.body);
             res.status(201).json(project);
         } catch (error) {
-            res.status(500).json(error)
+            res.status(500).json(error);
         }
     }
 
-    async getOne(res,req){
+    async getOne(req,res){
         try{
             const project= await ProjectServices.getOne(req.params.id);
             return res.status(200).json(project)
@@ -27,7 +31,7 @@ class projectControllers {
         }
     }
 
-    async upDate(res,req){
+    async upDate(req,res){
         try{
             const project= await ProjectServices.upDate(req.body);
             res.status(200).json(project)
@@ -36,7 +40,7 @@ class projectControllers {
         }
     }
 
-    async delete(res,req){
+    async delete(req,res){
         try{
             const project= await ProjectServices.delete(req.params.id);
             return res.status(200).json(project)
@@ -45,6 +49,6 @@ class projectControllers {
         }
 
     }
-}
+};
 
 export default new projectControllers();

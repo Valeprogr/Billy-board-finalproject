@@ -1,12 +1,13 @@
 import Project from "../models/Project.js";
 
 class ProjectServices{
+    
 async create(project){
     const createProject= await Project.create(project);
     return createProject
 }
 
-async getOne(){
+async getAll(){
     const projects= await Project.find();
     return projects
 }
@@ -29,10 +30,10 @@ return updateProject
 
 async delete(id){
     if(!id){
-        res.status(500).json({message: "id Missing"})
+        res.status(500).json({message: "id Missing!"})
     }
     const deleteProject= await Project.findByIdAndDelete(id);
     return deleteProject
 }
 }
-export default new Project();
+export default new ProjectServices();
