@@ -7,7 +7,8 @@ router.post("/user", UserControllers.create);
 router.post("/createNewEmployee", UserControllers.create)
 router.get("/user", UserControllers.getAll);
 router.get("/user/:id", UserControllers.getOne);
-router.put("user", UserControllers.upDate);
+router.put("/user/settings", UserControllers.upDate);
 router.delete("user/:id", UserControllers.delete);
+
 
 export default router;
