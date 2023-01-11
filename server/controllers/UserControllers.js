@@ -21,39 +21,50 @@ class UserControllers {
         }
     }
 
-    async getOne(req,res){
-        try{
-            const user= await UserServices.getOne(req.params.id);
-            return res.status(200).json(user) ;
-        }catch(error){
+    async getOne(req, res) {
+        try {
+            const user = await UserServices.getOne(req.params.id);
+            return res.status(200).json(user);
+        } catch (error) {
             res.status(500).json(error);
         }
     }
 
-    async upDate(req,res){
-        try{
-            const updatedUser= await UserServices.upDate(req.body);
+    async upDate(req, res) {
+        try {
+            const updatedUser = await UserServices.upDate(req.body);
             res.status(200).json(updatedUser);
-        }catch(error){
+        } catch (error) {
             res.status(404).json(error);
         }
     }
 
-    async delete(req,res){
-        try{
-            const user= await UserServices.delete(req.params.id);
+    async delete(req, res) {
+        try {
+            const user = await UserServices.delete(req.params.id);
             return res.status(200).json(user);
-        }catch(error){
+        } catch (error) {
             res.status(500).json(error);
         }
     }
-}
-const userControllersGet = async(req, res) => {
-    try {
-        const users = await UserServices.getAll();
-        res.status(200).json(users);
-    }catch(error){
-        res.status(500).json(error);
+    async getCacheId (req, res) {
+        try {
+            const id = await UserServices.getCacheId();
+            console.log(id)
+            res.status(200).json(id)
+        } catch (error) {
+            res.status(500).json(error)
+        }
     }
-    };
+}
+// const userControllersGet = async (req, res) => {
+//     try {
+//         const users = await UserServices.getAll();
+//         res.status(200).json(users);
+//     } catch (error) {
+//         res.status(500).json(error);
+//     }
+// };
+
+
 export default new UserControllers();

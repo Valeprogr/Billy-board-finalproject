@@ -1,4 +1,6 @@
 import User from "../models/User.js";
+import { readFile } from "fs/promises";
+import bcrypt from "bcrypt";
 
 class UserServices {
     async create(user) {
@@ -22,7 +24,8 @@ class UserServices {
         if (!user._id) {
             throw new Error("Id missing!")
         }
-        const updatedUser = await User.findByIdAndUpdate(user._id, user, { new: true });
+        const hashPassword= bcrypt.hashSync(user.password,7)
+        const updatedUser = await User.findByIdAndUpdate(user._id, {...user, password:hashPassword}, { new: true });
         return updatedUser
     }
 
@@ -33,6 +36,20 @@ class UserServices {
         const deletedUser = await User.findByIdAndDelete(id);
         return deletedUser
     }
+
+    async getCacheId() {
+        try {
+            const userId = JSON.parse(await readFile("./cache/userCache.json", { encoding: "utf-8" }));
+            //console.log(userId)
+            return userId
+        } catch (error) {
+
+        }
+
+
+    }
 }
+
+
 
 export default new UserServices();

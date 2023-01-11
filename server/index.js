@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import userRouter from "./routes/user-router.js";
 import authRouter from "./routes/auth-router.js";
 import projectRouter from "./routes/project-router.js";
+import fs from "fs";
+import {readFile} from "fs/promises";
 
 import cors from "cors";
 mongoose.set('strictQuery', true);
@@ -21,7 +23,7 @@ app.use(express.json({ extended: true }));
 app.use(cors());
 // app.use("", userRouter);
 app.use("/", authRouter);
-app.use("", userRouter);
+app.use("/", userRouter);
 app.use("", projectRouter);
 
 async function StartApp(){

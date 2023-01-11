@@ -1,8 +1,11 @@
-import { Router } from "express";
+import { json, Router } from "express";
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 const { sign } = jwt;
 import bcrypt from "bcrypt";
+//fs ti permette di scrivere file e leggere file
+import { writeFile } from "fs/promises";
+
 
 const router = new Router();
 
@@ -39,13 +42,20 @@ router.post("/login", async (req, res) => {
         if (!match) {
             return res.status(400).json({ message: `incorrect password...` })
         }
+        try {
+            await writeFile('./cache/userCache.json', JSON.stringify({ id: user._id }))
+        } catch (error) {
+            console.log(error)
+        }
 
         const token = sign(
             { userId: user.password.toString() },
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         );
+
         res.json({ token, company_name: user.company_name })
+
     } catch (error) {
         res.status(500).json({
             message: "error", status: "error"
@@ -53,7 +63,7 @@ router.post("/login", async (req, res) => {
     }
 })
 
-router.post("/createNewEmployee",async (req, res) => {
+router.post("/createNewEmployee", async (req, res) => {
     try {
         const { email, password, name, lastname, company_name, its_Admin, user_occupation } = req.body;
         const candidate = await User.findOne({ email: email });
