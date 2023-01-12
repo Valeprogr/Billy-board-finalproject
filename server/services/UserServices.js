@@ -17,6 +17,7 @@ class UserServices {
             throw new Error("id Missing")
         }
         const user = await User.findById(id);
+        console.log(user)
         return user
     }
 
@@ -39,8 +40,8 @@ class UserServices {
 
     async getCacheId() {
         try {
+            console.log("io sono pulcina")
             const userId = JSON.parse(await readFile("./cache/userCache.json", { encoding: "utf-8" }));
-            //console.log(userId)
             return userId
         } catch (error) {
 

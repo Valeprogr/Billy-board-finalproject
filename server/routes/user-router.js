@@ -6,9 +6,11 @@ const router = new Router();
 router.post("/user", UserControllers.create);
 router.post("/createNewEmployee", UserControllers.create)
 router.get("/user", UserControllers.getAll);
-router.get("/user/settings", UserControllers.getCacheId);
+router.get("/user/:id", UserControllers.getOne)
+router.get("/user-util/settings", UserControllers.getCacheId);
 router.put("/user/settings", UserControllers.upDate);
 router.delete("user/:id", UserControllers.delete);
+
 
 
 export default router;

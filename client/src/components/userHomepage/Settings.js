@@ -35,7 +35,7 @@ const Settings = () => {
         event.preventDefault();
         try {
             console.log(form)
-            const userId = await request("http://localhost:4000/user/settings");
+            const userId = await request("http://localhost:4000/user-util/settings");
             const data = await request('http://localhost:4000/user/settings', 'PUT', { ...form, _id: userId.id });
             message(data)
         } catch (error) {

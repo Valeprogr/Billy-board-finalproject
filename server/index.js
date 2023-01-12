@@ -23,7 +23,7 @@ app.use(express.json({ extended: true }));
 app.use(cors());
 // app.use("", userRouter);
 app.use("/", authRouter);
-app.use("/", userRouter);
+app.use("", userRouter);
 app.use("", projectRouter);
 
 async function StartApp(){

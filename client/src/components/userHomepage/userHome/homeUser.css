@@ -11,6 +11,9 @@
     color: var(--text-color);
     
   }
+  nav{
+    background-color: var(--text-color);
+  }
 .admin-home-body {
     background-color:var( --text-color);
     display:flex;
@@ -45,6 +48,7 @@ article {
     background-color:var(--text-color);
     width: 250px;
     border:  1px solid lightgray;
+    background-color: var(--text-color);
 }
 
 .nav-user a{
@@ -94,9 +98,7 @@ width: 200px;
 }
 
 
-.nav-user, span{
-    margin-right: 15px;
-}
+
 
 .navbar-data{
     font-size: 12px;

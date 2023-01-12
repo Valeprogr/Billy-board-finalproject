@@ -1,26 +1,45 @@
-import React,{useContext} from 'react';
-import { NavLink, Outlet } from "react-router-dom";
+import React, { useContext, useState, useEffect } from 'react';
+import { NavLink, Outlet, useRouteError } from "react-router-dom";
 import "./homeUser.css";
 import { AuthContext } from "../../../context/AuthContext";
+import { useHttp } from '../../../hooks/http.hook';
 
 
 
 
 const NavbarUser = ({ children }) => {
-    const auth= useContext(AuthContext);
-    
-    const logoutHandler= async()=>{
+    const { loading, request, error, clearError } = useHttp();
+    const auth = useContext(AuthContext);
+
+
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+
+        const getData = async () => {
+            const userId = await request("http://localhost:4000/user-util/settings");
+            const userData = await request(`http://localhost:4000/user/${userId.id}`);
+            setData(userData)
+        }
+        getData()
+
+    }, [])
+
+
+    const logoutHandler = async () => {
         await auth.logout();
     }
     //console.log(auth)
 
     return (
         <>
+        {data ?
+            <>
             <nav className="nav flex-column nav-user">
                 <div className='avatar-img-wow text-center'>
                     <img className='avatar-img' src='https://cdn.discordapp.com/attachments/1008786354865451019/1053355839953588335/profileimage.jpg' alt='profile pictures'></img>
-                    <p className='navbar-data'>Mario Rossi</p>
-                    <p className='navbar-data'><i>mario@rossi.com</i></p>
+                    <p className='navbar-data'>{data.name}</p>
+                    <p className='navbar-data'><i>{data.email}</i></p>
 
                 </div>
                 <br />
@@ -59,9 +78,15 @@ const NavbarUser = ({ children }) => {
                         logout
                     </span>Logout</button>
             </nav>
-           
+
             <Outlet />
             {children}
+            </>
+            :
+            <div>loading</div>
+        
+        }
+            
         </>
     );
 }

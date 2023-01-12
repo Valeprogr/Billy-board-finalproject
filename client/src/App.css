@@ -9,5 +9,6 @@
 html, body{
   font-style: var(--font-family);
   color: var(--text-color);
+  background-color: var(--text-color);
   
 }
