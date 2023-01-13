@@ -18,6 +18,7 @@
 .admin-home-body {
     background-color:var( --text-color);
     display:flex;
+    flex-direction: column;
     flex-wrap: wrap;
    justify-content: space-between;
    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
@@ -48,16 +49,45 @@ article {
 .nav-user {
     display: flex;
     height: 967px;
-    padding: 24px;
+    /* padding: 24px; */
     background-color:var(--text-color);
     border:  1px solid lightgray;
+    width: 332px;
  
+}
+.nav-link{
+    
 }
 
 .nav-user a{
     text-decoration: none !important;
     color: var(--color-secondary) !important;
     font-size: 22px ;
+}
+.navbar-icons{
+    margin-right: 12px;
+  margin-top: 2px;
+
+}
+.btn-navbar{
+    border: 2px solid lightgray !important;
+    width: 100%;
+
+}
+
+.nav-bar-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+   
+   
+}
+.nav-bar-box1{
+    margin-bottom: 282px;
+}
+.nav-bar-box2{
+    display: flex;
+    width: 100%;
 }
 
 footer {

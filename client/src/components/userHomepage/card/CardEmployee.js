@@ -12,7 +12,7 @@ const CardEmployee = ({employee}) => {
                     <p>{employee.name}</p>
                     <p className="card-text">Occupation:</p>
                     <p>{employee.user_occupation}</p>
-                    <a href="#" class="btn btn-secondary">See More</a>
+                    <a href="#" class="btn btn-dark">See More</a>
                 </div>
             </div>
         </div>
