@@ -2,7 +2,8 @@ import React,{useState,useEffect,useContext} from 'react';
 import { AuthContext } from '../../../context/AuthContext';
 import { useHttp } from '../../../hooks/http.hook';
 import CardEmployee from '../card/CardEmployee';
-import "./list.css"
+import "./list.css";
+import Spinner from '../Spinner/Spinner';
 
 const EmployeeList = () => {
     const {  request } = useHttp();

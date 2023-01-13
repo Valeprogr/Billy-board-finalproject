@@ -3,10 +3,11 @@ import { AuthContext } from '../../../context/AuthContext';
 import { useHttp } from '../../../hooks/http.hook';
 import "./list.css";
 import CardProjects from '../card/CardProjects';
+import Spinner from '../Spinner/Spinner';
 
 
 const ProjectsList = () => {
-    const { request } = useHttp();
+    const { request,loading } = useHttp();
     const [data, setData] = useState(null);
     const auth = useContext(AuthContext);
 
@@ -34,7 +35,7 @@ const ProjectsList = () => {
                     data.map((projects, index) => (
                         <CardProjects index={index} projects={projects} />))
                     :
-                    <div><h2>loading...</h2></div>
+                    <>{loading && <Spinner />}</>
                 }
 
             </div>
