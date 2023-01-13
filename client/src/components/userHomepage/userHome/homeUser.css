@@ -13,16 +13,18 @@
   }
   nav{
     background-color: var(--text-color);
+  
   }
 .admin-home-body {
     background-color:var( --text-color);
     display:flex;
     flex-wrap: wrap;
-   justify-content: space-around;
+   justify-content: space-between;
    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-   margin-top: 12px;
+  
    height: auto;
+   width: 100%;
     /* justify-items: center;
     align-items: center; */
     /* overflow: hidden; */
@@ -44,11 +46,12 @@ article {
 
 
 .nav-user {
+    display: flex;
+    height: 967px;
     padding: 24px;
     background-color:var(--text-color);
-    width: 250px;
     border:  1px solid lightgray;
-    background-color: var(--text-color);
+ 
 }
 
 .nav-user a{

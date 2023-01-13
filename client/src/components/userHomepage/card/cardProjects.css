@@ -5,55 +5,27 @@
     --text-color2: black;
     --font-family: 'Montserrat', sans-serif;
 }
-.admin-home-body{
-    display: flex;
-    flex-direction: column;
-}
-
-.card-personaliz {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white !important;
-    color: var(--text-color2);
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-    /* height: 200px; */
-    margin: 32px;
-
-}
-
-.card-img {
-    padding: 12px;
-    border-radius: 90%;
-    margin-left: 10px;
 
 
-}
-
-img, .img-calender{
-    height: 400px;
-    width: 400px;
-}
-
-.card,
-h1 {
-    font-weight: bolder;
-    /* color: var(--color-secondary); */
-}
 
 .body-holiday-card {
     display: flex;
     flex-direction: column;
     border: 1px solid lightgray;
+    border-radius: 12px;
     padding: 22px;
     /* margin-right: 32px; */
     margin:  32px;
+    background-color: white !important;
+    color: var(--text-color2);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+   
 }
 
 .container-holiday-card {
     height: auto;
-    width: auto;
+    width: 1000px;
     display: flex;
     justify-content: space-around;
     padding-top: 32px;
@@ -62,12 +34,25 @@ h1 {
 }
 
 .holiday-user-img {
-    height: 60px;
+    height: 100px;
     width: auto;
     border: 2px solid var(--color-secondary);
     border-radius: 50%;
     padding: 12px;
 }
+.box-info-location{
+    display: flex;
+    
+}
+.list-title-projectList{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-projectCard{
+    height: 46px;
+}
+
 
 @media screen and (max-width: 600px) {
     .admin-home-body {

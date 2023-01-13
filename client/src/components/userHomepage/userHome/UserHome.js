@@ -1,10 +1,9 @@
 import React,{useEffect,useState} from 'react';
 import FooterUser from './FooterUser';
 import "../userHome/homeUser.css";
-import { useHttp } from '../../../hooks/http.hook';
-import Card from '../card/Card';
-import CardHolidays from '../card/CardHolidays';
-import CardProjectsSum from '../card/CardProjectsSum';
+//import { useHttp } from '../../../hooks/http.hook';
+import CardProjects from '../card/CardProjects';
+//import CardProjectsSum from '../card/CardProjectsSum';
 
 const UserHome = () => {
 
@@ -12,9 +11,8 @@ const UserHome = () => {
         <div className='admin-home-body'>
 
             <div className='admin-home-container'>
-                <CardHolidays />
-                <CardProjectsSum />
-                <Card />
+                
+                
             </div>
 
 

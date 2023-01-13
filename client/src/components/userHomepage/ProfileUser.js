@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHttp } from '../../hooks/http.hook';
 import image from "../../images/png/user.png"
 import "./profileUser.css"
@@ -19,51 +19,64 @@ const ProfileUser = () => {
         getData()
 
     }, [])
-    //console.log(data)
+    console.log(data)
 
     return (
         <>
-        {
-            data ?
-            <div className='container-body-profile'>
-                <div className="container-box-profile">
+            {
+                data ?
+                    <div className='container-body-profile'>
+                        <div className='header-profile'>
 
-                  
-                    <div className='container-img'>
-                        <h1>{data.name}</h1>
-                    </div>
-                    <div className='container-data'>
-                        <div className='personal-data'>
-                            <h5>Name: </h5>
-                            <p>{data.name}</p>
+                            <div className='buttons'>
+                                <a href='/user/settings'><button type="button" class="btn btn-light">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button></a>
+                            </div>
+                            <div className='container-img'>
+                                <img src={image} alt='profile' />
 
-                            <h5>Last Name:</h5>
-                            <p>{data.lastname}</p>
+                            </div>
+                        </div>
+                        <div className="container-box-profile">
+                            <h2 className='title-profile'>Profile</h2>
+                            <hr />
+                            <div className='container-data'>
+                                <div>
+                                    <p><u>Name:</u> </p>
+                                    <h5 className='personal-data'>{data.name} {data.lastname}</h5>
+                                    <p><u>Occupation:</u></p>
+                                    <h5  className='personal-data'>{data.user_occupation}</h5>
+                                </div>
+                                <div className='icons-data-container'>
+                                    <div className='icons-data'>
+                                        <span class="material-symbols-outlined icons">
+                                            mail
+                                        </span>
+                                        <p>{data.email}</p>
+                                    </div>
+                                    <div className='icons-data'>
+                                        <span class="material-symbols-outlined icons">
+                                            location_on
+                                        </span>
+                                        <p>{data.company_name}</p>
+                                    </div>
 
-                            <h5>Email:</h5>
-                            <p>{data.email}</p>
-                            <h5>Company Name:</h5>
-                            <p>{data.company_name}</p>
 
-                            <h5>Occupation:</h5>
-                            <p>{data.user_occupation}</p>
+                                </div>
+
+                                
+                            </div>
+                            <hr/>
                         </div>
 
-                        <div className='work-data container-img'>
-                        <img src={image} alt='profile' />
-                        </div>
-
                     </div>
-                    <div className='buttons'>
-                        <a href='/user/settings'><button type="button" class="btn btn-secondary">Edit</button></a>
-                    </div>
-                </div>
+                    :
+                    <loading />
+            }
 
-            </div>
-            :
-            <loading/>
-        }
-            
         </>
     );
 }

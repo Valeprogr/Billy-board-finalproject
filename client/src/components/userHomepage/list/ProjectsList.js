@@ -1,69 +1,47 @@
-import React,{useState,useEffect,useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../../context/AuthContext';
 import { useHttp } from '../../../hooks/http.hook';
-import "./list.css"
+import "./list.css";
+import CardProjects from '../card/CardProjects';
 
 
 const ProjectsList = () => {
-    const { request} = useHttp();
+    const { request } = useHttp();
     const [data, setData] = useState(null);
-    const auth =useContext(AuthContext);
+    const auth = useContext(AuthContext);
 
     useEffect(() => {
         const getData = async () => {
             const userData = await request(`http://localhost:4000/projects`);
-            setData(userData.filter(item=>item.company_name == auth.company))
+            setData(userData.filter(item => item.company_name == auth.company))
         }
         getData()
-    },[])
-    console.log(data)
+    }, [])
+    //console.log(data)
     return (
         <div className='container-body-list'>
-            <h2>Projects List</h2>
-            <div className='list-title-emplyeeList'>
-        
 
+            <div className='list-title-projectList'>
+                <h2>Projects List</h2>
                 <a href="/CreateProject">
-                    <span class="material-symbols-outlined">
-                        add_circle
-                    </span>
+                    <button className='btn btn-secondary btn-projectCard'>Create new Project</button>
                 </a>
             </div>
             <hr></hr>
             <div className='cotainer-box'>
-                <table class="table">
-                    <thead class="table-light">
-                    <tr>
-                        <th>Name</th>
-                        <th>Lacation</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    { data?
-                       data.map((employee,index)=>  (
-                       <tr>
-                        <td>{employee.company_name}</td>
-                        <td>{employee.location}</td>
-                        <td>{employee.start_date}</td>
-                        <td>{employee.end_date}</td>
-                       </tr>))
-                       :
-                       <tr>
-                       <td>loading...</td>
-                        <td>loading...</td>
-                        <td>loading...</td>
-                        <td>loading...</td>
-                        </tr>
-                       }
-                    </tbody>
-                </table>
+
+                {data ?
+                    data.map((projects, index) => (
+                        <CardProjects index={index} projects={projects} />))
+                    :
+                    <div><h2>loading...</h2></div>
+                }
+
             </div>
-            <div className='buttons'>
+            {/* <div className='buttons'>
             <button type="button" class="btn btn-secondary">Back</button>
             <button type="button" class="btn btn-secondary">Edit</button>
-            </div>
+            </div> */}
         </div>
     );
 }
