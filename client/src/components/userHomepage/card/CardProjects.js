@@ -1,11 +1,11 @@
 import React,{useState} from 'react';
 import "./cardProjects.css"
 import user from "../../../images/png/user.png";
-import Task from '../task/Task';
+import Task from '../task/Tasklist';
 
 const CardProjects = ({ projects }) => {
   const [taskVisible, setTaskVisible]= useState(false);
-  //console.log(projects)
+  console.log(projects)
   return (
     <>
       <div className='body-holiday-card'>
