@@ -2,7 +2,7 @@ import React from 'react';
 import"./employeeCard.css"
 
 const CardEmployee = ({employee}) => {
-    console.log(employee)
+    //console.log(employee)
     return (
         <div>
             <div className="card-employee"  style={{"width": "18rem;"}}>

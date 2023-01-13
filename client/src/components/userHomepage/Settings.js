@@ -16,7 +16,8 @@ const Settings = () => {
         name: "",
         lastname: "",
         email: "",
-        password: ""
+        password: "",
+        user_occupation:''
     })
     
     useEffect(() => {
@@ -75,6 +76,9 @@ const Settings = () => {
                         <br></br>
                         <input type="text" name='password' onChange={changeHandler}></input>
                         <br></br>
+                        <label htmlFor='password'>Occupation:</label>
+                        <br></br>
+                        <input type="text" name='user_occupation' onChange={changeHandler}></input>
                     </div>
                     <div className='btn-container'>
                         <button type="submit" class="btn btn-secondary" onClick={upDateUser}>

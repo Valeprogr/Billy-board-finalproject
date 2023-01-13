@@ -1,15 +1,27 @@
-import React from 'react';
-import data from "../../../data.json"
+import React,{useState,useEffect,useContext} from 'react';
+import { AuthContext } from '../../../context/AuthContext';
+import { useHttp } from '../../../hooks/http.hook';
 import "./list.css"
 
 
 const ProjectsList = () => {
-    console.log( data )
+    const { request} = useHttp();
+    const [data, setData] = useState(null);
+    const auth =useContext(AuthContext);
+
+    useEffect(() => {
+        const getData = async () => {
+            const userData = await request(`http://localhost:4000/projects`);
+            setData(userData.filter(item=>item.company_name == auth.company))
+        }
+        getData()
+    },[])
+    console.log(data)
     return (
         <div className='container-body-list'>
-            {/* <h2>Projects List</h2> */}
+            <h2>Projects List</h2>
             <div className='list-title-emplyeeList'>
-              <h2>Projects List</h2>
+        
 
                 <a href="/CreateProject">
                     <span class="material-symbols-outlined">
@@ -29,18 +41,22 @@ const ProjectsList = () => {
                     </tr>
                     </thead>
                     <tbody>
+                    { data?
+                       data.map((employee,index)=>  (
                        <tr>
-                        <td>{data.projects[0].project_name}</td>
-                        <td>{data.projects[0].location}</td>
-                        <td>{data.projects[0].start_date}</td>
-                        <td>{data.projects[0].end_date}</td>
-                       </tr>
+                        <td>{employee.company_name}</td>
+                        <td>{employee.location}</td>
+                        <td>{employee.start_date}</td>
+                        <td>{employee.end_date}</td>
+                       </tr>))
+                       :
                        <tr>
-                        <td>{data.projects[1].project_name}</td>
-                        <td>{data.projects[1].location}</td>
-                        <td>{data.projects[1].start_date}</td>
-                        <td>{data.projects[1].end_date}</td>
-                       </tr>
+                       <td>loading...</td>
+                        <td>loading...</td>
+                        <td>loading...</td>
+                        <td>loading...</td>
+                        </tr>
+                       }
                     </tbody>
                 </table>
             </div>
