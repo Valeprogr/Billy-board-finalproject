@@ -49,6 +49,33 @@ class projectControllers {
         }
 
     }
+    async createTodoList(req, res) {
+        try {
+            const TodoList = await ProjectServices.createTodoList(req.body);
+            return res.status(201).json(TodoList)
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    }
+
+    async createTodo(req, res) {
+        try{
+            const Todo = await ProjectServices.createTodo(req.body);
+            return res.status(201).json(Todo)
+
+        } catch(error) {
+            res.status(500).json(error);
+        }
+    }
+
+    async getAllTodoList(req, res) {
+        try {
+            const TodoLists = await ProjectServices.getAllTodoList();
+            return res.status(200).json(TodoLists);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    }
 };
 
 export default new projectControllers();
