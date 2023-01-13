@@ -1,0 +1,19 @@
+.card-employee {
+    width: auto;
+    height: 100%;
+    padding: 10px;
+    background-color:white;
+    border: solid 1px lightgray;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.card-img,img{
+    /* border: solid 1px lightgray; */
+    height: 200px;
+    width: 200px;
+}
+
+.container-body-list{
+    height: 1000px;
+}

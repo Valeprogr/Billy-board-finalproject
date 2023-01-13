@@ -1,57 +1,54 @@
-import React from 'react';
-import data from "../../../data.json"
+import React,{useState,useEffect,useContext} from 'react';
+import { AuthContext } from '../../../context/AuthContext';
+import { useHttp } from '../../../hooks/http.hook';
+import CardEmployee from '../card/CardEmployee';
+import "./list.css"
 
 const EmployeeList = () => {
-    console.log(data)
+    const {  request } = useHttp();
+    const auth = useContext(AuthContext);
+    //console.log(auth.company)
+
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+
+        const getData = async () => {
+            // const userId = await request("http://localhost:4000/user-util/settings");
+            const userData = await request(`http://localhost:4000/user/`);
+            setData(userData.filter(item=>item.company_name == auth.company))
+           
+        }
+        getData()
+
+    }, [])
     return (
-        <div className='container-body-list'>
-            <div className='list-title-emplyeeList'>
-                <h2>Employee List</h2>
+        <>
+            <div className='container-body-list'>
+                <div className='box-list'>
+                    <div className='boh'>
+                        <h2>Employee List</h2>
+                        <a href="/createNewEmployee">
+                            Add New Employee
+                            <span class="material-symbols-outlined">
+                                add_circle
+                            </span>
+                        </a>
+                    </div>
 
-                <a href="/createNewEmployee">
-                    <span class="material-symbols-outlined">
-                        add_circle
-                    </span>
-                </a>
+                    <hr></hr>
+                    <div className='container-cards'>
+                       { data?
+                       data.map((employee,index)=>  (<CardEmployee index={index} employee={employee}/>))
+                       :
+                       <div>
+                       loading...
+                       </div>
+                       }
+                    </div>
+                </div>
             </div>
-
-            <hr></hr>
-
-            <div className='cotainer-box'>
-                <table class="table">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Name</th>
-                            <th>Lastname</th>
-                            <th>Email</th>
-                            <th>Occupation</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{data.users[0].user_name}</td>
-                            <td>{data.users[0].user_lastname}</td>
-                            <td>{data.users[0].user_occupation}</td>
-                            <td>{data.users[0].user_email}</td>
-                        </tr>
-                        <tr>
-                            <td>{data.users[1].user_name}</td>
-                            <td>{data.users[1].user_lastname}</td>
-                            <td>{data.users[1].user_occupation}</td>
-                            <td>{data.users[1].user_email}</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-            {/* <button type="button" class="btn btn-secondary">
-
-                <span class="material-symbols-outlined">
-                    add_circle
-                </span>
-                Add Employee
-            </button> */}
-        </div>
+        </>
     );
 }
 
