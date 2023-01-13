@@ -14,7 +14,7 @@ const ProjectsList = () => {
     useEffect(() => {
         const getData = async () => {
             const userData = await request(`http://localhost:4000/projects`);
-            setData(userData.filter(item => item.company_name == auth.company))
+            setData(userData.filter(item => item.company_name === auth.company))
         }
         getData()
     }, [])
@@ -39,10 +39,6 @@ const ProjectsList = () => {
                 }
 
             </div>
-            {/* <div className='buttons'>
-            <button type="button" class="btn btn-secondary">Back</button>
-            <button type="button" class="btn btn-secondary">Edit</button>
-            </div> */}
         </div>
     );
 }
