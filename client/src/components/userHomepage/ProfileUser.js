@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useHttp } from '../../hooks/http.hook';
-import image from "../../images/png/user.png"
+//import image from "../../images/png/user.png"
 import "./profileUser.css"
 
 const ProfileUser = () => {
-    const { loading, request, error, clearError } = useHttp();
+    const {  request } = useHttp();
 
 
     const [data, setData] = useState(null);
@@ -36,7 +36,7 @@ const ProfileUser = () => {
                                 </button></a>
                             </div>
                             <div className='container-img'>
-                                <img src={image} alt='profile' />
+                                <img src="https://cdn.discordapp.com/attachments/1008786354865451019/1053355839953588335/profileimage.jpg" alt='profile' />
 
                             </div>
                         </div>

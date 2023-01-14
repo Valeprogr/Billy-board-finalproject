@@ -55,9 +55,9 @@ article {
     width: 332px;
  
 }
-.nav-link{
+/* .nav-link{
     
-}
+} */
 
 .nav-user a{
     text-decoration: none !important;
@@ -79,6 +79,7 @@ article {
     display: flex;
     flex-direction: column;
     justify-content:space-between;
+    margin-left: 22px;
    
    
 }

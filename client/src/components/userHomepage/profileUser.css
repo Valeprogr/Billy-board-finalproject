@@ -6,96 +6,108 @@
     --font-family: 'Montserrat', sans-serif;
 }
 
-.container-body-profile h2,h5{
+.container-body-profile h2,
+h5 {
     color: var(--color-secondary);
     font-weight: 700;
-    /* line-height: 1.6; */
-    letter-spacing: 2px;
     font-size: 60px;
-    text-shadow: 0px 1px;
-}
-
-.container-body-profile p{
-    /* line-height: 1.8; */
+    /* text-shadow: 0px 1px; */
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    line-height: 1;
     letter-spacing: 2px;
 }
 
+.container-body-profile p {
+    margin: 0;
+}
 
-.header-profile{
+
+.header-profile {
     background-image: url("../../images/background.png");
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     height: 200px;
     /* border:1px solid red; */
     /* height: 162px;
     width: auto; */
 }
 
-.container-body-profile{
+.container-body-profile {
     background-color: #F9F9F9;
     display: flex;
     flex-direction: column;
     height: auto;
     width: 100%;
-    
+
     /* margin: 20px; */
-    
-    
+
+
 }
-.container-box-profile{
+
+.container-box-profile {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     /* border: 1px solid red; */
     width: 100%;
     /* height: auto; */
-  
+
 }
-.title-profile{
+
+.title-profile {
     padding-left: 92px;
 }
 
-.container-data{
+.container-data {
     /* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
-    
-    padding: 12px 92px ;
+
+    padding: 12px 92px;
     /* border-radius: 5%; */
     /* border: 1px solid black; */
     height: auto;
-    
+
 }
-.container-img img{
+
+.container-img img {
     height: 150px;
     width: 150px;
-    border:1px solid var(--color-secondary);
+    border: 1px solid white;
     border-radius: 50%;
-    padding: 12px;
+    /* padding: 12px; */
     background-color: white;
-   margin-left: 40%;
+    margin-left: 40%;
+    -moz-box-shadow: 0px 6px 5px #ccc;
+    -webkit-box-shadow: 0px 6px 5px #ccc;
+    box-shadow: 0px 6px 5px #ccc;
+    -moz-border-radius: 190px;
+    -webkit-border-radius: 190px;
 }
 
 
-.buttons{
+.buttons {
     display: flex;
-    justify-content:end;
+    justify-content: end;
     margin-top: 62px;
     margin-right: 122px;
 }
-.icons{
+
+.icons {
     height: 32px;
     margin-top: 2px;
     margin-right: 6px;
 }
-.icons-data{
+
+.icons-data {
     display: flex;
 }
-.icons-data-container{
+
+.icons-data-container {
     display: flex;
     justify-content: space-around;
 }
 
-.personal-data{
-font-size: 32px;
+.personal-data  {
+    font-size: 32px;
 }
