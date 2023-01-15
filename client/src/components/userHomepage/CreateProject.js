@@ -16,7 +16,8 @@ const[form,setForm]=useState({
     location:"",
     start_date:"",
     end_date:"",
-    company_name:auth.company
+    company_name:auth.company,
+    description:""
 })
 useEffect(()=>{
     message(error);

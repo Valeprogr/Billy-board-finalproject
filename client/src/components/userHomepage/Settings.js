@@ -1,16 +1,13 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./settings.css";
 import { useMessage } from '../../hooks/message.hook';
 import { useHttp } from '../../hooks/http.hook';
 import BtnSpinner from '../../btnSpinner/BtnSpinner';
 import { Toaster } from 'react-hot-toast';
-import { AuthContext } from '../../context/AuthContext';
 
 const Settings = () => {
     const { loading, request, error, clearError } = useHttp();
     const message = useMessage();
-    const auth = useContext(AuthContext)
-    //console.log(auth)
     const [form, setForm] = useState({
         _id: "",
         name: "",
@@ -43,15 +40,6 @@ const Settings = () => {
 
         }
     }
-   
-    // useEffect(() => {
-    //     const fetchData = async () => {
-                
-    //             setUserId(data.id)
-    //             console.log(userId)
-    //     }
-    //     fetchData()
-    // }, [])
     return (
         <div className='container-body-settings'>
             <Toaster />
