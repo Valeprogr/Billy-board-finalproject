@@ -1,15 +1,21 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import "./cardProjects.css"
 import user from "../../../images/png/user.png";
 import Task from '../task/Tasklist';
 
 const CardProjects = ({ projects }) => {
-  const [taskVisible, setTaskVisible]= useState(false);
+  const [taskVisible, setTaskVisible] = useState(false);
   console.log(projects)
   return (
     <>
       <div className='body-holiday-card'>
-        <h3>Name of the projects</h3>
+        <div className='title-container'>
+          <h3>Name of the projects</h3>
+          <span class="material-symbols-outlined">
+            delete
+          </span>
+        </div>
+
         <hr></hr>
         <div className='container-holiday-card'>
           <div>
@@ -19,14 +25,17 @@ const CardProjects = ({ projects }) => {
             <div className='box-info-location'><span class="material-symbols-outlined">
               location_on
             </span>
-            <p>{projects.location}</p>
+              <p>{projects.location}</p>
             </div>
           </div>
-          <button class="btn btn-secondary btn-projectCard" onClick={()=>{setTaskVisible(taskVisible=>!taskVisible )}}>Tasks</button>
+
+        </div>
+        <div>
+          <button class="btn btn-secondary btn-projectCard" onClick={() => { setTaskVisible(taskVisible => !taskVisible) }}>Tasks</button>
           <button class="btn btn-dark btn-projectCard">Show Members</button>
         </div>
         {
-          taskVisible && <Task/>
+          taskVisible && <Task />
         }
       </div>
     </>

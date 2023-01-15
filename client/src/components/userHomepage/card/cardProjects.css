@@ -53,6 +53,11 @@
     height: 46px;
 }
 
+.title-container{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 @media screen and (max-width: 600px) {
     .admin-home-body {
