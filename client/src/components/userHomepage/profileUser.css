@@ -6,8 +6,7 @@
     --font-family: 'Montserrat', sans-serif;
 }
 
-.container-body-profile h2,
-h5 {
+.container-body-profile h2,h5 {
     color: var(--color-secondary);
     font-weight: 700;
     /* font-size: 32px; */
@@ -112,5 +111,7 @@ h5 {
 }
 
 .personal-data  {
-    font-size: 32px;
+    font-size: 22px;
+    font-weight: 700;
+    
 }
