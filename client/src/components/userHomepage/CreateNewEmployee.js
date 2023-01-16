@@ -6,6 +6,7 @@ import Btnspinner from "../../btnSpinner/BtnSpinner";
 import { Toaster } from "react-hot-toast";
 import { AuthContext } from '../../context/AuthContext.js';
 
+const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const CreateNewEmployee = () => {
     const { loading, request, error, clearError } = useHttp();
     const message = useMessage();
@@ -36,7 +37,7 @@ const CreateNewEmployee = () => {
     const createUser = async (event) => {
         event.preventDefault();
         try {
-            const data = await request('http://localhost:4000/createNewEmployee', 'POST', { ...form });
+            const data = await request(`${REACT_APP_URL_CYCLIC}createNewEmployee`, 'POST', { ...form });
             message(data);
 
         } catch (event) {

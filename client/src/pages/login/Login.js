@@ -6,7 +6,7 @@ import { useMessage } from '../../hooks/message.hook';
 import Btnspinner from "../../btnSpinner/BtnSpinner";
 import { Toaster } from "react-hot-toast";
 
-
+const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const Login = () => {
     const auth = useContext(AuthContext);
     const {loading, request, error, clearError} = useHttp();
@@ -32,7 +32,7 @@ const Login = () => {
     const loginHandler = async(event) => {
         event.preventDefault();
         try {
-            const data = await request('http://localhost:4000/login', 'POST', {...form});
+            const data = await request(`${REACT_APP_URL_CYCLIC}login`, 'POST', {...form});
             auth.login(data.token, data.company_name);
            //console.log(data.company_name)
           

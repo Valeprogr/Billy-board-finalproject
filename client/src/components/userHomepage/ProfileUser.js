@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useContext} from 'react';
 import { useHttp } from '../../hooks/http.hook';
+import { AuthContext } from '../../context/AuthContext';
 //import image from "../../images/png/user.png"
 import "./profileUser.css"
-
+const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const ProfileUser = () => {
+    const auth = useContext(AuthContext);
+    //console.log(auth)
     const {  request } = useHttp();
 
 
@@ -12,14 +15,14 @@ const ProfileUser = () => {
     useEffect(() => {
 
         const getData = async () => {
-            const userId = await request("http://localhost:4000/user-util/settings");
-            const userData = await request(`http://localhost:4000/user/${userId.id}`);
+            const userId = await request(`${REACT_APP_URL_CYCLIC}user-util/settings`);
+            const userData = await request(`${REACT_APP_URL_CYCLIC}user/${userId.id}`);
             setData(userData)
         }
         getData()
 
     }, [])
-    console.log(data)
+    //console.log(data)
 
     return (
         <>

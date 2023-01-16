@@ -49,8 +49,9 @@ class UserControllers {
     }
     async getCacheId (req, res) {
         try {
+            console.log('Ciao sono vale')
             const id = await UserServices.getCacheId();
-            //console.log(id)
+            console.log(id)
             res.status(200).json(id)
         } catch (error) {
             res.status(500).json(error)

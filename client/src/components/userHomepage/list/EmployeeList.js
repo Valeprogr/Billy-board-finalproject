@@ -3,8 +3,9 @@ import { AuthContext } from '../../../context/AuthContext';
 import { useHttp } from '../../../hooks/http.hook';
 import CardEmployee from '../card/CardEmployee';
 import "./list.css";
-import Spinner from '../Spinner/Spinner';
+//import Spinner from '../Spinner/Spinner';
 
+const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const EmployeeList = () => {
     const {  request } = useHttp();
     const auth = useContext(AuthContext);
@@ -16,7 +17,7 @@ const EmployeeList = () => {
 
         const getData = async () => {
             // const userId = await request("http://localhost:4000/user-util/settings");
-            const userData = await request(`http://localhost:4000/user/`);
+            const userData = await request(`${REACT_APP_URL_CYCLIC}user/`);
             setData(userData.filter(item=>item.company_name === auth.company))
            
         }

@@ -6,7 +6,7 @@ import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 import { Toaster } from 'react-hot-toast';
 
 
-
+const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const CreateNewTask = ({project}) => {
     console.log(project)
     const { loading, request, error, clearError } = useHttp();
@@ -33,7 +33,7 @@ const CreateNewTask = ({project}) => {
     const createTask = async (event) => {
         event.preventDefault();
         try {
-            const data = await request('http://localhost:4000/createNewTask', 'POST', { ...form });
+            const data = await request(`${REACT_APP_URL_CYCLIC}createNewTask`, 'POST', { ...form });
             message(data)
         } catch (error) {
 

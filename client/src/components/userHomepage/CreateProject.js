@@ -5,6 +5,7 @@ import { useHttp } from '../../hooks/http.hook';
 import "./createProject.css"
 import { Toaster } from 'react-hot-toast';
 import BtnSpinner from '../../btnSpinner/BtnSpinner';
+const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const CreateProject = () => {
     //Nel dropdown devo fetchare tutte le email per poterli insirire nel dropdown
     const { loading, request, error, clearError } = useHttp();
@@ -31,7 +32,7 @@ const CreateProject = () => {
     const createProject = async (event) => {
         event.preventDefault();
         try {
-            const data = await request('http://localhost:4000/createProject', 'POST', { ...form });
+            const data = await request(`${REACT_APP_URL_CYCLIC}createProject`, 'POST', { ...form });
             message(data)
         } catch (error) {
 
@@ -39,7 +40,7 @@ const CreateProject = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='container-create-project'>
             <Toaster />
             <div className=''>
                 <h1>Create a new Project</h1>

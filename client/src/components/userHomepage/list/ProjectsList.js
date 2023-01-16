@@ -3,9 +3,11 @@ import { AuthContext } from '../../../context/AuthContext';
 import { useHttp } from '../../../hooks/http.hook';
 import "./list.css";
 import CardProjects from '../card/CardProjects';
-import Spinner from '../Spinner/Spinner';
+//import Spinner from '../Spinner/Spinner';
+import EmptyProjectList from '../empty-projectList/EmptyProjectList';
 
-
+const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
+console.log(REACT_APP_URL_CYCLIC)
 const ProjectsList = () => {
     const { request,loading } = useHttp();
     const [data, setData] = useState(null);
@@ -13,7 +15,7 @@ const ProjectsList = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const userData = await request(`http://localhost:4000/projects`);
+            const userData = await request(`${REACT_APP_URL_CYCLIC}projects`);
             setData(userData.filter(item => item.company_name === auth.company))
         }
         getData()
@@ -35,7 +37,7 @@ const ProjectsList = () => {
                     data.map((projects, index) => (
                         <CardProjects index={index} projects={projects} />))
                     :
-                    <>{loading && <Spinner />}</>
+                    <EmptyProjectList/>
                 }
 
             </div>

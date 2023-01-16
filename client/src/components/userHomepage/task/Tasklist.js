@@ -5,7 +5,7 @@ import CreateNewTask from './CreateNewTask';
 //import CreateNewTask from './CreateNewTask';
 
 
-
+const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const Tasklist = ({projects}) => {
     //console.log(projects)
     const{request}=useHttp();
@@ -14,7 +14,7 @@ const Tasklist = ({projects}) => {
     
     useEffect(()=>{
         const getTask = async ()=>{
-            const data = await request('http://localhost:4000/todos','POST', { "todoList_id": projects.todo_list });
+            const data = await request(`${REACT_APP_URL_CYCLIC}todos`,'POST', { "todoList_id": projects.todo_list });
             setTask(prev=>[...data]);
         }
         getTask();
