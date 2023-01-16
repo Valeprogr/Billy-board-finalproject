@@ -83,7 +83,6 @@ const NavbarUser = ({ children }) => {
                                     </span>
                                     Settings</NavLink>
                             </div>
-
                         </div>
                         <div className='nav-bar-box2'>
                             <button class="btn btn-dark btn-navbar" onClick={logoutHandler}>

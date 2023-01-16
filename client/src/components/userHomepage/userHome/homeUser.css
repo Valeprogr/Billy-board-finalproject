@@ -59,7 +59,7 @@ nav {
     display: flex;
     height: auto;
     justify-content: space-between;
-    /* padding: 24px; */
+    padding: 24px;
     background-color: var(--text-color);
     border: 1px solid lightgray;
     width: 222px;
@@ -102,7 +102,7 @@ nav {
 }
 
 .nav-bar-box1 {
-    margin-bottom: 282px;
+    margin-bottom: 62px;
 }
 
 .nav-bar-box2 {
