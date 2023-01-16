@@ -1,15 +1,20 @@
-import React from "react";
+import React from 'react';
 
-export const MembersList = ({ project }) => {
+const MembersList = ({projects}) => {
+    
     return (
         <div className="px-0 border-top">
             <div className="card border-0" style={{ width: "auto" }}>
                 <div className="card-body">
-                    <button className="btn btn-outline-primary">add Member</button>
+                    <button className="btn btn-outline-secondary">add Member</button>
                     
                 </div>
             </div>
 
         </div>
+
+       
     );
 }
+
+export default MembersList;

@@ -7,6 +7,7 @@ import projectRouter from "./routes/project-router.js";
 import fs from "fs";
 import {readFile} from "fs/promises";
 
+
 import cors from "cors";
 mongoose.set('strictQuery', true);
 
@@ -37,3 +38,4 @@ async function StartApp(){
     }
 }
 StartApp()
+
