@@ -1,0 +1,27 @@
+.container-header{
+    background-image: url("../../../images/header1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    color: var(--text-color);
+}
+
+.box-header{
+    margin-top: 62px;
+    margin-left:332px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+   
+}
+.box-header p{
+    
+    font-size: 22px;
+    
+    color: black;
+}
+
+.title-header{
+    font-weight: 700;
+    
+}
