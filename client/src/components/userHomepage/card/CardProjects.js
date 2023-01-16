@@ -21,7 +21,8 @@ const CardProjects = ({ projects }) => {
           <div>
             <img className='holiday-user-img' src={user} alt="profile pictures"></img>
           </div>
-          <div><p>{projects.description}</p>
+          <div className='container-info-location'>
+          <p>{projects.description}</p>
             <div className='box-info-location'><span class="material-symbols-outlined">
               location_on
             </span>

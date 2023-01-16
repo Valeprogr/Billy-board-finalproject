@@ -7,6 +7,7 @@
   }
 
  .container-body-list{
+    font-family: var(--font-family);
     width: 100%;
     height: auto;
     padding: 32px;
@@ -37,4 +38,8 @@
     display: flex;
     justify-content: space-between;
     margin: 0 12px 12px 0;
+}
+
+.btn-projectCard{
+    margin: 12px;
 }
