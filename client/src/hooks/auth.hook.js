@@ -20,7 +20,7 @@ export const useAuth = () => {
 
     const logout = useCallback(() => {
         setToken(null);
-        company(null);
+        setCompany(null);
         localStorage.removeItem(storageName);
     }, []);
 

@@ -9,20 +9,16 @@ import HeaderUserHome from '../header-userHome/HeaderUserHome';
 import ProjectsList from '../list/ProjectsList';
 
 const UserHome = () => {
+    const [loading,setLoading]=useState(true)
 
     return (
+     
         <div className='admin-home-body'>
              <HeaderUserHome/>
 
             <div className='admin-home-container'>
-          
-                
                 <ProjectsList/>
                 <Calender />
-                
-            
-
-                
             </div>
 
 

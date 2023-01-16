@@ -1,28 +1,34 @@
 import React, { useEffect, useState,useContext} from 'react';
 import { useHttp } from '../../hooks/http.hook';
 import { AuthContext } from '../../context/AuthContext';
-//import image from "../../images/png/user.png"
+import { useMessage } from '../../hooks/message.hook';
 import "./profileUser.css"
 const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const ProfileUser = () => {
     const auth = useContext(AuthContext);
-    //console.log(auth)
-    const {  request } = useHttp();
+    //console.log(auth.id)
+    const {loading, request, error, clearError} = useHttp();
 
+    const message= useMessage();
+    useEffect(() => {
+        message(error);
+        clearError();
+
+    }, [error, message, clearError]);
 
     const [data, setData] = useState(null);
 
     useEffect(() => {
-
         const getData = async () => {
             const userId = await request(`${REACT_APP_URL_CYCLIC}user-util/settings`);
             const userData = await request(`${REACT_APP_URL_CYCLIC}user/${userId.id}`);
+           
             setData(userData)
         }
         getData()
 
     }, [])
-    //console.log(data)
+   
 
     return (
         <>
