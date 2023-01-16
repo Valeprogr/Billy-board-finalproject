@@ -42,11 +42,12 @@ router.post("/login", async (req, res) => {
         if (!match) {
             return res.status(400).json({ message: `incorrect password...` })
         }
-        try {
-            await writeFile('./cache/userCache.json', JSON.stringify({ id: user._id }))
-        } catch (error) {
-            console.log(error)
-        }
+        // try {
+        //     await writeFile('./cache/userCache.json', JSON.stringify({ id: user._id }));
+        //     console.log("sto scrivendo")
+        // } catch (error) {
+        //     console.log(error)
+        // }
 
         const token = sign(
             { userId: user.password.toString() },
@@ -54,7 +55,7 @@ router.post("/login", async (req, res) => {
             { expiresIn: '1h' }
         );
 
-        res.json({ token, company_name: user.company_name })
+        res.json({ token, company_name: user.company_name, user_id: user._id })
 
     } catch (error) {
         res.status(500).json({

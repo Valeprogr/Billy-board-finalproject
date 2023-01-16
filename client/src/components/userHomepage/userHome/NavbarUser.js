@@ -11,6 +11,7 @@ const NavbarUser = ({ children }) => {
     const { loading, request, error, clearError } = useHttp();
     const auth = useContext(AuthContext);
 
+    console.log(auth)
 
     const message = useMessage();
     useEffect(() => {

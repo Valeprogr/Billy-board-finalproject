@@ -33,7 +33,7 @@ const Login = () => {
         event.preventDefault();
         try {
             const data = await request(`${REACT_APP_URL_CYCLIC}login`, 'POST', {...form});
-            auth.login(data.token, data.company_name);
+            auth.login(data.token, data.company_name,data.user_id);
            //console.log(data.company_name)
           
             
