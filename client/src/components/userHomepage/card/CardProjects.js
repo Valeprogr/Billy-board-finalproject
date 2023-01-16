@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import "./cardProjects.css"
 import user from "../../../images/png/user.png";
-import Task from '../task/Tasklist';
+import Tasklist from '../task/Tasklist';
 
 const CardProjects = ({ projects }) => {
   const [taskVisible, setTaskVisible] = useState(false);
-  console.log(projects)
+  //console.log(projects)
   return (
     <>
       <div className='body-holiday-card'>
         <div className='title-container'>
-          <h3>Name of the projects</h3>
+          <h3>{projects.name}</h3>
           <span class="material-symbols-outlined">
             delete
           </span>
@@ -21,7 +21,7 @@ const CardProjects = ({ projects }) => {
           <div>
             <img className='holiday-user-img' src={user} alt="profile pictures"></img>
           </div>
-          <div><p>{projects.name}</p>
+          <div><p>{projects.description}</p>
             <div className='box-info-location'><span class="material-symbols-outlined">
               location_on
             </span>
@@ -35,7 +35,7 @@ const CardProjects = ({ projects }) => {
           <button class="btn btn-dark btn-projectCard">Show Members</button>
         </div>
         {
-          taskVisible && <Task />
+          taskVisible && <Tasklist projects={projects} />
         }
       </div>
     </>

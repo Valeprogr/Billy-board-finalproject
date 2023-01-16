@@ -1,12 +1,14 @@
 import React from 'react';
 
-const Task = () => {
+const Task = ({task}) => {
+    //console.log(task)
     return (
         <div>
-            <div class="card border-danger mb-3">
+            <div class="card border-secondary mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Title:</h5>
+                    <h5 class="card-title">{task.title}</h5>
                     <p class="card-text">Description:</p>
+                    <p>{task.text}</p>
                 </div>
             </div>
         </div>

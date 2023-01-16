@@ -12,6 +12,7 @@ import EmployeeList from "./components/userHomepage/list/EmployeeList";
 import ProjectsList from "./components/userHomepage/list/ProjectsList";
 import CreateProject from "./components/userHomepage/CreateProject";
 import CreateNewEmployee from "./components/userHomepage/CreateNewEmployee";
+import CreateNewTask from "./components/userHomepage/task/CreateNewTask";
 
 
 export const useRoutes = (isAuthenticated) => {

@@ -68,10 +68,10 @@ class projectControllers {
         }
     }
 
-    async getAllTodoList(req, res) {
+    async getAllTodos(req, res) {
         try {
-            const TodoLists = await ProjectServices.getAllTodoList();
-            return res.status(200).json(TodoLists);
+            const todos = await ProjectServices.getAllTodos(req.body);
+            return res.status(200).json(todos);
         } catch (error) {
             res.status(500).json(error);
         }

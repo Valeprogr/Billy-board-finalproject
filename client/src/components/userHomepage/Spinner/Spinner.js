@@ -1,11 +1,16 @@
 import React from 'react';
-import "./spinner.css"
+
 
 const Spinner = () => {
     return (
-        <div>
-            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div style={{ width: "5rem", height: "5rem", margin: "50%" }}>
+        <div className="spinner-grow"  role="status">
+            <span class="visually-hidden">Loading...</span>
         </div>
+        <div className="spinner-grow"  role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
     );
 }
 

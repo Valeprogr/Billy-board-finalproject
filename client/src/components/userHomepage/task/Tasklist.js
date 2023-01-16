@@ -1,26 +1,38 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import Task from './Task';
+import {useHttp} from "../../../hooks/http.hook";
+import Spinner from '../Spinner/Spinner';
+import { EmptyProjectList } from '../empty-projectList/EmptyProjectList';
+import CreateNewTask from './CreateNewTask';
+//import CreateNewTask from './CreateNewTask';
 
-const Tasklist = () => {
+
+
+const Tasklist = ({projects}) => {
+    //console.log(projects)
+    const{request}=useHttp();
+    const[tasks, setTask]=useState([]);
+    const [createTask, setCreateTask] = useState(false);
+    
+    useEffect(()=>{
+        const getTask = async ()=>{
+            const data = await request('http://localhost:4000/todos','POST', { "todoList_id": projects.todo_list });
+            setTask(prev=>[...data]);
+        }
+        getTask();
+    },[])
+    //console.log(tasks)
     return (
         <>
             <div>
             <h4>Task list</h4>
-                <Task />
-                {/* <div class="card border-warning mb-3">
-                <div class="card-body ">
-                    <h5 class="card-title">Danger card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-
-            <div class="card border-dark mb-3">
-                <div class="card-body ">
-                    <h5 class="card-title">Danger card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div> */}
-                <button class="btn btn-secondary btn-projectCard">Create new Task</button>
+            {tasks.length !==0 ?
+            (tasks.map(task=> <Task task={task} key={task._id}/>))
+            :
+            null}
+                {/* <Task projects={projects} /> */}
+                <button className="btn btn-outline-secondary" onClick={() => setCreateTask(prev => !prev)}>Create New Task</button>
+                    {createTask && <CreateNewTask project={projects} />}
             </div>
         </>
     );
