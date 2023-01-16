@@ -1,6 +1,5 @@
-import React,{useEffect,useState,useContext} from 'react';
+import React,{useEffect,useState} from 'react';
 import { useHttp } from '../../../hooks/http.hook';
-import { AuthContext } from '../../../context/AuthContext';
 import { useMessage } from '../../../hooks/message.hook';
 import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 import { Toaster } from 'react-hot-toast';
@@ -8,11 +7,9 @@ import { Toaster } from 'react-hot-toast';
 
 const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const CreateNewTask = ({project}) => {
-    console.log(project)
+    //console.log(project)
     const { loading, request, error, clearError } = useHttp();
     const message = useMessage();
-    const auth = useContext(AuthContext)
-    //console.log(auth)
     const [form, setForm] = useState({
         title: "",
         text: "",
@@ -20,7 +17,6 @@ const CreateNewTask = ({project}) => {
         "todoList_id": project.todo_list
        
     })
-    console.log(form)
     const changeHandler = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value });
         console.log(form)

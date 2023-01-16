@@ -19,7 +19,7 @@ const Tasklist = ({ projects }) => {
         }
         getTask();
     }, [])
-    //console.log(tasks)
+    console.log(tasks)
     return (
         <>
             <div>
