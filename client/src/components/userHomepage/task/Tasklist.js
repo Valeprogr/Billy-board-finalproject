@@ -1,8 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import Task from './Task';
 import {useHttp} from "../../../hooks/http.hook";
-import Spinner from '../Spinner/Spinner';
-import { EmptyProjectList } from '../empty-projectList/EmptyProjectList';
 import CreateNewTask from './CreateNewTask';
 //import CreateNewTask from './CreateNewTask';
 

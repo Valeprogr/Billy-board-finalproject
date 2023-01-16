@@ -1,9 +1,10 @@
 .container-body-settings{
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
    background-color: aqua;
    width: 100%;
-   margin: 100px;
+   /* margin:0px 0 160px 100px; */
+   margin-left: 240px;
    justify-content: center;
    justify-items: center;
    

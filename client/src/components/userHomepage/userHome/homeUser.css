@@ -9,10 +9,12 @@
   html, body{
     font-style: var(--font-family);
     color: var(--text-color);
+   
     
   }
   nav{
     background-color: var(--text-color);
+    height: auto;
   
   }
 .admin-home-body {
@@ -23,7 +25,7 @@
    justify-content: space-between;
    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-  
+   margin-left: 160px;
    height: auto;
    width: 100%;
     /* justify-items: center;
@@ -35,24 +37,30 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
 }
 
 
-article {
+/* article {
     border:  1px solid red;
     display: flex;
     height: auto;
    
-}
+} */
 
 
 .nav-user {
     display: flex;
-    height: 967px;
+    height: auto;
+    justify-content: space-between;
     /* padding: 24px; */
     background-color:var(--text-color);
     border:  1px solid lightgray;
-    width: 332px;
+    width: 222px;
+    position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
  
 }
 /* .nav-link{

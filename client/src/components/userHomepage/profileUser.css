@@ -33,6 +33,7 @@ h5 {
 }
 
 .container-body-profile {
+    margin-left: 160px;
     background-color: #F9F9F9;
     display: flex;
     flex-direction: column;
