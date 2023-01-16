@@ -5,7 +5,7 @@ import { useMessage } from '../../hooks/message.hook';
 import "./profileUser.css"
 const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const ProfileUser = () => {
-    const auth = useContext(AuthContext);
+    // const auth = useContext(AuthContext);
     //console.log(auth.id)
     const {loading, request, error, clearError} = useHttp();
 
