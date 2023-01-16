@@ -3,9 +3,9 @@ import Task from './Task';
 import { useHttp } from "../../../hooks/http.hook";
 import CreateNewTask from './CreateNewTask';
 //import CreateNewTask from './CreateNewTask';
-
-
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
+
+
 const Tasklist = ({ projects }) => {
     //console.log(projects)
     const { request } = useHttp();
@@ -19,7 +19,7 @@ const Tasklist = ({ projects }) => {
         }
         getTask();
     }, [])
-    console.log(tasks)
+    //console.log(tasks)
     return (
         <>
             <div>

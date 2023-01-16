@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast';
 
 
 const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
+
 const CreateNewTask = ({project}) => {
     //console.log(project)
     const { loading, request, error, clearError } = useHttp();
@@ -19,7 +20,7 @@ const CreateNewTask = ({project}) => {
     })
     const changeHandler = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value });
-        console.log(form)
+        //console.log(form)
     }
     useEffect(() => {
         message(error);

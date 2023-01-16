@@ -7,7 +7,7 @@ import CardProjects from '../card/CardProjects';
 import EmptyProjectList from '../empty-projectList/EmptyProjectList';
 
 const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
-console.log(REACT_APP_URL_CYCLIC)
+//console.log(REACT_APP_URL_CYCLIC)
 const ProjectsList = () => {
     const { request,loading } = useHttp();
     const [data, setData] = useState(null);
@@ -26,7 +26,7 @@ const ProjectsList = () => {
 
             <div className='list-title-projectList'>
                 <h2>Projects List</h2>
-                <a href="/CreateProject">
+                <a href="/createProject">
                     <button className='btn btn-secondary btn-projectCard'>Create new Project</button>
                 </a>
             </div>
