@@ -93,6 +93,14 @@ class projectControllers {
             res.status(500).json(error);
         }
     }
+    async getCurrentProject(req, res) {
+        try {
+            const project = await ProjectServices.getCurrentProject();
+            res.status(200).json(project);
+        } catch (error) {
+            res.status(500).json(error)
+        }
+    }
 };
 
 export default new projectControllers();

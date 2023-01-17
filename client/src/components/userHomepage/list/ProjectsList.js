@@ -3,13 +3,12 @@ import { AuthContext } from '../../../context/AuthContext';
 import { useHttp } from '../../../hooks/http.hook';
 import "./list.css";
 import CardProjects from '../card/CardProjects';
-//import Spinner from '../Spinner/Spinner';
-//import EmptyProjectList from '../empty-projectList/EmptyProjectList';
+
 
 const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 //console.log(REACT_APP_URL_CYCLIC)
 const ProjectsList = () => {
-    const { request,loading } = useHttp();
+    const { request} = useHttp();
     const [data, setData] = useState(null);
     const auth = useContext(AuthContext);
 
@@ -20,7 +19,7 @@ const ProjectsList = () => {
         }
         getData()
     }, [])
-    //console.log(data)
+
     return (
         <div className='container-body-list'>
 

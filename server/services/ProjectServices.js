@@ -1,8 +1,8 @@
 import Project from "../models/Project.js";
 import TodoList from "../models/TodoList.js";
 import Todo from "../models/Todo.js";
-import User from "../models/User.js"
-
+import User from "../models/User.js";
+import {format} from "date-fns";
 
 class ProjectServices {
 
@@ -66,6 +66,13 @@ class ProjectServices {
         const updatedProject = await Project.findByIdAndUpdate(updateObj.projectID, { $push: { "members": updateObj.members } }, { new: true, useFindAndModify: false });
         
         return updatedProject
+    }
+
+    async getCurrentProject() {
+        const today = format(Date.now(), 'dd.MM.yyyy').toString();
+        const project = await Project.findOne({"start_date": today});
+        return project
+
     }
 
 }
