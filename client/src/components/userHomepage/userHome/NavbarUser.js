@@ -26,9 +26,8 @@ const NavbarUser = ({ children }) => {
     useEffect(() => {
 
         const getData = async () => {
-            const userId = await request(`${REACT_APP_URL_CYCLIC}user-util/settings`);
-            console.log(userId)
-            const userData = await request(`${REACT_APP_URL_CYCLIC}user/${userId.id}`);
+          
+            const userData = await request(`${REACT_APP_URL_CYCLIC}user/${auth.userId}`);
             setData(userData)
         }
         getData()

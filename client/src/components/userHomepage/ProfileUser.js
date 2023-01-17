@@ -5,8 +5,8 @@ import { useMessage } from '../../hooks/message.hook';
 import "./profileUser.css"
 const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const ProfileUser = () => {
-    // const auth = useContext(AuthContext);
-    //console.log(auth.id)
+     const auth = useContext(AuthContext);
+    //console.log(auth.userId)
     const {loading, request, error, clearError} = useHttp();
 
     const message= useMessage();
@@ -20,8 +20,8 @@ const ProfileUser = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const userId = await request(`${REACT_APP_URL_CYCLIC}user-util/settings`);
-            const userData = await request(`${REACT_APP_URL_CYCLIC}user/${userId.id}`);
+            
+            const userData = await request(`${REACT_APP_URL_CYCLIC}user/${auth.userId}`);
            
             setData(userData)
         }
