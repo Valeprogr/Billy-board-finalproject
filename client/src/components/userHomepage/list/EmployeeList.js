@@ -16,7 +16,6 @@ const EmployeeList = () => {
     useEffect(() => {
 
         const getData = async () => {
-            // const userId = await request("http://localhost:4000/user-util/settings");
             const userData = await request(`${REACT_APP_URL_CYCLIC}user/`);
             setData(userData.filter(item=>item.company_name === auth.company))
            

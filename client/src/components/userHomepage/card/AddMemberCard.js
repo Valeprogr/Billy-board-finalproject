@@ -1,35 +1,37 @@
-import React,{useState,useEffect,useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHttp } from '../../../hooks/http.hook';
+import { AuthContext } from '../../../context/AuthContext';
 
-const AddMemberCard = ({company}) => {
+const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
+const AddMemberCard = ({ company }) => {
     const { request, loading } = useHttp();
-    const [members, setMembers] = useState([]);
+    const [members, setMembers] = useState();
     const [membersToAdd, setMembersToAdd] = useState([]);
+    const auth = useContext(AuthContext);
+    // console.log(auth.company)
 
     useEffect(() => {
         const res = async () => {
-            const data = await request('http://localhost:4000/user/all-by-compname', 'POST', { "company_name": company });
-            setMembers(prev => [...data]);
+            const data = await request(`${REACT_APP_URL_CYCLIC}user`);
+            const members = data.filter(item => item.company_name == auth.company)
+            setMembers(members);
         }
-
         res();
     }, []);
-
 
     const onClickHandler = (event) => {
         event.preventDefault()
         console.log(event.target.id)
         setMembersToAdd(prev => [...prev, event.target.id]);
-        console.log(membersToAdd)
-        //event.target.className = "btn btn-primary"
     }
+    console.log(membersToAdd)
     return (
-        <>
-            
+        <div>
+            <h3>Select members for the project</h3>
             {
-                members.length !== 0 && members.map(member => <button  className="btn btn-outline-secondary" id={member._id} onClick={onClickHandler} key={member._id}>{member.name} {member.lastname}</button>)
+                members && members.map(ele => <button  className="btn btn-outline-dark" id={ele._id} onClick={onClickHandler} key={ele._id}>{ele.name} {ele.lastname}</button>)
             }
-        </>
+        </div>
     );
 }
 

@@ -6,7 +6,8 @@ import MembersList from "../members-list/MembersList"
 
 const CardProjects = ({ projects }) => {
   const [taskVisible, setTaskVisible] = useState(false);
-  const [membersVisible, setMembersVisible]=useState(false)
+  const [membersVisible, setMembersVisible]=useState(false);
+  const [onlyOne,setOnlyOne]= useState(false);
   //console.log(projects)
   return (
     <>
@@ -34,16 +35,17 @@ const CardProjects = ({ projects }) => {
 
         </div>
         <div>
-          <button class="btn btn-secondary btn-projectCard" onClick={() => { setTaskVisible(taskVisible => !taskVisible) }}>Tasks</button>
-          <button class="btn btn-dark btn-projectCard" onClick={()=>{setMembersVisible(membersVisible=> !membersVisible)}}>Show Members</button>
+          <button class="btn btn-secondary btn-projectCard close" onClick={() => { setTaskVisible(taskVisible => !taskVisible) }}>Tasks</button>
+          <button class="btn btn-dark btn-projectCard close" onClick={()=>{setMembersVisible(membersVisible=> !membersVisible)}}>Show Members</button>
         </div>
+        <div>
         {
           taskVisible && <Tasklist projects={projects} />
         }
-
         {
           membersVisible && <MembersList projects={projects}/>
         }
+        </div>
       </div>
     </>
   );

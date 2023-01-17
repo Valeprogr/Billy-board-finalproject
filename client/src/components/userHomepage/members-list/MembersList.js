@@ -13,7 +13,7 @@ const MembersList = ({projects}) => {
             <div className="card border-0" style={{ width: "auto" }}>
                 <div className="card-body">
                 {addMemberVisible && <AddMemberCard company={auth.company}/>}
-                    <button className="btn btn-outline-secondary"
+                    <button className="btn btn-dark"
                      onClick={() => setAddMemberVisible(prev => !prev)}>add Member</button>
                     
                 </div>
