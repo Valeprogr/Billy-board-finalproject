@@ -33,6 +33,10 @@
             opacity: 80%;
         }
 
+        .box-container-contacts h5{
+            color: var(--text-color2);
+        }
+
         .text-message{
            height: 100%;
            /* display: block; */
