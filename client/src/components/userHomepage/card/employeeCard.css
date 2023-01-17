@@ -1,19 +1,45 @@
+:root {
+    --color-primary: #A5F1E9;
+    --color-secondary: #62B6B7;
+    --text-color: #F9F9F9;
+    --text-color2: black;
+    --font-family: 'Montserrat', sans-serif;
+    ---text-shadow:1px 1px 0px rgba(0,0,0,0.2);
+}
 .card-employee {
     width: auto;
-    height: 100%;
+    height: auto;
     padding: 10px;
     background-color:white;
     border: solid 1px lightgray;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 12px;
+    
 }
 
+.card-img{
+    height: 200px;
+    width: 200px; 
+}
 .card-img,img{
     /* border: solid 1px lightgray; */
     height: 200px;
     width: 200px;
+    border-radius: 8px;
 }
 
 .container-body-list{
-    height: 1000px;
+    height: auto;
+}
+
+.card-body{
+    padding: 32px !important;
+}
+
+.card-text{
+    color: var(--color-secondary);
+    font-weight: 700;
+    /* opacity: 80%; */
+    text-shadow: var(---text-shadow);
+
 }

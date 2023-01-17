@@ -25,15 +25,16 @@ const EmployeeList = () => {
     }, [])
     return (
         <>
-            <div className='container-body-list'>
+            <div className='container-body-list container-employee-list'>
                 <div className='box-list'>
                     <div className='boh'>
                         <h2>Employee List</h2>
                         <a href="/createNewEmployee">
-                            Add New Employee
-                            <span class="material-symbols-outlined">
-                                add_circle
-                            </span>
+                            <button  className="btn btn-outline-dark">
+                                  Add New Employee
+                            
+                            </button>
+                          
                         </a>
                     </div>
 

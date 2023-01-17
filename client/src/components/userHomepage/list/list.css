@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     padding: 12px;
-    height: 100%;
+    height: auto;
     background-color: whitesmoke;
     border: 1px solid lightgrey;
     border-radius: 12px;
@@ -38,8 +38,10 @@
     display: flex;
     justify-content: space-between;
     margin: 0 12px 12px 0;
+    padding-top:32px ;
 }
 
 .btn-projectCard{
     margin: 12px;
 }
+
