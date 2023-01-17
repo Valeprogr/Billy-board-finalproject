@@ -23,14 +23,16 @@ const AddMemberCard = ({ company,projectId }) => {
     }, []);
 
     const saveHandler = async() => {
+        
         try {
-            const res = await request(`${REACT_APP_URL_CYCLIC}project/members/add`, 'POST', {"projectId": projectId, "members": membersToAdd});
+            const res = await request(`${REACT_APP_URL_CYCLIC}project/members/add`, 'POST', {"projectID": projectId, "members": membersToAdd});
             console.log(res);
         } catch(error) {
             message(error);
         }
         clearError();
     }
+    console.log(membersToAdd)
     return (
         <div>
             <h3>Select members for the project</h3>

@@ -7,7 +7,7 @@ import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 
 const MembersList = ({ projects }) => {
 
-    const { request, message, loading } = useHttp();
+    const { request,  loading } = useHttp();
     const auth = useContext(AuthContext);
     const [addMemberVisible, setAddMemberVisible] = useState(false);
     const [members, setMembers] = useState([]);
@@ -17,9 +17,11 @@ const MembersList = ({ projects }) => {
     useEffect(() => {
         const getMembers = async () => {
             const response = await request(`${REACT_APP_URL_CYCLIC}project`, 'POST', { "project_id": projects._id });
+            console.log(response)
             const membersIds = response.members;
             console.log(membersIds)
             const members = await request(`${REACT_APP_URL_CYCLIC}project/members`, 'POST', { "members": membersIds });
+            console.log(members)
             setMembers(prev => [...members])
         }
         getMembers();

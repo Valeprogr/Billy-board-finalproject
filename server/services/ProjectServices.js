@@ -1,6 +1,7 @@
 import Project from "../models/Project.js";
 import TodoList from "../models/TodoList.js";
-import Todo from "../models/Todo.js"
+import Todo from "../models/Todo.js";
+import User from "../models/User.js"
 
 
 class ProjectServices {
@@ -51,11 +52,12 @@ class ProjectServices {
         const deleteProject = await Project.findByIdAndDelete(id);
         return deleteProject
     }
+
     async getManyUsers(ids) {
         let users = [];
         console.log(ids[0])
         for (let id of ids) {
-            let user = await User.findOne({ "_id": id });
+            let user = await User.findById( id );
             console.log(user)
             users.push(user);
         }
@@ -64,6 +66,7 @@ class ProjectServices {
 
     async addMembers(updateObj) {
         const updatedProject = await Project.findByIdAndUpdate(updateObj.projectID, { $push: { "members": updateObj.members } }, { new: true, useFindAndModify: false });
+        
         return updatedProject
     }
 
