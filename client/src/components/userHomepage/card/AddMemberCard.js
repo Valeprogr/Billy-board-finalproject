@@ -7,7 +7,7 @@ const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 
 
 const AddMemberCard = ({ company,projectId }) => {
-    const { request, loading,message,clearError } = useHttp();
+    const { request, message,clearError } = useHttp();
     const [members, setMembers] = useState();
     const [membersToAdd, setMembersToAdd] = useState([]);
     const auth = useContext(AuthContext);
@@ -16,14 +16,13 @@ const AddMemberCard = ({ company,projectId }) => {
     useEffect(() => {
         const res = async () => {
             const data = await request(`${REACT_APP_URL_CYCLIC}user`);
-            const members = data.filter(item => item.company_name == auth.company)
+            const members = data.filter(item => item.company_name === auth.company)
             setMembers(members);
         }
         res();
     }, []);
 
     const saveHandler = async() => {
-        
         try {
             const res = await request(`${REACT_APP_URL_CYCLIC}project/members/add`, 'POST', {"projectID": projectId, "members": membersToAdd});
             console.log(res);

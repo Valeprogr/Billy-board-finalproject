@@ -56,8 +56,8 @@ class ProjectServices {
     async getManyUsers(ids) {
         let users = [];
         console.log(ids[0])
-        for (let id of ids) {
-            let user = await User.findById( id );
+        for (let i= 0;i < ids.length; i++) {
+            let user = await User.findById( ids[i] );
             console.log(user)
             users.push(user);
         }
