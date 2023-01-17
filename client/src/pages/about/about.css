@@ -13,7 +13,7 @@
 
 .box-container{
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
    
 
 }
@@ -29,4 +29,8 @@
 
 .box-text{
     width: 500px;
+}
+
+@media only screen and (max-width: 1600px){
+
 }
