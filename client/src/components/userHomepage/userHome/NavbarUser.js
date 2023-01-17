@@ -6,6 +6,7 @@ import { useHttp } from '../../../hooks/http.hook';
 import { useMessage } from '../../../hooks/message.hook';
 
 
+
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 const NavbarUser = ({ children }) => {
     const {  request, error, clearError } = useHttp();
@@ -41,7 +42,7 @@ const NavbarUser = ({ children }) => {
         <>
             {data ?
                 <>
-                    <nav className="nav flex-column nav-user ">
+                    <nav className="nav nav-user ">
                         <div className='avatar-img-wow text-center'>
                             <img className='avatar-img' src='https://cdn.discordapp.com/attachments/1008786354865451019/1053355839953588335/profileimage.jpg' alt='profile pictures'></img>
                             <p className='navbar-data'>{data.name}</p>

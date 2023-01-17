@@ -17,7 +17,7 @@ body {
 
 nav {
     background-color: var(--text-color);
-    height: auto;
+    height: 100% !important;
 
 }
 
@@ -58,7 +58,7 @@ nav {
 .nav-user {
     display: flex;
     height: auto;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 24px;
     background-color: var(--text-color);
     border: 1px solid lightgray;
@@ -88,9 +88,11 @@ nav {
 
 .btn-navbar {
     border: 2px solid lightgray !important;
-    width: 100%;
+    height: 62px;
+    width: 560px;
 
 }
+
 
 .nav-bar-container {
     display: flex;
@@ -103,11 +105,12 @@ nav {
 
 .nav-bar-box1 {
     margin-bottom: 62px;
+    width: 200px;
 }
 
 .nav-bar-box2 {
     display: flex;
-    width: 100%;
+   
 }
 
 footer {
@@ -145,9 +148,10 @@ footer {
 
 }
 
-.box2-container {
+.nav-bar-box2 {
     display: flex;
-    /* padding: 10px; */
+    width: 100%;
+    margin-top: 162px;
 
 
 }
@@ -160,23 +164,30 @@ footer {
     margin: 0;
 }
 
-@media screen and (max-width: 600px) {
-
-    .admin-home-body {
-        display: flex;
-    }
-
-    .admin-home-container {
-        display: flex;
-        flex-direction: column;
-    }
-
+@media only screen and (max-width: 1600px) {
     .nav-user {
-        width: 162px;
-    }
+        display: flex;
+        height: auto;
+        justify-content: space-between;
+        padding: 24px;
+        background-color: var(--text-color);
+        border: 1px solid lightgray;
+        width: 222px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
 
-    .nav-user,
-    span {
-        margin-right: 2px;
+    }
+    .nav-bar-box1 {
+        margin-bottom: 16px;
+        width: 200px;
+    }
+    .nav-bar-box2 {
+        display: flex;
+        width: 100%;
+        margin-top: 162px;
+    
+    
     }
 }
