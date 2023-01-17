@@ -9,10 +9,8 @@ const About = () => {
                 <h1>About</h1>
                 <hr></hr>
                 <div className='box-text'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br/>
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Managing Employees in a small environment such as a shoes store could be very stressful especially if you do not have some kind of store management system. <br/>
+                With Billy you can manage daily tasks easily by creating small projects with daily tasks and assigning to each project available employees you can safely check then wheater the tasks were done or not.</p>
                 </div>
                 </div>
             </div>
