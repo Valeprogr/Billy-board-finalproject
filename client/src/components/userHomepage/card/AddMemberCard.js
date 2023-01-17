@@ -11,7 +11,6 @@ const AddMemberCard = ({ company,projectId }) => {
     const [members, setMembers] = useState();
     const [membersToAdd, setMembersToAdd] = useState([]);
     const auth = useContext(AuthContext);
-    // console.log(auth.company)
 
     useEffect(() => {
         const res = async () => {
