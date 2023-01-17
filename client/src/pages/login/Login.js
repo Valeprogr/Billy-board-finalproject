@@ -63,14 +63,14 @@ const Login = () => {
                 onChange={changeHandler}
                 ></input><br/>
                 <button type="submit" 
-                className='btn btn-secondary'
+                className='btn btn-secondary btn-login'
                 disabled={loading}
                 onClick={loginHandler}>
                     Login
                     {loading && <Btnspinner />}
                 </button>
             </form>
-            <p>Don't have an account?</p>
+            <a href='/signin'><p className='my-2'>Don't have an account?</p></a>
         </div>
           
         </div>

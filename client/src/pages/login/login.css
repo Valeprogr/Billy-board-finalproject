@@ -18,7 +18,7 @@
     background-image: url(../../images/login.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 800px;
+    height: 900px;
     width: 100%;
 }
 
@@ -30,3 +30,24 @@
     padding: 150px;
 }
 
+.btn-login{
+  margin-top: 22px;
+}
+@media only screen and (max-width: 1600px){
+  .login-body{
+    display: flex;
+    justify-content: center;
+     justify-items: center;
+     background-image: url(../../images/login.png);
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 800px;
+     width: 100%;
+ }
+ .login-box{
+  display: flex;
+  flex-direction: column;
+  margin-left: 436px;
+  padding: 150px;
+}
+}
