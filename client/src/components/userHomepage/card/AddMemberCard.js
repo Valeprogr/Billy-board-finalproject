@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useHttp } from '../../../hooks/http.hook';
 import { AuthContext } from '../../../context/AuthContext';
+import CardMember from './CardMember';
 
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
-const AddMemberCard = ({ company }) => {
-    const { request, loading } = useHttp();
+
+
+const AddMemberCard = ({ company,projectId }) => {
+    const { request, loading,message,clearError } = useHttp();
     const [members, setMembers] = useState();
     const [membersToAdd, setMembersToAdd] = useState([]);
     const auth = useContext(AuthContext);
@@ -19,18 +22,22 @@ const AddMemberCard = ({ company }) => {
         res();
     }, []);
 
-    const onClickHandler = (event) => {
-        event.preventDefault()
-        console.log(event.target.id)
-        setMembersToAdd(prev => [...prev, event.target.id]);
+    const saveHandler = async() => {
+        try {
+            const res = await request(`${REACT_APP_URL_CYCLIC}project/members/add`, 'POST', {"projectId": projectId, "members": membersToAdd});
+            console.log(res);
+        } catch(error) {
+            message(error);
+        }
+        clearError();
     }
-    console.log(membersToAdd)
     return (
         <div>
             <h3>Select members for the project</h3>
             {
-                members && members.map(ele => <button  className="btn btn-outline-dark" id={ele._id} onClick={onClickHandler} key={ele._id}>{ele.name} {ele.lastname}</button>)
+                members && members.map(member => <CardMember id={member._id} setMembersToAdd={setMembersToAdd} key={member._id} member={member}/>)
             }
+            <button onClick={saveHandler}>SAVE</button>
         </div>
     );
 }

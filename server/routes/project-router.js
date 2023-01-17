@@ -8,5 +8,7 @@ router.post("/createProject", ProjectControllers.create);
 router.post("/todos", ProjectControllers.getAllTodos);
 router.post("/createNewTask", ProjectControllers.createTodo);
 router.get("/projects", ProjectControllers.getAll);
-
+router.post("/project",ProjectControllers.getOne);
+router.post("/project/members",ProjectControllers.getManyUsers);
+router.post("/project/members/add",ProjectControllers.addMembers);
 export default router;

@@ -3,54 +3,69 @@ import TodoList from "../models/TodoList.js";
 import Todo from "../models/Todo.js"
 
 
-class ProjectServices{
-    
-async create(project){
-    const createProject= await Project.create(project);
-    const todolist = await TodoList.create({"projectID" : createProject._id});
-    const projectWithTodo = await Project.findByIdAndUpdate(createProject._id, {'todo_list': todolist._id}, { new: true, useFindAndModify: false })
-    return projectWithTodo
-}
+class ProjectServices {
 
-async createTodo(todo) {
-    const newTodo = await Todo.create(todo);
-    const updatedTodoList = await TodoList.findByIdAndUpdate(todo.todoList_id, {$push: {todos: newTodo._id}}, {new: true, useFindAndModify: false});
-    return updatedTodoList;
-}
-
-async getAllTodos(todoListID) {
-    const todos = await Todo.find(todoListID);
-    return todos;
-}
-
-async getAll(){
-    const projects= await Project.find();
-    return projects
-}
-
-async getOne(id){
-    if(!id){
-        throw new Error("id Missing")
+    async create(project) {
+        const createProject = await Project.create(project);
+        const todolist = await TodoList.create({ "projectID": createProject._id });
+        const projectWithTodo = await Project.findByIdAndUpdate(createProject._id, { 'todo_list': todolist._id }, { new: true, useFindAndModify: false })
+        return projectWithTodo
     }
-    const project= await Project.findById(id);
-    return project
-}
 
-async upDate(project){
-if(!project._id){
-    throw new Error("id Mising")
-}
-const updateProject= await Project.findByIdAndUpdate(project._id,project,{new: true});
-return updateProject
-}
-
-async delete(id){
-    if(!id){
-        res.status(500).json({message: "id Missing!"})
+    async createTodo(todo) {
+        const newTodo = await Todo.create(todo);
+        const updatedTodoList = await TodoList.findByIdAndUpdate(todo.todoList_id, { $push: { todos: newTodo._id } }, { new: true, useFindAndModify: false });
+        return updatedTodoList;
     }
-    const deleteProject= await Project.findByIdAndDelete(id);
-    return deleteProject
-}
+
+    async getAllTodos(todoListID) {
+        const todos = await Todo.find(todoListID);
+        return todos;
+    }
+
+    async getAll() {
+        const projects = await Project.find();
+        return projects
+    }
+
+    async getOne(id) {
+        if (!id) {
+            throw new Error("id Missing")
+        }
+        const project = await Project.findById(id);
+        return project
+    }
+
+    async upDate(project) {
+        if (!project._id) {
+            throw new Error("id Mising")
+        }
+        const updateProject = await Project.findByIdAndUpdate(project._id, project, { new: true });
+        return updateProject
+    }
+
+    async delete(id) {
+        if (!id) {
+            res.status(500).json({ message: "id Missing!" })
+        }
+        const deleteProject = await Project.findByIdAndDelete(id);
+        return deleteProject
+    }
+    async getManyUsers(ids) {
+        let users = [];
+        console.log(ids[0])
+        for (let id of ids) {
+            let user = await User.findOne({ "_id": id });
+            console.log(user)
+            users.push(user);
+        }
+        return users;
+    }
+
+    async addMembers(updateObj) {
+        const updatedProject = await Project.findByIdAndUpdate(updateObj.projectID, { $push: { "members": updateObj.members } }, { new: true, useFindAndModify: false });
+        return updatedProject
+    }
 
 }
 export default new ProjectServices();

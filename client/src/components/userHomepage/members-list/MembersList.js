@@ -1,27 +1,45 @@
-import React,{useState,useEffect,useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../../context/AuthContext';
 import AddMemberCard from '../card/AddMemberCard';
+import { useHttp } from '../../../hooks/http.hook';
+import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 
 
+const MembersList = ({ projects }) => {
 
-const MembersList = ({projects}) => {
+    const { request, message, loading } = useHttp();
     const auth = useContext(AuthContext);
     const [addMemberVisible, setAddMemberVisible] = useState(false);
-    
+    const [members, setMembers] = useState([]);
+
+    const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
+
+    useEffect(() => {
+        const getMembers = async () => {
+            const response = await request(`${REACT_APP_URL_CYCLIC}project`, 'POST', { "project_id": projects._id });
+            const membersIds = response.members;
+            console.log(membersIds)
+            const members = await request(`${REACT_APP_URL_CYCLIC}project/members`, 'POST', { "members": membersIds });
+            setMembers(prev => [...members])
+        }
+        getMembers();
+    }, []);
     return (
         <div className="px-0 border-top">
             <div className="card border-0" style={{ width: "auto" }}>
                 <div className="card-body">
-                {addMemberVisible && <AddMemberCard company={auth.company}/>}
+                    {loading && <BtnSpinner />}
+                    {members.length !== 0 ? members.map(member => <div>{member.name} {member.lastname}</div>) : <p>list empty</p>}
+                    {addMemberVisible && <AddMemberCard projectId={projects._id} company={auth.company} />}
                     <button className="btn btn-dark"
-                     onClick={() => setAddMemberVisible(prev => !prev)}>add Member</button>
-                    
+                        onClick={() => setAddMemberVisible(prev => !prev)}>add Member</button>
+
                 </div>
             </div>
 
         </div>
 
-       
+
     );
 }
 
