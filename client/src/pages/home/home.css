@@ -52,9 +52,12 @@ justify-content: center;
 .btn-container{
     display: flex;
 }
+.logo{
+    height: auto;
+    width: auto;
+}
 
-
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .home{
         height: 600px;
         width: auto;

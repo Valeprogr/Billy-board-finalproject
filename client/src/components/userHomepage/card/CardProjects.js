@@ -7,7 +7,6 @@ import MembersList from "../members-list/MembersList"
 const CardProjects = ({ projects }) => {
   const [taskVisible, setTaskVisible] = useState(false);
   const [membersVisible, setMembersVisible]=useState(false);
-  //console.log(projects)
   return (
     <>
       <div className='body-holiday-card'>

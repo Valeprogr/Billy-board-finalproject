@@ -6,8 +6,7 @@ import "./profileUser.css"
 const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const ProfileUser = () => {
      const auth = useContext(AuthContext);
-    //console.log(auth.userId)
-    const {loading, request, error, clearError} = useHttp();
+    const { request, error, clearError} = useHttp();
 
     const message= useMessage();
     useEffect(() => {
@@ -39,7 +38,7 @@ const ProfileUser = () => {
 
                             <div className='buttons'>
                                 <a href='/user/settings'><button type="button" class="btn btn-light">
-                                    <span class="material-symbols-outlined">
+                                    <span className="material-symbols-outlined">
                                         edit
                                     </span>
                                 </button></a>
@@ -61,13 +60,13 @@ const ProfileUser = () => {
                                 </div>
                                 <div className='icons-data-container'>
                                     <div className='icons-data'>
-                                        <span class="material-symbols-outlined icons">
+                                        <span className="material-symbols-outlined icons">
                                             mail
                                         </span>
                                         <p>{data.email}</p>
                                     </div>
                                     <div className='icons-data'>
-                                        <span class="material-symbols-outlined icons">
+                                        <span className="material-symbols-outlined icons">
                                             location_on
                                         </span>
                                         <p>{data.company_name}</p>

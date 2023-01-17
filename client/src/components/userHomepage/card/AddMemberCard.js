@@ -30,7 +30,6 @@ const AddMemberCard = ({ company,projectId }) => {
         }
         clearError();
     }
-    console.log(membersToAdd)
     return (
         <div>
             <h3>Select members for the project</h3>

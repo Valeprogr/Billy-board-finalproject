@@ -17,7 +17,7 @@ const Contacts = () => {
                     <input type="text"></input>
                     <h5>Message</h5>
                    <textarea rows="4" cols="50" className='text-message'></textarea>
-                        <button class=" btn-contact btn btn-secondary ">Send</button>
+                        <button className=" btn-contact btn btn-secondary ">Send</button>
                 </div>
             </div>
 
