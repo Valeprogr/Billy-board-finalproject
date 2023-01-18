@@ -16,13 +16,17 @@ const Navbar = ({children}) => {
           <span className="navbar-toggler-icon">
           </span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <div className="navbar-nav">
-            <NavLink className="nav-item nav-link active" to="/">Home</NavLink>
-            <NavLink className="nav-item nav-link" to="/about">About</NavLink>
-            <NavLink className="nav-item nav-link" to="/contacts">Contacts</NavLink>
-            <NavLink className="nav-item nav-link" to="/login">Login</NavLink>
-          </div>
+        <div className="collapse navbar-collapse navbar-body " id="navbarSupportedContent">
+            
+              <div className="navbar-nav">
+                <NavLink className="nav-item nav-link active" to="/">Home</NavLink>
+                <NavLink className="nav-item nav-link" to="/about">About</NavLink>
+                <NavLink className="nav-item nav-link" to="/contacts">Contacts</NavLink>
+              </div>
+              <div>
+              <NavLink className="nav-item nav-link btn btn-secondary btn-login" to="/login">Login</NavLink>
+              </div>
+           
         </div>
 
       </nav>

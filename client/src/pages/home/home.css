@@ -12,6 +12,8 @@
   }
   .navbar {
     background-color: white;
+    padding: 0px 12px 12px 12px!important;
+    color: white;
   }
 .home{
     display: flex;
@@ -53,8 +55,19 @@ justify-content: center;
     display: flex;
 }
 .logo{
-    height: auto;
+    height: 46px;
     width: auto;
+   
+}
+
+.navbar-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-login{
+    padding: 9px 18px!important;
+    margin-right: 4px;
 }
 
 @media only screen and (max-width: 600px) {
