@@ -31,7 +31,7 @@
 }
 .container-cards{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 .boh{
@@ -45,6 +45,6 @@
     margin: 12px;
 }
 
-.list-title-projectList{
-    /* border: 1px solid; */
+.container-card-big{
+margin: 26px;
 }

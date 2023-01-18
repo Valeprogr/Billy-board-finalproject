@@ -39,6 +39,7 @@ const EmployeeList = () => {
                     </div>
 
                     <hr></hr>
+                    <div className='container-card-big'>
                     <div className='container-cards'>
                        { data?
                        data.map((employee,index)=>  (<CardEmployee index={index} employee={employee}/>))
@@ -47,6 +48,7 @@ const EmployeeList = () => {
                        loading...
                        </div>
                        }
+                       </div>
                     </div>
                 </div>
             </div>
