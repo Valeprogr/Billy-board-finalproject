@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import "./settings.css";
 import { useMessage } from '../../hooks/message.hook';
 import { useHttp } from '../../hooks/http.hook';
 import BtnSpinner from '../../btnSpinner/BtnSpinner';
 import { Toaster } from 'react-hot-toast';
+import { AuthContext } from '../../context/AuthContext';
 
+const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 const Settings = () => {
     const { loading, request, error, clearError } = useHttp();
     const message = useMessage();
+    const auth=useContext(AuthContext);
+    
     const [form, setForm] = useState({
         _id: "",
         name: "",
@@ -33,8 +37,8 @@ const Settings = () => {
         event.preventDefault();
         try {
             console.log(form)
-            const userId = await request("http://localhost:4000/user-util/settings");
-            const data = await request('http://localhost:4000/user/settings', 'PUT', { ...form, _id: userId.id });
+            
+            const data = await request(`${REACT_APP_URL_CYCLIC}user/settings`, 'PUT', { ...form, _id: auth.userId });
             message(data)
         } catch (error) {
 
@@ -62,7 +66,7 @@ const Settings = () => {
                         <br></br>
                         <label htmlFor='password'>New Password:</label>
                         <br></br>
-                        <input type="text" name='password' onChange={changeHandler}></input>
+                        <input type="password" name='password' onChange={changeHandler}></input>
                         <br></br>
                         <label htmlFor='password'>Occupation:</label>
                         <br></br>
