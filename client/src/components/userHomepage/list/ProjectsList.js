@@ -6,13 +6,13 @@ import CardProjects from '../card/CardProjects';
 import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 
 
-const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
+const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 //console.log(REACT_APP_URL_CYCLIC)
 const ProjectsList = () => {
-    const { request,loading} = useHttp();
+    const { request, loading } = useHttp();
     const [data, setData] = useState(null);
     const auth = useContext(AuthContext);
-    const [refresh,setRefresh]=useState(false);
+    const [refresh, setRefresh] = useState(false);
     useEffect(() => {
         const getData = async () => {
             const userData = await request(`${REACT_APP_URL_CYCLIC}projects`);
@@ -26,17 +26,18 @@ const ProjectsList = () => {
 
             <div className='list-title-projectList'>
                 <h2>Projects List</h2>
-                <a href="/createProject">
+                <div>   <a href="/createProject">
                     <button className='btn  btn-dark btn-projectCard'>Create new Project</button>
                 </a>
-                <button className='btn  btn-outline-secondary btn-projectCard'onClick={()=>{setRefresh(prev=>!prev)}}>{loading && <BtnSpinner/>}Refresh</button>
-            </div>
+                    <button className='btn  btn-outline-secondary btn-projectCard' onClick={() => { setRefresh(prev => !prev) }}>{loading && <BtnSpinner />}Refresh</button>
+                </div></div>
+
             <hr></hr>
             <div className='cotainer-box'>
 
                 {data ?
                     data.map((projects, index) => (
-                        <CardProjects index={index} projects={projects} setRefresh={setRefresh}/>))
+                        <CardProjects index={index} projects={projects} setRefresh={setRefresh} />))
                     :
                     null
                 }

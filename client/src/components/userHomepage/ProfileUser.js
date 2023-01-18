@@ -37,10 +37,9 @@ const ProfileUser = () => {
                         <div className='header-profile'>
 
                             <div className='buttons'>
-                                <a href='/user/settings'><button type="button" class="btn btn-light">
-                                    <span className="material-symbols-outlined">
-                                        edit
-                                    </span>
+                                <a href='/user/settings'>
+                                <button type="button" class="btn btn-light">
+                                  Edit Profile
                                 </button></a>
                             </div>
                             <div className='container-img'>
