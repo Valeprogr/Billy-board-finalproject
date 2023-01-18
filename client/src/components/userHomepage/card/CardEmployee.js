@@ -1,13 +1,9 @@
 import React from 'react';
 import"./employeeCard.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 const CardEmployee = ({employee}) => {
-    const notify = () => toast("Send!", {
-        position: toast.POSITION.TOP_CENTER
-    });
+   
     return (
         <div>
             <div className="card-employee" >
@@ -17,7 +13,7 @@ const CardEmployee = ({employee}) => {
                     <p className="card-text">{employee.user_occupation}</p>
                     
                     <a href='/sendMessage'><button class="btn btn-dark" >Send Message
-                    <ToastContainer /></button></a>
+                    </button></a>
                 </div>
             </div>
         </div>
