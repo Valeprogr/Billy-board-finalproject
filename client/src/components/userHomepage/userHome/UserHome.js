@@ -15,11 +15,12 @@ const UserHome = () => {
     const { request } = useHttp();
     const [currentProj, setCurrentProj] = useState([]);
     const auth=useContext(AuthContext);
-    console.log()
+    console.log(auth)
 
     useEffect(() => {
         const getProj = async () => {
             const proj = await request(`${REACT_APP_URL_CYCLIC}project/current/${auth.company}`);
+            
             setCurrentProj(prev => [...proj]);
             console.log(currentProj)
         }
@@ -29,7 +30,7 @@ const UserHome = () => {
     return (
 
         <div className='admin-home-body'>
-            <HeaderUserHome />
+            <HeaderUserHome userId={auth.userId}/>
 
             <div className='admin-home-container box-card'>
                 {currentProj !== null ?

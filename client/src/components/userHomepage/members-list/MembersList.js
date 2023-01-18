@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../../context/AuthContext';
 import AddMemberCard from '../card/AddMemberCard';
 import { useHttp } from '../../../hooks/http.hook';
-// import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 import "./memberList.css";
 
 
