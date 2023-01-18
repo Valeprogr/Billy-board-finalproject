@@ -3,18 +3,31 @@ import "./cardProjects.css"
 import user from "../../../images/png/user.png";
 import Tasklist from '../task/Tasklist';
 import MembersList from "../members-list/MembersList"
+import { useHttp } from '../../../hooks/http.hook';
+import { useMessage } from '../../../hooks/message.hook';
 
-const CardProjects = ({ projects }) => {
+const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
+const CardProjects = ({ projects,setRefresh }) => {
   const [taskVisible, setTaskVisible] = useState(false);
   const [membersVisible, setMembersVisible]=useState(false);
+  const {request,loading}=useHttp();
+  const message= useMessage();
+
+  const deleteHandler = async () => {
+    const deletedProj = await request(`${REACT_APP_URL_CYCLIC}/project/${projects._id}`, "DELETE");
+    message({message: "deleted.."});
+    setRefresh(prev=>!prev)
+}
   return (
     <>
       <div className='body-holiday-card'>
         <div className='title-container'>
           <h3>{projects.name}</h3>
-          <span class="material-symbols-outlined">
+          <div onClick={deleteHandler}> 
+          <span className="material-symbols-outlined">
             delete
-          </span>
+          </span></div>
+         
         </div>
 
         <hr></hr>
@@ -33,8 +46,8 @@ const CardProjects = ({ projects }) => {
 
         </div>
         <div>
-          <button class="btn btn-secondary btn-projectCard close" onClick={() => { setTaskVisible(taskVisible => !taskVisible) }}>Tasks</button>
-          <button class="btn btn-dark btn-projectCard close" onClick={()=>{setMembersVisible(membersVisible=> !membersVisible)}}>Show Members</button>
+          <button className="btn btn-secondary btn-projectCard close" onClick={() => { setTaskVisible(taskVisible => !taskVisible) }}>Tasks</button>
+          <button className="btn btn-dark btn-projectCard close" onClick={()=>{setMembersVisible(membersVisible=> !membersVisible)}}>Show Members</button>
         </div>
         <div>
         {

@@ -11,14 +11,14 @@ const ProjectsList = () => {
     const { request} = useHttp();
     const [data, setData] = useState(null);
     const auth = useContext(AuthContext);
-
+    const [refresh,setRefresh]=useState(false);
     useEffect(() => {
         const getData = async () => {
             const userData = await request(`${REACT_APP_URL_CYCLIC}projects`);
-            setData(userData.filter(item => item.company_name === auth.company))
+            setData(userData.filter(item => item.company_name === auth.company));
         }
         getData()
-    }, [])
+    }, [refresh])
 
     return (
         <div className='container-body-list'>
@@ -26,15 +26,16 @@ const ProjectsList = () => {
             <div className='list-title-projectList'>
                 <h2>Projects List</h2>
                 <a href="/createProject">
-                    <button className='btn btn-secondary btn-projectCard'>Create new Project</button>
+                    <button className='btn  btn-dark btn-projectCard'>Create new Project</button>
                 </a>
+                <button className='btn  btn-outline-secondary btn-projectCard'onClick={()=>{setRefresh(prev=>!prev)}}>Refresh</button>
             </div>
             <hr></hr>
             <div className='cotainer-box'>
 
                 {data ?
                     data.map((projects, index) => (
-                        <CardProjects index={index} projects={projects} />))
+                        <CardProjects index={index} projects={projects} setRefresh={setRefresh}/>))
                     :
                     null
                 }
