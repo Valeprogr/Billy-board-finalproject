@@ -3,7 +3,8 @@ import { useHttp } from '../../../hooks/http.hook';
 import { useMessage } from '../../../hooks/message.hook';
 import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 import { Toaster } from 'react-hot-toast';
-import "./createNewTask.css"
+import "./createNewTask.css";
+
 
 
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
@@ -47,6 +48,7 @@ const CreateNewTask = ({ project, show }) => {
                         <div className='modal-content'>
                             <div className='title-btn-container'>
                             <h1>Create your Task!</h1>
+                           
                                 <span onClick={() => setClose(false)} class="material-symbols-outlined">
                                     close
                                 </span>

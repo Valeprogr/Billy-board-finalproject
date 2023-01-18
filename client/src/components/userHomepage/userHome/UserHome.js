@@ -6,6 +6,7 @@ import HeaderUserHome from '../header-userHome/HeaderUserHome';
 import { useHttp } from '../../../hooks/http.hook';
 import CardProjects from '../card/CardProjects';
 import ProjectsList from '../list/ProjectsList';
+import Spinner from '../Spinner/Spinner';
 
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 const UserHome = () => {
@@ -26,14 +27,14 @@ const UserHome = () => {
         <div className='admin-home-body'>
             <HeaderUserHome />
 
-            <div className='admin-home-container'>
+            <div className='admin-home-container box-card'>
                 {currentProj !== null ?
-                    <div className="position-relative">
+                    <div className="position-relative ">
                         <h3 className="card-title text-secondary">Your Current Project</h3>
                         <CardProjects projects={currentProj} />
                     </div>
                     :
-                    <ProjectsList/>}
+                    <Spinner/>}
                 <Calender />
             </div>
 
