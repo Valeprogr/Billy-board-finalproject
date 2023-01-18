@@ -25,8 +25,8 @@
             flex-direction: column;
             border: 1px solid white;
             border-radius: 20px;
-            height: 620px;
-            width: 70%;
+            height: 640px;
+            width: 80%;
             margin: 160px 444px;
             padding: 100px;
             background-color: var(--text-color);
@@ -45,7 +45,6 @@
    .btn-contact{
     height: 50px;
     width: 100px;
-    
     margin: 10px 0 0 0 !important;
    }
 
@@ -59,7 +58,7 @@
         }
         .box-container-contacts{
            margin-left: 160px;
-           margin-top: 100px;
+           margin-top: 70px;
             /* background-color: aqua; */
         }
    }
