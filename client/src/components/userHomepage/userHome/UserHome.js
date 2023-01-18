@@ -13,14 +13,15 @@ import { AuthContext } from '../../../context/AuthContext';
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 const UserHome = () => {
     const { request } = useHttp();
-    const [currentProj, setCurrentProj] = useState(null);
+    const [currentProj, setCurrentProj] = useState([]);
     const auth=useContext(AuthContext);
+    console.log()
 
     useEffect(() => {
         const getProj = async () => {
             const proj = await request(`${REACT_APP_URL_CYCLIC}project/current/${auth.company}`);
-            setCurrentProj(prev => proj);
-            console.log(proj)
+            setCurrentProj(prev => [...proj]);
+            console.log(currentProj)
         }
         getProj();
     }, [])
@@ -34,10 +35,11 @@ const UserHome = () => {
                 {currentProj !== null ?
                     <div className="position-relative ">
                         <h3 className="card-title text-secondary">Your Current Project</h3>
-                        <CardProjects projects={currentProj} />
+                        
+                        {currentProj.map(p=><CardProjects projects={p} />)}
                     </div>
                     :
-                    <Spinner/>}
+                    null}
                 <Calender />
             </div>
 
