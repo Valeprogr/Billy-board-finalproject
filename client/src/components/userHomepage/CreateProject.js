@@ -33,7 +33,7 @@ const CreateProject = () => {
         event.preventDefault();
         try {
             const data = await request(`${REACT_APP_URL_CYCLIC}createProject`, 'POST', { ...form });
-            message(data)
+            message({message:"Project created!"})
         } catch (error) {
 
         }
@@ -51,19 +51,19 @@ const CreateProject = () => {
                 <form className='form-container-createPro'>
                     <label htmlFor='name'>Project Name:</label>
                     <br />
-                    <input type="text" name='name' onChange={changeHandler}></input>
+                    <input type="text" name='name' onChange={changeHandler} ></input>
                     <br />
                     <label htmlFor='location'>Location:</label>
                     <br />
-                    <input type="text" name='location' onChange={changeHandler}></input>
+                    <input type="text" name='location' onChange={changeHandler} ></input>
                     <br />
                     <label htmlFor='start_date'>Start Date:</label>
                     <br />
-                    <input type="text" name='start_date' onChange={changeHandler}></input>
+                    <input type="text" name='start_date' onChange={changeHandler} placeholder="es. dd.mm.yyyy"></input>
                     <br />
                     <label htmlFor='end_date'>End Date:</label>
                     <br />
-                    <input type="text" name='end_date' onChange={changeHandler}></input>
+                    <input type="text" name='end_date' onChange={changeHandler} placeholder="es. dd.mm.yyyy"></input>
                     <br />
                     <label htmlFor='description'>Description:</label>
                     < br />
