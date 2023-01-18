@@ -33,7 +33,7 @@ const UserHome = () => {
 
             <div className='admin-home-container box-card'>
                 {currentProj !== null ?
-                    <div className="position-relative ">
+                    <div className="position-relative container">
                         <h3 className="card-title text-secondary">Your Current Project</h3>
                         
                         {currentProj.map(p=><CardProjects projects={p} />)}

@@ -41,7 +41,7 @@ nav {
 
 .admin-home-container {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     margin-top: 22px !important;
 
 }
