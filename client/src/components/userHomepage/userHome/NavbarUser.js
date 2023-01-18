@@ -4,6 +4,7 @@ import "./homeUser.css";
 import { AuthContext } from "../../../context/AuthContext";
 import { useHttp } from '../../../hooks/http.hook';
 import { useMessage } from '../../../hooks/message.hook';
+import "../../../images/logo.png"
 
 
 
@@ -45,7 +46,6 @@ const NavbarUser = ({ children }) => {
                     <nav className="nav nav-user ">
                         <div className='avatar-img-wow text-center'>
                             <img className='avatar-img' src='https://cdn.discordapp.com/attachments/1008786354865451019/1053355839953588335/profileimage.jpg' alt='profile pictures'></img>
-                            <p className='navbar-data'>{data.name}</p>
                             <p className='navbar-data'><i>{data.email}</i></p>
 
                         </div>

@@ -11,6 +11,6 @@ router.get("/projects", ProjectControllers.getAll);
 router.post("/project",ProjectControllers.getOne);
 router.post("/project/members",ProjectControllers.getManyUsers);
 router.post("/project/members/add",ProjectControllers.addMembers);
-router.get("/project/current", ProjectControllers.getCurrentProject);
+router.get("/project/current/:id", ProjectControllers.getCurrentProject);
 router.delete("/project/:id", ProjectControllers.delete);
 export default router;

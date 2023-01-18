@@ -95,7 +95,7 @@ class projectControllers {
     }
     async getCurrentProject(req, res) {
         try {
-            const project = await ProjectServices.getCurrentProject();
+            const project = await ProjectServices.getCurrentProject(req.params.id);
             res.status(200).json(project);
         } catch (error) {
             res.status(500).json(error)

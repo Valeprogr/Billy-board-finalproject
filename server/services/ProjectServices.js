@@ -68,9 +68,9 @@ class ProjectServices {
         return updatedProject
     }
 
-    async getCurrentProject() {
+    async getCurrentProject(id) {
         const today = format(Date.now(), 'dd.MM.yyyy').toString();
-        const project = await Project.findOne({"start_date": today});
+        const project = await Project.findOne({"start_date": today,"company_name":id});
         return project
 
     }
