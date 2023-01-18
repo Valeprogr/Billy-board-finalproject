@@ -30,8 +30,9 @@
 
 }
 .container-cards{
-    display: flex;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr;
+    /* justify-content: flex-start; */
     flex-wrap: wrap;
 }
 .boh{

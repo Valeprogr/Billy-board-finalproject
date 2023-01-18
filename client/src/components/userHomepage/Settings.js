@@ -73,7 +73,7 @@ const Settings = () => {
                         <input type="text" name='user_occupation' onChange={changeHandler}></input>
                     </div>
                     <div className='btn-container'>
-                        <button type="submit" class="btn btn-secondary" onClick={upDateUser}>
+                        <button type="submit" className="btn btn-secondary" onClick={upDateUser}>
                             {loading && <BtnSpinner />}
                             Save Profile</button>
                     </div>

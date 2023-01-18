@@ -15,7 +15,7 @@ const CardMember = ({ member, setMembersToAdd }) => {
     }
     return (
         <div className='container-name-btn'>
-             <button class="btn btn-outline-secondary" onClick={() => addToList()}>
+             <button className={!clicked ? `btn btn-outline-secondary`: `btn btn-secondary`} onClick={() => addToList()}>
             {member.name} {member.lastname}
         </button>
         </div>
