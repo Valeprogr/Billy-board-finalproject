@@ -5,6 +5,7 @@ import Calender from '../calender/Calender';
 import HeaderUserHome from '../header-userHome/HeaderUserHome';
 import { useHttp } from '../../../hooks/http.hook';
 import CardProjects from '../card/CardProjects';
+import ProjectsList from '../list/ProjectsList';
 
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 const UserHome = () => {
@@ -32,7 +33,7 @@ const UserHome = () => {
                         <CardProjects projects={currentProj} />
                     </div>
                     :
-                    <></>}
+                    <ProjectsList/>}
                 <Calender />
             </div>
 

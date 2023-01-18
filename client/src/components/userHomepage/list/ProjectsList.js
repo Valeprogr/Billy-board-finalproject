@@ -3,12 +3,13 @@ import { AuthContext } from '../../../context/AuthContext';
 import { useHttp } from '../../../hooks/http.hook';
 import "./list.css";
 import CardProjects from '../card/CardProjects';
+import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 
 
 const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 //console.log(REACT_APP_URL_CYCLIC)
 const ProjectsList = () => {
-    const { request} = useHttp();
+    const { request,loading} = useHttp();
     const [data, setData] = useState(null);
     const auth = useContext(AuthContext);
     const [refresh,setRefresh]=useState(false);
@@ -28,7 +29,7 @@ const ProjectsList = () => {
                 <a href="/createProject">
                     <button className='btn  btn-dark btn-projectCard'>Create new Project</button>
                 </a>
-                <button className='btn  btn-outline-secondary btn-projectCard'onClick={()=>{setRefresh(prev=>!prev)}}>Refresh</button>
+                <button className='btn  btn-outline-secondary btn-projectCard'onClick={()=>{setRefresh(prev=>!prev)}}>{loading && <BtnSpinner/>}Refresh</button>
             </div>
             <hr></hr>
             <div className='cotainer-box'>
