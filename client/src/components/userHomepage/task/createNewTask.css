@@ -7,7 +7,7 @@
     right: 0;
     display: flex;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 700px; /* Full height */
     background-color:white;
     padding:100px ;
     
@@ -21,7 +21,8 @@
   background-color:	#F8F8F8 !important;
   padding: 22px!important;
   border: 1px solid lightgray !important;
-  border-radius: 8px!important;  
+  border-radius: 8px!important; 
+  height: 550px; 
 }
 
 

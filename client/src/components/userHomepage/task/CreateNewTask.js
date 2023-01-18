@@ -43,7 +43,7 @@ const CreateNewTask = ({ project, show }) => {
         <>
             {close ?
                 <div className='modal-body'>
-                    <div class="modaldiv">
+                    <div class="modaldiv  card">
                         <div className='modal-content'>
                             <div className='title-btn-container'>
                             <h1>Create your Task!</h1>
