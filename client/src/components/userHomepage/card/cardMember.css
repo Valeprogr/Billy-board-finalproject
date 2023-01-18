@@ -1,0 +1,12 @@
+.container-name-btn{
+    margin-top: 22px;
+   
+}
+
+
+.add-member-card{
+    background-color:	#F7F7F7;
+     padding: 32px;
+     border: 1px solid lightgray;
+     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+}

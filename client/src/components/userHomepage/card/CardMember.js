@@ -1,4 +1,5 @@
 import React,{useState}from 'react';
+import "./cardMember.css"
 
 const CardMember = ({ member, setMembersToAdd }) => {
     const [clicked, setClicked] = useState(false)
@@ -13,8 +14,8 @@ const CardMember = ({ member, setMembersToAdd }) => {
         }
     }
     return (
-        <div>
-             <button onClick={() => addToList()}>
+        <div className='container-name-btn'>
+             <button class="btn btn-outline-secondary" onClick={() => addToList()}>
             {member.name} {member.lastname}
         </button>
         </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useHttp } from '../../../hooks/http.hook';
 import { AuthContext } from '../../../context/AuthContext';
 import CardMember from './CardMember';
+import "./cardMember.css"
 
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 
@@ -31,12 +32,12 @@ const AddMemberCard = ({ company,projectId }) => {
         clearError();
     }
     return (
-        <div>
-            <h3>Select members for the project</h3>
+        <div className='add-member-card'>
+            <h3>Select members for the project:</h3>
             {
                 members && members.map(member => <CardMember id={member._id} setMembersToAdd={setMembersToAdd} key={member._id} member={member}/>)
             }
-            <button onClick={saveHandler}>SAVE</button>
+            <button className='btn btn-secondary container-name-btn' onClick={saveHandler}>SAVE</button>
         </div>
     );
 }
