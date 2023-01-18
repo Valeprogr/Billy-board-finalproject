@@ -5,6 +5,7 @@ import Tasklist from '../task/Tasklist';
 import MembersList from "../members-list/MembersList"
 import { useHttp } from '../../../hooks/http.hook';
 import { useMessage } from '../../../hooks/message.hook';
+import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 
@@ -17,7 +18,7 @@ const CardProjects = ({ projects, setRefresh }) => {
   const deleteHandler = async (event) => {
     event.preventDefault();
     const deletedProj = await request(`${REACT_APP_URL_CYCLIC}project/${projects._id}`, "DELETE");
-    message({ message: "deleted.." });
+    message({ message: "Project deleted." });
     setRefresh(prev => !prev)
   }
   return (
@@ -26,7 +27,7 @@ const CardProjects = ({ projects, setRefresh }) => {
         <div className='title-container'>
           <h3>{projects.name}</h3>
           <button className='btn btn-danger' onClick={event=>deleteHandler(event)}>
-            Delete
+            {loading&&<BtnSpinner/>}Delete
           </button>
 
         </div>
