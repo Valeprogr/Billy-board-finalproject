@@ -16,8 +16,8 @@ const CardEmployee = ({employee}) => {
                     <h5 className="card-title">{employee.name} {employee.lastname}</h5>
                     <p className="card-text">{employee.user_occupation}</p>
                     
-                    <button class="btn btn-dark"  onClick={notify}>Send Message
-                    <ToastContainer /></button>
+                    <a href='/sendMessage'><button class="btn btn-dark" >Send Message
+                    <ToastContainer /></button></a>
                 </div>
             </div>
         </div>

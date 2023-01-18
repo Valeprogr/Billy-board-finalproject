@@ -12,6 +12,7 @@ import EmployeeList from "./components/userHomepage/list/EmployeeList";
 import ProjectsList from "./components/userHomepage/list/ProjectsList";
 import CreateProject from "./components/userHomepage/CreateProject";
 import CreateNewEmployee from "./components/userHomepage/CreateNewEmployee";
+import SendMessage from "./components/userHomepage/sendMessage/SendMessage";
 
 
 
@@ -27,6 +28,7 @@ export const useRoutes = (isAuthenticated) => {
                 <Route path="/projects" element={<ProjectsList/>} />
                 <Route path="/createProject" element={<CreateProject/>} />
                 <Route path="/createNewEmployee" element={<CreateNewEmployee />}/>
+                <Route path="/sendMessage" element={<SendMessage/>}/>
                 <Route path="*" element={<Navigate to="/user/dashboard" replace />} />
             </Routes>
         );
