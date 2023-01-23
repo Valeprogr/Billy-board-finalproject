@@ -42,6 +42,7 @@ class projectControllers {
 
     async delete(req, res) {
         try {
+            console.log('delete')
             const project = await ProjectServices.delete(req.params.id);
             return res.status(200).json(project)
         } catch (error) {

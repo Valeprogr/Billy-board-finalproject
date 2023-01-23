@@ -9,8 +9,9 @@ import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 import { Toaster } from 'react-hot-toast';
 
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
+const REACT_APP_LOCALHOST= process.env.REACT_APP_LOCALHOST;
 
-const CardProjects = ({ projects, setRefresh }) => {
+const CardProjects = ({ projects, setRefresh,index }) => {
   const [taskVisible, setTaskVisible] = useState(false);
   const [membersVisible, setMembersVisible] = useState(false);
   const { request, loading } = useHttp();
@@ -18,17 +19,19 @@ const CardProjects = ({ projects, setRefresh }) => {
 
   const deleteHandler = async (event) => {
     event.preventDefault();
-    const deletedProj = await request(`${REACT_APP_URL_CYCLIC}project/${projects._id}`, "DELETE");
+    const deletedProj = await request(`${REACT_APP_LOCALHOST}project/${projects._id}`, 'DELETE');
+    console.log(deletedProj)
     message({ message: "Project deleted." });
     setRefresh(prev => !prev)
   }
+
   return (
     <>
       <Toaster />
-      <div className='body-holiday-card'>
+      <div className='body-holiday-card' index={index}>
         <div className='title-container'>
           <h3>{projects.name}</h3>
-          <button className='btn btn-danger' onClick={event => deleteHandler(event)}>
+          <button className='btn btn-danger' onClick={(event) => deleteHandler(event)}>
             {loading && <BtnSpinner />}Delete
           </button>
 
