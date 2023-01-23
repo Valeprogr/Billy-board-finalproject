@@ -36,8 +36,8 @@ const ProjectsList = () => {
             <div className='cotainer-box'>
 
                 {data ?
-                    data.map((projects, index) => (
-                        <CardProjects index={index} projects={projects} setRefresh={setRefresh} />))
+                    data.map((data, index) => (
+                        <CardProjects index={index} projects={data} setRefresh={setRefresh} />))
                     :
                     null
                 }

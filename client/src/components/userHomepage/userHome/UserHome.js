@@ -5,8 +5,6 @@ import Calender from '../calender/Calender';
 import HeaderUserHome from '../header-userHome/HeaderUserHome';
 import { useHttp } from '../../../hooks/http.hook';
 import CardProjects from '../card/CardProjects';
-import ProjectsList from '../list/ProjectsList';
-import Spinner from '../Spinner/Spinner';
 import { AuthContext } from '../../../context/AuthContext';
 
 
@@ -16,11 +14,9 @@ const UserHome = () => {
     const [currentProj, setCurrentProj] = useState([]);
     const auth=useContext(AuthContext);
     console.log(auth)
-
-    useEffect(() => {
+        useEffect(() => {
         const getProj = async () => {
             const proj = await request(`${REACT_APP_URL_CYCLIC}project/current/${auth.company}`);
-            
             setCurrentProj(prev => [...proj]);
             console.log(currentProj)
         }
@@ -36,8 +32,7 @@ const UserHome = () => {
                 {currentProj !== null ?
                     <div className="position-relative container">
                         <h3 className="card-title text-secondary">Your Current Project</h3>
-                        
-                        {currentProj.map(p=><CardProjects projects={p} />)}
+                        {currentProj.map(p =><CardProjects projects={p} />)}
                     </div>
                     :
                     null}
