@@ -9,7 +9,7 @@ import BtnSpinner from '../../../btnSpinner/BtnSpinner';
 import { Toaster } from 'react-hot-toast';
 
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
-const REACT_APP_LOCALHOST= process.env.REACT_APP_LOCALHOST;
+//const REACT_APP_LOCALHOST= process.env.REACT_APP_LOCALHOST;
 
 const CardProjects = ({ projects, setRefresh,index }) => {
   const [taskVisible, setTaskVisible] = useState(false);

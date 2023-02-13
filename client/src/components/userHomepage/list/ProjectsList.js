@@ -13,13 +13,14 @@ const ProjectsList = () => {
     const [data, setData] = useState(null);
     const auth = useContext(AuthContext);
     const [refresh, setRefresh] = useState(false);
+
     useEffect(() => {
         const getData = async () => {
             const userData = await request(`${REACT_APP_URL_CYCLIC}projects`);
             setData(userData.filter(item => item.company_name === auth.company));
         }
-        getData()
-    }, [refresh])
+        getData();
+    },[refresh]);
 
     return (
         <div className='container-body-list'>

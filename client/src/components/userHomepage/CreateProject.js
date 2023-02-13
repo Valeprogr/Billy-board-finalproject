@@ -33,6 +33,7 @@ const CreateProject = () => {
         event.preventDefault();
         try {
             const data = await request(`${REACT_APP_URL_CYCLIC}createProject`, 'POST', { ...form });
+            console.log(data)
             message({message:"Project created!"})
         } catch (error) {
 

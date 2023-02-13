@@ -9,7 +9,7 @@ import { AuthContext } from '../../../context/AuthContext';
 
 
 const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
-const REACT_APP_LOCALHOST =process.env.REACT_APP_LOCALHOST;
+//const REACT_APP_LOCALHOST =process.env.REACT_APP_LOCALHOST;
 const UserHome = () => {
     const { request } = useHttp();
     const [currentProj, setCurrentProj] = useState([]);
@@ -18,7 +18,7 @@ const UserHome = () => {
 
         useEffect(() => {
         const getProj = async () => {
-            const proj = await request(`${REACT_APP_LOCALHOST}project/current/${auth.company}`);
+            const proj = await request(`${REACT_APP_URL_CYCLIC}project/current/${auth.company}`);
             console.log(proj)
             setCurrentProj(prev => [...proj]);
         }
@@ -34,7 +34,7 @@ const UserHome = () => {
                 {currentProj !== null ?
                     <div className="position-relative container">
                         <h3 className="card-title text-secondary">Your Current Project</h3>
-                        {currentProj.map(p => <CardProjects projects={p} />)}
+                        {currentProj.map(p => <CardProjects index={p} projects={p} />)}
                     </div>
                     :
                     null}
