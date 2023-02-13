@@ -70,7 +70,7 @@ const CreateProject = () => {
                     <textarea name='description' onChange={changeHandler} cols="40"
                         rows="5" />
                     <div className='btn-container-create-project'>
-                        <button type="submit" class="btn btn-secondary" onClick={createProject}>Save Profile
+                        <button type="submit" class="btn btn-secondary" onClick={createProject}>Create Project
                             {loading && <BtnSpinner />}</button>
                     </div>
 

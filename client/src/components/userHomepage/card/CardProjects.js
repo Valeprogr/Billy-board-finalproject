@@ -19,7 +19,7 @@ const CardProjects = ({ projects, setRefresh,index }) => {
 
   const deleteHandler = async (event) => {
     event.preventDefault();
-    const deletedProj = await request(`${REACT_APP_LOCALHOST}project/${projects._id}`, 'DELETE');
+    const deletedProj = await request(`${REACT_APP_URL_CYCLIC}project/${projects._id}`, 'DELETE');
     console.log(deletedProj)
     message({ message: "Project deleted." });
     setRefresh(prev => !prev)
