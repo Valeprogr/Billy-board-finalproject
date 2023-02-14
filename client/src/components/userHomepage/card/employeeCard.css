@@ -8,7 +8,7 @@
 }
 .card-employee {
     justify-content: flex-start;
-    width: auto;
+    width: 260px;
     height: auto;
     padding: 10px;
     background-color:white;
