@@ -41,6 +41,7 @@ nav {
 
 .admin-home-container {
     display: flex;
+    flex-direction: column !important;
     /* justify-content: space-around; */
     margin-top: 22px !important;
 
@@ -145,6 +146,11 @@ footer {
     margin-top: 162px;
 
 
+}
+
+.box-card{
+    display: flex;
+    flex-direction: column;
 }
 
 
