@@ -28,7 +28,7 @@ const UserHome = () => {
         if(currentProj !== []){
             setShowComponent(true)
         }
-    },[])
+    },[currentProj])
         
     return (
 
