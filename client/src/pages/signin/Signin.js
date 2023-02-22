@@ -50,19 +50,19 @@ const Signin = () => {
                 <h1>Sign Up</h1>
                     <hr className="horizontalLine"></hr>
                     <form>
-                        <label for="name">Name:</label><br />
+                        <label htmlFor="name">Name:</label><br />
                         <input type="text" name='name' onChange={changeHandler} value={form.name}></input><br />
 
-                        <label for="lastname">Last Name:</label><br />
+                        <label htmlFor="lastname">Last Name:</label><br />
                         <input type="text" name="lastname" onChange={changeHandler} value={form.lastname}></input><br />
 
-                        <label for="email">Email:</label><br />
+                        <label htmlFor="email">Email:</label><br />
                         <input type="text" name='email' onChange={changeHandler} value={form.email}></input><br />
 
-                        <label for="password">Password:</label><br />
+                        <label htmlFor="password">Password:</label><br />
                         <input type="password" name='password' onChange={changeHandler} value={form.password}></input><br />
 
-                        <label for="company_name">Company Name:</label><br />
+                        <label htmlFor="company_name">Company Name:</label><br />
                         <input type="text" id="company-name" name='company_name' onChange={changeHandler} value={form.company_name}/><br />
                        
                         <a href='/login'><h6 className='h6-text'>Do you have already an account ? Click here!</h6></a>

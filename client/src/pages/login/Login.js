@@ -50,13 +50,13 @@ const Login = () => {
         <h1>Login</h1>
             <hr></hr>
             <form>
-                <label for="user-email">Email</label><br/>
+                <label htmlFor="user-email">Email</label><br/>
                 <input type="text"
                 placeholder='enter email'
                 name='email'
                 value={form.email}
                 onChange={changeHandler}></input><br/>
-                <label for="user-password">Password</label><br/>
+                <label htmlFor="user-password">Password</label><br/>
                 <input type="password"
                 placeholder='password'
                 name="password"

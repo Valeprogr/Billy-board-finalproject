@@ -20,7 +20,6 @@ const UserHome = () => {
         const getProj = async () => {
             const proj = await request(`${REACT_APP_URL_CYCLIC}project/current/${auth.company}`);
             setCurrentProj(prev => [...proj]); 
-            console.log(currentProj)
         }
         getProj();
     }, [])
@@ -44,7 +43,7 @@ const UserHome = () => {
                     <>
                      {currentProj !== null ?
                     <div className="container">
-                        {currentProj.map(p => <CardProjects index={p} projects={p} />)}
+                        {currentProj.map((p,index)=> <CardProjects index={index} projects={p} />)}
                     </div>
                     :
                    null}    

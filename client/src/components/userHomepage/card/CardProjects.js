@@ -44,7 +44,7 @@ const CardProjects = ({ projects, setRefresh,index }) => {
           </div>
           <div className='container-info-location'>
             <p>{projects.description}</p>
-            <div className='box-info-location'><span class="material-symbols-outlined">
+            <div className='box-info-location'><span className="material-symbols-outlined">
               location_on
             </span>
               <p>{projects.location}</p>
