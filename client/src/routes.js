@@ -21,7 +21,7 @@ export const useRoutes = (isAuthenticated) => {
         
         return (
             <Routes>
-                <Route path="/user/dashboard" element={<UserHome/>} />
+                <Route path="/user/dashboard" index element={<UserHome/>} />
                 <Route path="/user/settings" element={<Settings/>} />
                 <Route path="user/profile" element={<ProfileUser/>}/>
                 <Route path="/employees" element={<EmployeeList/>} />
