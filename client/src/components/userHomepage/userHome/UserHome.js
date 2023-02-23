@@ -12,7 +12,7 @@ const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 const UserHome = () => {
     const { request } = useHttp();
     const [currentProj, setCurrentProj] = useState([]);
-    const [showComponent, setShowComponent] = useState(false);
+    const [showComponent, setShowComponent] = useState(null);
     const auth = useContext(AuthContext);
    
 
@@ -20,14 +20,18 @@ const UserHome = () => {
         const getProj = async () => {
             const proj = await request(`${REACT_APP_URL_CYCLIC}project/current/${auth.company}`);
             setCurrentProj(prev => [...proj]); 
+      
         }
         getProj();
+       
     }, [])
 
     useEffect(()=>{
-        if(currentProj !== []){
-            setShowComponent(true)
-        }
+        if( currentProj.length === 0){
+            setShowComponent(false)
+     }else{
+        setShowComponent(true)
+     }
     },[currentProj])
         
     return (
