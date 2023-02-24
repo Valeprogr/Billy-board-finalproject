@@ -30,7 +30,7 @@ const Signin = () => {
     const changeHandler = event =>{
         setForm({...form, [event.target.name]: event.target.value});
     }
-
+    
     const registerHandler = async (event)=>{
         event.preventDefault();
         try{
