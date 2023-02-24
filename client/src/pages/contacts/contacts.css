@@ -5,19 +5,51 @@
     --text-color2: black ;
     --font-family: 'Montserrat', sans-serif;
   }
+
+
+  @media only screen and (max-width: 500px){
+    .body{
+        font-size: 18px;
+        display: flex;
+        background-image: none !important;
+        width: auto !important;
+        margin: 0px !important;
+        height: 800px !important;
+        line-height: 2em;
+    }
+    .box-container-contacts{
+        width: 100% !important;
+        margin: 0px 0px !important;
+        border-radius: 0% !important;
+        padding: 60px !important;
+        height: 100% !important;
+        
+    }
+   .container2{
+    margin-left: 0px !important;
+    width: 100% !important;
+   }
+   .text-message{
+    margin-top: 10px !important;
+    height: 40% !important;
+   
+}
+   }
+.body h5{
+    padding-top: 12px;
+}
 .body{
     background-image: url("../../images/contacs.png" );
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    height: 910px;
+    height: 100%;
+    width: 100%;
 }
-.container1{
-    width: 600px;
-    }
+
 
     .container2{
-        width: 900px;
+        margin-left: 560px;
         }
 
         .box-container-contacts{
@@ -38,15 +70,17 @@
         }
 
         .text-message{
-           height: 100%;
-           /* display: block; */
+            margin-top: 12px;
+            height: 100%;
+           
         }
 
    .btn-contact{
     height: 50px;
     width: 100px;
-    margin: 10px 0 0 0 !important;
+    margin: 22px 0 0 0 !important;
    }
+
 
    @media only screen and (max-width: 1600px){
     .body{
@@ -62,3 +96,4 @@
             /* background-color: aqua; */
         }
    }
+

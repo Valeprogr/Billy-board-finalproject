@@ -32,6 +32,13 @@
     width: 500px;
 }
 
-@media only screen and (max-width: 1600px){
-
+@media only screen and (max-width: 500px){
+.box{
+ margin: 12px;
+ padding: 52px;  
+}
+.box-text{
+    display: flex;
+    width: auto;
+}
 }

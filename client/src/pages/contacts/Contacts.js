@@ -40,9 +40,6 @@ const Contacts = () => {
     });
     return (
         <div className='body'>
-            <div className='container1'>
-               
-            </div>
             <div className='container2'>
                 <form className='box-container-contacts'>
                     <h2>Get in touch</h2>
@@ -52,7 +49,7 @@ const Contacts = () => {
                     <h5>Email</h5>
                     <input type="email" name='email' value={form.email} onChange={changeHandler}></input>
                     <h5>Message</h5>
-                   <textarea rows="4" cols="50" className='text-message' name='message' value={form
+                   <textarea rows="5" cols="60" className='text-message' name='message' value={form
                    .message} onChange={changeHandler}></textarea>
                         <button type='submit' className=" btn-contact btn btn-secondary "  onClick={emailHandler}>Send
                         <ToastContainer /></button>
