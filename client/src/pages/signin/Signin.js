@@ -30,10 +30,11 @@ const Signin = () => {
     const changeHandler = event =>{
         setForm({...form, [event.target.name]: event.target.value});
     }
-    
+
     const registerHandler = async (event)=>{
         event.preventDefault();
         try{
+            console.log(form)
             const data = await request(`${REACT_APP_URL_CYCLIC}signin`,'POST', {...form});
             message(data);
         }catch(error){
