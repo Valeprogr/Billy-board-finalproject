@@ -20,7 +20,7 @@ const Signin = () => {
         email:"",
         password:"",
         company_name:"",
-        user_occupation: "ceo"
+        user_occupation:"ceo"
     });
     useEffect(()=>{
         message(error);
