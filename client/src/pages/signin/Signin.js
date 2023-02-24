@@ -19,7 +19,8 @@ const Signin = () => {
         lastname:"",
         email:"",
         password:"",
-        company_name:""
+        company_name:"",
+        user_occupation: "ceo"
     });
     useEffect(()=>{
         message(error);
