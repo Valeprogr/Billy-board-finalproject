@@ -3,35 +3,18 @@ import { NavLink, Outlet } from "react-router-dom";
 import "./homeUser.css";
 import { AuthContext } from "../../../context/AuthContext";
 import { useHttp } from '../../../hooks/http.hook';
-import { useMessage } from '../../../hooks/message.hook';
+//import { useMessage } from '../../../hooks/message.hook';
 import "../../../images/logo.png"
 
 
 
-const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
+//const REACT_APP_URL_CYCLIC = process.env.REACT_APP_URL_CYCLIC;
 const NavbarUser = ({ children }) => {
     const {  request, error, clearError } = useHttp();
     const auth = useContext(AuthContext);
+const [img, setImg]= useState(true);
 
-    const message = useMessage();
-    useEffect(() => {
-        message(error);
-        clearError();
-
-    }, [error, message, clearError]);
-
-
-    const [data, setData] = useState(null);
-    useEffect(() => {
-
-        const getData = async () => {
-          
-            const userData = await request(`${REACT_APP_URL_CYCLIC}user/${auth.userId}`);
-            setData(userData)
-        }
-        getData()
-
-    }, [])
+    
 
 
     const logoutHandler = () => {
@@ -40,53 +23,67 @@ const NavbarUser = ({ children }) => {
 
 
     return (
-        <>
-            {data ?
+        
+           
                 <>
                     <nav className="nav nav-user ">
                         <div className='avatar-img-wow text-center'>
                             <img className='avatar-img' src='https://cdn.discordapp.com/attachments/1008786354865451019/1053355839953588335/profileimage.jpg' alt='profile pictures'></img>
-                            <p className='navbar-data'><i>{data.email}</i></p>
-
                         </div>
-                        <div className='nav-bar-container'>
-                            <div className='nav-bar-box1'>
+                        <div className='nav-bar-container '>
+                            
                                 <NavLink className="nav-link active" aria-current="page" to="/userHome">
-                                    <span className="material-symbols-outlined navbar-icons">
+                                <div className='nav-bar-box1'>
+                                      <span className="material-symbols-outlined navbar-icons">
                                         Home
                                     </span>
-                                    <span>Home</span></NavLink >
-                                <br />
+                                    <p className='nav-text'>Home</p>
+                                </div>
+                                  
+                                    </NavLink >
+                             
                                 <NavLink className="nav-link" to="user/profile">
-                                    <span className="material-symbols-outlined navbar-icons">
+                                <div className='nav-bar-box1'>
+                                        <span className="material-symbols-outlined navbar-icons">
                                         person
                                     </span>
-                                    Profile</NavLink >
-                                <br />
+                                    <p className='nav-text'>Profile</p>
+                                </div>
+                                </NavLink >
+                                
                                 <NavLink className="nav-link" to="/employees">
-                                    <span className="material-symbols-outlined navbar-icons">
+                                <div className='nav-bar-box1'>
+                                         <span className="material-symbols-outlined navbar-icons">
                                         group
                                     </span>
-                                    Employees</NavLink >
-                                <br />
+                                    <p className='nav-text'>Employees</p>
+                                </div>
+                               </NavLink >
+                            
                                 <NavLink className="nav-link" to="/projects">
-                                    <span className="material-symbols-outlined navbar-icons">
+                                <div className='nav-bar-box1'>
+                                      <span className="material-symbols-outlined navbar-icons">
                                         list_alt
                                     </span>
-                                    Projects</NavLink >
-                                <br />
+                                    <p className='nav-text'>Projects</p>
+                                </div>
+                                  </NavLink >
+                                
                                 <NavLink className="nav-link" to="/user/settings">
-                                    <span className="material-symbols-outlined navbar-icons">
+                                <div className='nav-bar-box1'>
+                                      <span className="material-symbols-outlined navbar-icons">
                                         settings
                                     </span>
-                                    Settings</NavLink>
-                            </div>
-                        </div>
+                                    <p className='nav-text'>Settings</p>
+                                </div>
+                                  </NavLink>
+                                    </div>
                         <div className='nav-bar-box2'>
-                            <button className="btn btn-dark btn-navbar" onClick={logoutHandler}>
+                            <button className="btn btn-dark btn-navbar btn-logout" onClick={logoutHandler}>
                                 <span className="material-symbols-outlined navbar-icons">
                                     logout
-                                </span>Logout</button>
+                                </span>
+                                <p className='nav-text'>Logout</p></button>
                         </div>
                     </nav>
 
@@ -94,12 +91,6 @@ const NavbarUser = ({ children }) => {
                     <Outlet />
                     {children}
                 </>
-                :
-                <div>loading</div>
-
-            }
-
-        </>
     );
 }
 
