@@ -88,5 +88,10 @@ justify-content: center;
        h1{
         font-size: 36px;
        }
+       .navbar-body{
+        display: flex;
+        flex-direction: column;
+        
+       }
       
   }
