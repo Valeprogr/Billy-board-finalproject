@@ -70,7 +70,7 @@ justify-content: center;
     margin-right: 4px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .home{
         height: 600px;
         width: auto;
