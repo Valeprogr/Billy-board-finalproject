@@ -10,8 +10,8 @@
     font-style: var(--font-family);
     color: var(--text-color);
   }
-  @media only screen and (max-width: 600px){
-  }
+  /* @media only screen and (max-width: 600px){
+  } */
 
 .signin-body{
    display: flex;
