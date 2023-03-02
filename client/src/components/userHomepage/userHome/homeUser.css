@@ -18,7 +18,7 @@ body {
     nav{
         width: 62px !important;
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
     }
 
     .nav-bar-container{
