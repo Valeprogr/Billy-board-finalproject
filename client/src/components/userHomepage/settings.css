@@ -16,7 +16,7 @@
   font-family: var(--font-family);
   /* display: flex; */
   flex-direction: column;
-  width: 100%;
+  width: 100vh;
   height: auto;
   /* margin:0px 0 160px 100px; */
   margin-left: 220px;

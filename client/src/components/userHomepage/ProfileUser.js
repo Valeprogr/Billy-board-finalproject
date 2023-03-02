@@ -36,14 +36,14 @@ const ProfileUser = () => {
                     <div className='container-body-profile'>
                         <div className='header-profile'>
 
-                            <div className='buttons'>
+                            <div className='buttons btn-edit-profile'>
                                 <a href='/user/settings'>
                                 <button type="button" class="btn btn-light">
                                   Edit Profile
                                 </button></a>
                             </div>
                             <div className='container-img'>
-                                <img src="https://cdn.discordapp.com/attachments/1008786354865451019/1053355839953588335/profileimage.jpg" alt='profile' />
+                                <img className='pic-profile' src="https://cdn.discordapp.com/attachments/1008786354865451019/1053355839953588335/profileimage.jpg" alt='profile' />
 
                             </div>
                         </div>

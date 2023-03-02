@@ -17,18 +17,18 @@ body {
 @media only screen and (max-width: 500px){
     nav{
         width: 62px !important;
-        display: flex;
-        /* flex-direction: column; */
+        /* display: flex;
+        flex-direction: column; */
+        height: 100vh !important;
     }
 
     .nav-bar-container{
         width: 100% !important;
-        
     }
     .nav-bar-box1{
-        width:  100% !important;;
+        width:  100% !important;
     }
-    img{
+    .avatar-img {
         display: none;
     }
     .avatar-img-wow{
@@ -48,14 +48,14 @@ body {
         display: none;
     }
     .nav-user a{
-        margin-top: 72px !important;
+        margin-top: 60px !important;
     }
 
    .btn-logout{
     width: 100%!important;
     border: 1px solid black !important;
    }
-   .btn-logout  .navbar-icons{
+   .btn-logout .navbar-icons{
     color: white !important;
    }
    .admin-home-body{
@@ -69,8 +69,7 @@ body {
 
 nav {
     background-color: var(--text-color);
-    height: 100% !important;
-
+    height: 100vh !important;
 }
 
 .admin-home-body {
@@ -103,7 +102,7 @@ nav {
 
 .nav-user {
     display: flex;
-    /* height: 100%; */
+    height: auto;
     /* justify-content: space-between; */
     padding: 0px !important;
     background-color: var(--text-color);

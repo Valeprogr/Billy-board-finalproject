@@ -5,7 +5,18 @@
     --text-color2: black;
     --font-family: 'Montserrat', sans-serif;
 }
-
+@media only screen and (max-width: 500px){
+    .container-body-profile{
+        margin-left: 0% !important;
+    }
+    .btn-edit-profile{
+        margin-right: 22px !important;
+        margin-top: 32px !important;
+    }
+    .container-img{
+        margin-top: 12px;
+    }
+}
 .container-body-profile h2,h5 {
     color: var(--color-secondary);
     font-weight: 700;
@@ -71,7 +82,7 @@
 
 }
 
-.container-img img {
+.container-img .pic-profile {
     height: 150px;
     width: 150px;
     border: 1px solid white;
@@ -87,7 +98,7 @@
 }
 
 
-.buttons {
+.btn-edit-profile {
     display: flex;
     justify-content: end;
     margin-top: 62px;
