@@ -5,14 +5,18 @@
   --text-color2: black;
   --font-family: 'Montserrat', sans-serif;
 }
-
+@media only screen and (max-width: 500px){
+  .container-body-settings{
+    margin-left: 0px !important;
+  }
+}
 .container-body-settings {
   font-family: var(--font-family);
   /* display: flex; */
   flex-direction: column;
   background-color: aqua;
   width: 100%;
-  height: auto;
+  height: 100%;
   /* margin:0px 0 160px 100px; */
   margin-left: 220px;
   justify-content: center;
