@@ -89,9 +89,10 @@ justify-content: center;
         font-size: 36px;
        }
        .navbar-body{
-        display: flex;
-        flex-direction: column;
-        
+        width: auto !important;
        }
-      
+       .btn-login{
+        width: 92px;
+        margin-top: 2% !important;
+       }
   }
