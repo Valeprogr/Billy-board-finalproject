@@ -28,7 +28,7 @@ function App() {
      
       {
         isAuthenticated?
-        <div style={{display: "flex"}}>
+        <div>
          <NavbarUser />
          {routes}
          </div>

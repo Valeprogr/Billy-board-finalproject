@@ -16,6 +16,10 @@
     .container-img{
         margin-top: 12px;
     }
+    .icons {
+        margin-top: 12px;
+    }
+
 }
 .container-body-profile h2,h5 {
     color: var(--color-secondary);
