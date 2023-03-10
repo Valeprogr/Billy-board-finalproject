@@ -27,5 +27,5 @@ Admin Profile:
 - See Employees
 
 ### Deploy Site
-https://app.netlify.com/sites/willowy-capybara-1a4d3d/overview
+https://willowy-capybara-1a4d3d.netlify.app/
 
