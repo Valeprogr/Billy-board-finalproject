@@ -12,7 +12,7 @@
         display: flex;
         
     }
-    .card-img,img{
+    .employee-card-img{
         height: 100px !important;
         width: 100px !important; 
         
@@ -40,11 +40,11 @@
     
 }
 
-.card-img{
+/* .card-img{
     height: 200px;
     width: 200px; 
-}
-.card-img,img{
+} */
+ .employee-card-img{
     /* border: solid 1px lightgray; */
     margin-top: 32px;
     height: 200px;
