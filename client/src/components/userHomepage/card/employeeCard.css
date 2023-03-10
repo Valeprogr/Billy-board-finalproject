@@ -6,6 +6,24 @@
     --font-family: 'Montserrat', sans-serif;
     ---text-shadow:1px 1px 0px rgba(0,0,0,0.2);
 }
+@media only screen and (max-width: 500px){
+    .card-employee{
+        margin: 12px 0px !important;
+        display: flex;
+        
+    }
+    .card-img,img{
+        height: 100px !important;
+        width: 100px !important; 
+        
+    }
+    .card-body{
+        display: flex;
+        flex-direction: column;
+        padding: 0% !important;
+        
+    }
+}
 .card-employee {
     justify-content: flex-start;
     width: 260px;
@@ -15,7 +33,7 @@
     border: solid 1px lightgray;
     border-radius: 8px;
     padding: 12px;
-    margin: 32px !important;
+    margin: 32px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
     font-size: 18px;
    
@@ -28,6 +46,7 @@
 }
 .card-img,img{
     /* border: solid 1px lightgray; */
+    margin-top: 32px;
     height: 200px;
     width: 200px;
     border-radius: 8px;
