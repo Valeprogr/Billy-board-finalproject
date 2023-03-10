@@ -5,7 +5,7 @@
 This Project is designed to facilitate the organization of work and employees.In this site you will be able to create a manager account and enter all your employees in the data base.
 You will also be able to create dated projects and enter your employees and create tasks.
 
-##User Stories
+## User Stories
 - Admin sign up: As an admin I can sign up
 - Admin log-in: As an admin I can login to the platform
 - Admin log-out: As an admin I can logout from the platform so no one else can use it
