@@ -77,14 +77,15 @@ const [img, setImg]= useState(true);
                                     <p className='nav-text'>Settings</p>
                                 </div>
                                   </NavLink>
-                                    </div>
-                        <div className='nav-bar-box2'>
+                                  <div className='nav-bar-box2'>
                             <button className="btn btn-dark btn-navbar btn-logout" onClick={logoutHandler}>
                                 <span className="material-symbols-outlined navbar-icons">
                                     logout
                                 </span>
                                 <p className='nav-text'>Logout</p></button>
                         </div>
+                                    </div>
+                     
                     </nav>
 
 
