@@ -30,10 +30,10 @@ const [img, setImg]= useState(true);
                         <div className='avatar-img-wow text-center'>
                             <img className='avatar-img' src='https://cdn.discordapp.com/attachments/1008786354865451019/1053355839953588335/profileimage.jpg' alt='profile pictures'></img>
                         </div>
-                        <div className='nav-bar-container '>
+                        <div className='nav-bar-container'>
                             
                                 <NavLink className="nav-link active" aria-current="page" to="/userHome">
-                                <div className='nav-bar-box1'>
+                                <div className='container-icon-navlik'>
                                       <span className="material-symbols-outlined navbar-icons">
                                         Home
                                     </span>
@@ -43,7 +43,7 @@ const [img, setImg]= useState(true);
                                     </NavLink >
                              
                                 <NavLink className="nav-link" to="user/profile">
-                                <div className='nav-bar-box1'>
+                                <div className='container-icon-navlik'>
                                         <span className="material-symbols-outlined navbar-icons">
                                         person
                                     </span>
@@ -52,7 +52,7 @@ const [img, setImg]= useState(true);
                                 </NavLink >
                                 
                                 <NavLink className="nav-link" to="/employees">
-                                <div className='nav-bar-box1'>
+                                <div className='container-icon-navlik'>
                                          <span className="material-symbols-outlined navbar-icons">
                                         group
                                     </span>
@@ -61,7 +61,7 @@ const [img, setImg]= useState(true);
                                </NavLink >
                             
                                 <NavLink className="nav-link" to="/projects">
-                                <div className='nav-bar-box1'>
+                                <div className='container-icon-navlik'>
                                       <span className="material-symbols-outlined navbar-icons">
                                         list_alt
                                     </span>
@@ -70,21 +70,21 @@ const [img, setImg]= useState(true);
                                   </NavLink >
                                 
                                 <NavLink className="nav-link" to="/user/settings">
-                                <div className='nav-bar-box1'>
+                                <div className='container-icon-navlik'>
                                       <span className="material-symbols-outlined navbar-icons">
                                         settings
                                     </span>
                                     <p className='nav-text'>Settings</p>
                                 </div>
                                   </NavLink>
-                                  <div className='nav-bar-box2'>
+                </div>
+                <div className='nav-bar-box2'>
                             <button className="btn btn-dark btn-navbar btn-logout" onClick={logoutHandler}>
                                 <span className="material-symbols-outlined navbar-icons">
                                     logout
                                 </span>
-                                <p className='nav-text'>Logout</p></button>
+                               </button>
                         </div>
-                                    </div>
                      
                     </nav>
 
