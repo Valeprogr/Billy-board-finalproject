@@ -71,6 +71,7 @@ body {
 
 nav {
     background-color: var(--text-color);
+    height: 100%;
 }
 
 .admin-home-body {
