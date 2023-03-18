@@ -5,6 +5,9 @@
   --text-color2: black ;
   --font-family: 'Montserrat', sans-serif;
 }
+*{
+  margin: 0%;
+}
 
 html, body{
   font-style: var(--font-family);

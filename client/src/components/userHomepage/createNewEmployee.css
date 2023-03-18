@@ -1,0 +1,19 @@
+@media only screen and (max-width: 500px){
+    #createNewEmployee{
+        margin-left:55px !important;
+        
+    }
+  
+}
+#createNewEmployee{
+    margin-left: 228px;
+    height: 100vh;
+    /* border: 1px solid red; */
+    width: auto;
+    background-color:#F9F9F9;
+}
+
+.new-employee-container{
+    margin-top: 32px;
+    padding-left: 22px !important;
+}

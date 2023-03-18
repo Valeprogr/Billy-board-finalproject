@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
-import "./createProject.css";
+import "./createNewEmployee.css";
 import { useMessage } from '../../hooks/message.hook';
 import { useHttp } from '../../hooks/http.hook';
 import Btnspinner from "../../btnSpinner/BtnSpinner";
 import { Toaster } from "react-hot-toast";
 import { AuthContext } from '../../context/AuthContext.js';
+
 
 const REACT_APP_URL_CYCLIC=process.env.REACT_APP_URL_CYCLIC;
 const CreateNewEmployee = () => {
@@ -48,7 +49,7 @@ const CreateNewEmployee = () => {
     return (
         <div id="createNewEmployee">
         
-                <div className='container'>
+                <div className='container new-employee-container'>
                     <Toaster />
                     <div className=''>
                         <h1>Create a new Employee</h1>
