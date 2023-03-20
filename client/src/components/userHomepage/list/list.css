@@ -6,6 +6,9 @@
     --font-family: 'Montserrat', sans-serif;
   }
   @media only screen and (max-width: 500px){
+    .boh{
+        flex-direction: column;
+    }
     .container-body-list{
         margin-left: 10% !important;
         width: 100% !important;
