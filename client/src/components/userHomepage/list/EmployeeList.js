@@ -24,7 +24,7 @@ const EmployeeList = () => {
 
     }, [])
     return (
-        <>
+    
             <div className='container-body-list container-employee-list'>
                 <div className='box-list'>
                     <div className='boh'>
@@ -52,7 +52,7 @@ const EmployeeList = () => {
                     </div>
                 </div>
             </div>
-        </>
+    
     );
 }
 

@@ -6,8 +6,11 @@
     --font-family: 'Montserrat', sans-serif;
   }
   @media only screen and (max-width: 500px){
+    .boh{
+        flex-direction: column;
+    }
     .container-body-list{
-        margin-left: 10% !important;
+        margin-left: 12% !important;
         width: 100% !important;
        
     }
@@ -15,31 +18,34 @@
         grid-template-columns: 0.2fr !important;
         
     }
+    .list-body-project-list{
+        padding-left: 32px !important;
+        padding-top: 32px !important;
+    }
     /* .box-list{
        padding-top: 0%;
     } */
   }
 
  .container-body-list{
-    display: flex;
+    /* display: flex; */
     font-family: var(--font-family);
-    width: auto;
     height: 100%;
-    padding: 0px 12px;
+    padding-left: 12px;
     margin-left: 210px;
     /* border: solid 1px red; */
     background-color: var(--text-color);
-
+    
     /* background-color: white; */
   
-    
 }
+
 .box-list{
     display: flex;
     flex-direction: column;
     padding: 12px;
     height: auto;
-    width: auto;
+    width:auto;
     background-color: whitesmoke;
     border: 1px solid lightgrey;
     border-radius: 12px;

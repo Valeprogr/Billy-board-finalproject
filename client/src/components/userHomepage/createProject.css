@@ -1,14 +1,20 @@
+@media only screen and (max-width: 500px){
+    .container-create-project{
+        margin-left:22px !important;
+    }
+    .form-container-createPro{
+        padding: 18px !important; 
+    }
+}
 .container-create-project{
     display: flex;
     flex-direction: column;
-    margin-left: 260px;
-    box-shadow: 0px 1px 2px rgba(0,0,0,0.1), 
-    0px 2px 4px rgba(0,0,0,0.1), 
-    0px 4px 8px rgba(0,0,0,0.1), 
-    0px 8px 16px rgba(0,0,0,0.1);
+    margin-left: 220px;
     border-radius: 12px;
     padding: 32px 42px 22px 42px;
-    width: 1000px;
+    width: auto;
+    height: auto;
+    background-color: #F9F9F9;
 }
 
 .btn-container-create-project{
@@ -21,5 +27,5 @@
 
 
 .form-container-createPro{
-    padding: 32px 42px 22px 42px; 
+    padding: 32px 62px 22px 32px; 
 }

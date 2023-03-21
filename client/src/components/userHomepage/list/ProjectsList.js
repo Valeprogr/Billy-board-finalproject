@@ -23,7 +23,7 @@ const ProjectsList = () => {
     },[refresh]);
 
     return (
-        <div className='container-body-list'>
+        <div className='container-body-list d-flex flex-column list-body-project-list'>
 
             <div className='list-title-projectList'>
                 <h2>Projects List</h2>
