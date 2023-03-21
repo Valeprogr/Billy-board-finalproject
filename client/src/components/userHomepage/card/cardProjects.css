@@ -6,7 +6,15 @@
     --font-family: 'Montserrat', sans-serif;
 }
 
-
+@media only screen and (max-width: 500px){
+    .container-info-location{
+        margin: 6px !important;
+        
+    }
+    .container-holiday-card{
+        padding: 12px !important;
+    }
+}
 
 .body-holiday-card {
     font-family: var(--font-family);
