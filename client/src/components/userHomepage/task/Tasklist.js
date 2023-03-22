@@ -30,7 +30,7 @@ const Tasklist = ({ projects }) => {
                     (tasks.map(task => <Task task={task} key={task._id} />))
                     :
                     null}
-                <button className="btn btn-outline-secondary" onClick={() => setCreateTask(prev => !prev)}>Create New Task</button>
+                <button type='button' className="btn btn-outline-secondary" onClick={() => setCreateTask(prev => !prev)}>Create New Task</button>
                 {createTask && <CreateNewTask project={projects} show={createTask}/>}
             </div>
         </>

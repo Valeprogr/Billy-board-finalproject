@@ -43,6 +43,7 @@ const CreateNewTask = ({ project, show }) => {
     return (
         <>
             {close ?
+                <>            
                 <div className='modal-body'>
                     <div class="modaldiv  card">
                         <div className='modal-content'>
@@ -57,14 +58,14 @@ const CreateNewTask = ({ project, show }) => {
                             </div>
                             <hr/>
                             <Toaster />
-                            <form className='form-container-createPro'>
+                            <form className='form-container-createPro' style={{boxSizing: "border-box"}}>
                                 <label htmlFor='title'>Title:</label>
                                 <br />
                                 <input type="text" name='title' onChange={changeHandler}></input>
                                 <br />
                                 <label htmlFor='text'>Task:</label>
                                 < br />
-                                <textarea name='text' onChange={changeHandler} cols="40"
+                                <textarea name='text' onChange={changeHandler} cols="auto"
                                     rows="5" />
                                 <div className='btn-container-create-project'>
                                     <button type="submit" class="btn btn-secondary" onClick={createTask}>Create Task
@@ -74,7 +75,8 @@ const CreateNewTask = ({ project, show }) => {
                             </form>
                         </div>
                     </div>
-                </div>
+                    </div>
+                    </>
                 :
                 null
             }
