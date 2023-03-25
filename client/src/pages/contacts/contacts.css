@@ -83,7 +83,7 @@
    }
 
 
-   @media only screen and (max-width: 1669px){
+   @media only screen and (min-width: 1669px){
     .body{
         font-size: 18px;
         height: 100vh !important;
@@ -92,7 +92,7 @@
         width: 667px;
         }
         .box-container-contacts{
-          margin:100px 644px !important;
+          margin:100px 664px !important;
         }
    }
 
