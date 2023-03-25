@@ -68,7 +68,9 @@ body {
    }
    
 }
-
+@media screen and (min-width:501px){
+    
+}
 nav {
     background-color: var(--text-color);
     height: 100%;
@@ -77,14 +79,14 @@ nav {
 .admin-home-body {
     background-color: var(--text-color);
     font-family: var(--font-family);
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    /* box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3)); */
     margin-left: 220px;
     height: 100vh;
-    /* width: 100%; */
+    /* width: 100vh; */
     padding: 62px 62px 0 62px;
     /* justify-items: center;
     align-items: center; */
@@ -213,7 +215,7 @@ footer {
     margin: 22px !important;
 } */
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1669px) {
     .nav-user {
         display: flex;
         height: auto;
