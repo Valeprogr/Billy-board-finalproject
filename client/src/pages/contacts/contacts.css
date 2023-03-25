@@ -59,8 +59,8 @@
             border: 1px solid white;
             border-radius: 20px;
             height: 640px;
-            width: 80%;
-            margin: 160px 444px;
+            width: 600px;
+            margin: 100px 334px;
             padding: 100px;
             background-color: var(--text-color);
             opacity: 80%;
@@ -83,7 +83,7 @@
    }
 
 
-   @media only screen and (max-width: 1600px){
+   @media only screen and (min-width: 1600px){
     .body{
         font-size: 18px;
         height: 800px;
@@ -92,9 +92,7 @@
         width: 667px;
         }
         .box-container-contacts{
-           margin-left: 160px;
-           margin-top: 70px;
-            /* background-color: aqua; */
+          margin:100px 644px !important;
         }
    }
 
